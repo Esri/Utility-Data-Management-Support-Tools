@@ -3,6 +3,7 @@
 Here are a set of tools to work with the utility network and the maps to interact with it.
 
 ## Features
+
 ### Update Data Sources
 #### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
 <p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
@@ -11,6 +12,7 @@ Here are a set of tools to work with the utility network and the maps to interac
 | --------- | ------- | ----------- |
 target_workspace|Target Workspace|<p>The new workspace for the layers.</p>
 maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data source in.</p>
+---
 
 
 ### Select by Association
@@ -20,6 +22,7 @@ maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data sourc
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 json_payload|Selection Payload|<p>The layers and selection types to apply. For more help, see the tool usage.</p>
+---
 
 
 ### Batch Trace
@@ -39,6 +42,7 @@ key_field|Group Field|<p><p>Field used to group starting points and barriers.</p
 concatenate_results|Concatenate results with existing values|<p>Add the value to the existing value</p>
 json_folder|Connectivity and Element file folder|<p>The folder with the files for connectivity and element information.</p>
 out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geomtery</p>
+---
 
 
 ### Build Starting Points
@@ -53,6 +57,7 @@ starting_points|Starting Points|The utility network subnetworks table or a table
 subnetwork_name|Subnetwork Name|The name for the new subnetwork. If not provided, the Global ID of the trace record will be used.
 results_trace_config|Result Trace Config|The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.
 trace_results|Trace Results|The results from the trace in the starting points table format. If an existing table is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.
+---
 
 
 ### Calculate Tolerances and Resolutions
@@ -63,6 +68,7 @@ trace_results|Trace Results|The results from the trace in the starting points ta
 | --------- | ------- | ----------- |
 spatial_reference|Spatial Reference|<p>The spatial reference of the dataset.</p>
 measure_unit|Measure Unit|<p>Unit of measurement for the M values.</p>
+---
 
 
 ### Configure UN Layers
@@ -76,6 +82,7 @@ input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to u
 options|Options|<p>The options to add to the layers.</p><ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul>
 category_filters|Category Display Filters|<p>The display filters to add to the map.</p><p>To specify multiple categories in the same display filter, reuse the Display Filter Name.</p>
 output_project|Output Project|<p>The updated project.</p>
+---
 
 
 ### Create Association Lines
@@ -88,6 +95,7 @@ network|Input Network|<p>The utility network or asset package to process.</p>
 association_types|Association Types|<p>The association types to generate.</p><ul><li>Junction Junction Connectivity</li><li>Containment</li><li>Structural Attachment</li></ul>
 extent|Extent|<p>If specified, only generate lines for features intersecting this extent. By default, the entire network is processed.</p>
 output_lines|Output Lines|<p>The output line feature class.</p>
+---
 
 
 ### Enable APR on UPDM
@@ -100,6 +108,7 @@ in_utility_network|Input Utility Network|<p>The utility network that will be use
 lrs_name|LRS Name|<p>The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.</p>
 write_script|Only Write Script|<p>Option to only write a script to enable LRS and not perform the Geoprocessing calls. This script can be run through python to enable LRS. Selecting this option will enable the output folder parameter.</p>
 output_folder|Script Output Folder|<p>Output folder for the LRS script. The script name will start with "updm_lrs" and end with a unique GUID. This parameter is only valid when Write Output Script is true.</p>
+---
 
 
 ### Export Matrix
@@ -112,6 +121,7 @@ Creates Excel workbooks for visualizing and modifying Utility Network rules and 
 network|Input Network|<p>The utility network or asset package.</p>
 rule_matrix|Rule Matrix|<p>The output rule matrix to generate.</p>
 category_matrix|Category Matrix|<p>The output category matrix to generate.</p>
+---
 
 
 ### Modify Map by Rename and Configure
@@ -126,6 +136,7 @@ rename_field|Rename using|<p>The rename field to apply. Items in the map will ha
 maps|Maps|<p>The maps in the current ArcGIS Pro project to modify.</p>
 input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to use the active project.</p>
 output_project|Output Project|<p>The updated Pro project.</p>
+---
 
 
 ### Import Matrix
@@ -138,6 +149,7 @@ Loads the values from the rule and network category workbooks.
 network|Input Network|<p>The utility network or asset package to modify.</p>
 rule_matrix|Rule Matrix|<p>The rules matrix to import.</p>
 category_matrix|Category Matrix|<p>The network category matrix to import.</p>
+---
 
 
 ### Summary By Bits
@@ -150,6 +162,7 @@ input_records|Input Records|<p>The table to summarize.</p>
 bit_field|Bitwise Field|<p>The field containing bit values. This field must have a coded value domain assigned of type short or long.</p>
 summary_field|Summary Fields|<p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
 output|Table|<p>The table to write the summarized results to.</p>
+---
 
 
 ### Trace results to Trace configurations
@@ -162,7 +175,7 @@ trace_configuration_name|Trace Configuration Name|<p>The name of the trace confi
 trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations</p><ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
-
+---
 
 
 ## Instructions
