@@ -3,7 +3,6 @@
 Here are a set of tools to work with the utility network and the maps to interact with it.
 
 ## Features
-
 ### Update Data Sources
 #### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
 <p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
@@ -23,9 +22,9 @@ maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data sourc
 json_payload|Selection Payload|<p>The layers and selection types to apply. For more help, see the tool usage.</p>
 
 
-## Batch Trace
-### Iterate through the starting points to trace the utility network and use the results.
-#### <p><p>This tool uses a with starting point information to trace the utility network. The starting points are optionally grouped so set of starting points is used in each trace.</p><p>The trace results can be used to select features in a map, calculate values on results, create connectivity and element files or save the aggregated geometry with summary information.</p><p>The starting points layer uses a field to determine if a row is a starting point and/or barrier. A feature as a starting point and filter barrier is useful in a connected trace to determine all the items between the starting points.</p><p>The starting points table requires the following fields:<ul><li>FEATUREGLOBALID: GUID</li><li>TERMINALID: Short</li><li>PERCENTALONG: Double</li></ul></p></p>
+### Batch Trace
+#### Iterate through the starting points to trace the utility network and use the results.
+<p><p>This tool uses a with starting point information to trace the utility network. The starting points are optionally grouped so set of starting points is used in each trace.</p><p>The trace results can be used to select features in a map, calculate values on results, create connectivity and element files or save the aggregated geometry with summary information.</p><p>The starting points layer uses a field to determine if a row is a starting point and/or barrier. A feature as a starting point and filter barrier is useful in a connected trace to determine all the items between the starting points.</p><p>The starting points table requires the following fields:<ul><li>FEATUREGLOBALID: GUID</li><li>TERMINALID: Short</li><li>PERCENTALONG: Double</li></ul></p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -42,9 +41,9 @@ json_folder|Connectivity and Element file folder|<p>The folder with the files fo
 out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geomtery</p>
 
 
-## Build Starting Points
-### Creates starting points based on a trace configuration.
-#### <p>Creates starting points based on a trace configuration.</p>
+### Build Starting Points
+#### Creates starting points based on a trace configuration.
+<p>Creates starting points based on a trace configuration.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -56,9 +55,9 @@ results_trace_config|Result Trace Config|The trace configuration to use in the r
 trace_results|Trace Results|The results from the trace in the starting points table format. If an existing table is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.
 
 
-## Calculate Tolerances and Resolutions
-### Calculate the XY, Z, and M tolerances based on a measure unit for systems that will use a linear referencing system (LRS).
-#### <p>Specify the spatial reference and the unit of measure for the M values. The tolerances are printed as geoprocessing messages. These values should be entered when defining the spatial reference of the feature dataset.</p>
+### Calculate Tolerances and Resolutions
+#### Calculate the XY, Z, and M tolerances based on a measure unit for systems that will use a linear referencing system (LRS).
+<p>Specify the spatial reference and the unit of measure for the M values. The tolerances are printed as geoprocessing messages. These values should be entered when defining the spatial reference of the feature dataset.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -66,9 +65,9 @@ spatial_reference|Spatial Reference|<p>The spatial reference of the dataset.</p>
 measure_unit|Measure Unit|<p>Unit of measurement for the M values.</p>
 
 
-## Configure UN Layers
-### Configures utility network layers by modifying popups and display filters.
-#### <p>Configures utility network layers by modifying popups and display filters.</p><p>This tool can be run multiple times and existing properties will be updated.</p>
+### Configure UN Layers
+#### Configures utility network layers by modifying popups and display filters.
+<p>Configures utility network layers by modifying popups and display filters.</p><p>This tool can be run multiple times and existing properties will be updated.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -79,9 +78,9 @@ category_filters|Category Display Filters|<p>The display filters to add to the m
 output_project|Output Project|<p>The updated project.</p>
 
 
-## Create Association Lines
-### Creates lines representing utility network associations
-#### <p><p>Creates lines representing utility network associations.</p><p>For polylines and polygons, the centroid will be used.</p><p>Both features must intersect the extent to be processed.</p></p>
+### Create Association Lines
+#### Creates lines representing utility network associations
+<p><p>Creates lines representing utility network associations.</p><p>For polylines and polygons, the centroid will be used.</p><p>Both features must intersect the extent to be processed.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -91,9 +90,9 @@ extent|Extent|<p>If specified, only generate lines for features intersecting thi
 output_lines|Output Lines|<p>The output line feature class.</p>
 
 
-## Enable APR on UPDM
-### Creates the script to enable LRS or enables LRS on a UPDM database with a utility network.
-#### <p>To create the LRS controller dataset in an UPDM utility network database.</p>
+### Enable APR on UPDM
+#### Creates the script to enable LRS or enables LRS on a UPDM database with a utility network.
+<p>To create the LRS controller dataset in an UPDM utility network database.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -103,10 +102,10 @@ write_script|Only Write Script|<p>Option to only write a script to enable LRS an
 output_folder|Script Output Folder|<p>Output folder for the LRS script. The script name will start with "updm_lrs" and end with a unique GUID. This parameter is only valid when Write Output Script is true.</p>
 
 
-## Export Matrix
-### 
+### Export Matrix
+#### 
 		
-#### Creates Excel workbooks for visualizing and modifying Utility Network rules and categories.
+Creates Excel workbooks for visualizing and modifying Utility Network rules and categories.
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -115,9 +114,9 @@ rule_matrix|Rule Matrix|<p>The output rule matrix to generate.</p>
 category_matrix|Category Matrix|<p>The output category matrix to generate.</p>
 
 
-## Modify Map by Rename and Configure
-### Applies rename and configuration options to maps based on an asset package.
-#### <p>Applies rename and configuration options to maps based on an asset package.</p>
+### Modify Map by Rename and Configure
+#### Applies rename and configuration options to maps based on an asset package.
+<p>Applies rename and configuration options to maps based on an asset package.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -129,10 +128,10 @@ input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to u
 output_project|Output Project|<p>The updated Pro project.</p>
 
 
-## Import Matrix
-### 
+### Import Matrix
+#### 
 		
-#### Loads the values from the rule and network category workbooks.
+Loads the values from the rule and network category workbooks.
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -141,9 +140,9 @@ rule_matrix|Rule Matrix|<p>The rules matrix to import.</p>
 category_matrix|Category Matrix|<p>The network category matrix to import.</p>
 
 
-## Summary By Bits
-### Summarizes records containing a bitwise coded value domain.
-#### <p>The output table containing summary information will have chart(s) associated with it.</p>
+### Summary By Bits
+#### Summarizes records containing a bitwise coded value domain.
+<p>The output table containing summary information will have chart(s) associated with it.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -153,9 +152,9 @@ summary_field|Summary Fields|<p>The numeric fields to summarize in addition to c
 output|Table|<p>The table to write the summarized results to.</p>
 
 
-## Trace results to Trace configurations
-### Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration
-#### <p>To capture the python code, run a trace from Geoprocessing and copy the results from History.</p>
+### Trace results to Trace configurations
+#### Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration
+<p>To capture the python code, run a trace from Geoprocessing and copy the results from History.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
