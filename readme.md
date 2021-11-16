@@ -4,9 +4,9 @@ Here are a set of tools to work with the utility network and the maps to interac
 
 ## Features
 
-## Update Data Sources
-### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
-#### <p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
+### Update Data Sources
+#### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
+<p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -14,9 +14,9 @@ target_workspace|Target Workspace|<p>The new workspace for the layers.</p>
 maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data source in.</p>
 
 
-## Select by Association
-### Expands the current selection in the map based on specified utility network association types and layers.
-#### <p><p>This tool requires at least 1 record be selected.</p><p>The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>associationTypes</li><li>toLayers</li></ul></p><p>Each key maps to an array of values. If the array is empty, then all valid choices are applied.</p><p>fromLayers and toLayers are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.</p><p>For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".</p><p>associationTypes is the type of association between fromLayers and toLayers. It has the following entries:<ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul></p></p>
+### Select by Association
+#### Expands the current selection in the map based on specified utility network association types and layers.
+<p><p>This tool requires at least 1 record be selected.</p><p>The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>associationTypes</li><li>toLayers</li></ul></p><p>Each key maps to an array of values. If the array is empty, then all valid choices are applied.</p><p>fromLayers and toLayers are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.</p><p>For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".</p><p>associationTypes is the type of association between fromLayers and toLayers. It has the following entries:<ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul></p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
