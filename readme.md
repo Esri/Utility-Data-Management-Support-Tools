@@ -181,7 +181,7 @@ output_script|Save python calls to script|<p>Create a python script with the cal
 
 ## Instructions
 
-1. Download the UtilityDataManagementSupport.atbx
+1. Download the  [UtilityDataManagementSupport.atbx](/UtilityDataManagementSupport.atbx)
 2. Add to an ArcGIS Pro project
 
 ## Requirements
