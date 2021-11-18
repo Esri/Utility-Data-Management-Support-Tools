@@ -95,6 +95,7 @@ network|Input Network|<p>The utility network or asset package to process.</p>
 association_types|Association Types|<p>The association types to generate.</p><ul><li>Junction Junction Connectivity</li><li>Containment</li><li>Structural Attachment</li></ul>
 extent|Extent|<p>If specified, only generate lines for features intersecting this extent. By default, the entire network is processed.</p>
 output_lines|Output Lines|<p>The output line feature class.</p>
+completely_within|Completely Within|<p>If specified, both sides of the association must be present in the extent. This option is only valid when specifying an extent.</p>
 ---
 
 
@@ -202,7 +203,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
 
 ## Licensing
-Copyright 2020 Esri
+Copyright 2021 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
