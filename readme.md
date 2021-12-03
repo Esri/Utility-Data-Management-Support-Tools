@@ -4,6 +4,18 @@ Here are a set of tools to work with the utility network and the maps to interac
 
 ## Features
 
+### Add Utility Network System Tables
+#### Add the system utility network tables to the map
+<p>Add table views of the utility network tables</p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+network|Input Network|<p>The utility network</p>
+tables|Tables|<p>The tables to add to the maps</p>
+out_tables|Table Views|<p>The resulting table views</p>
+---
+
+
 ### Update Data Sources
 #### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
 <p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
@@ -68,6 +80,19 @@ trace_results|Trace Results|The results from the trace in the starting points ta
 | --------- | ------- | ----------- |
 spatial_reference|Spatial Reference|<p>The spatial reference of the dataset.</p>
 measure_unit|Measure Unit|<p>Unit of measurement for the M values.</p>
+---
+
+
+### Change GDB Spatial Reference
+#### Creates a new file geodatabase in the user-specified spatial reference.
+<p>Creates a new file geodatabase in the user-specified spatial reference.</p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+gdb|Geodatabase|<p>The input gdb that will be copied.</p>
+spatial_reference|Output Spatial Reference|<p>The spatial reference of the new geodatabase.</p>
+output_folder|Folder Location|<p>The folder location where the asset package will be created.</p>
+output_name|Output Name|<p>The name of the output geodatabase.</p>
 ---
 
 
@@ -177,7 +202,6 @@ trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations</p><ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
 ---
-
 
 ## Instructions
 
