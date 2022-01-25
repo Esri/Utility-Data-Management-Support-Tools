@@ -137,7 +137,7 @@ workbook|Matrix Workbook|<p>The output workbook to create.</p>
 matrix_options|Matrix Options|<p>The properties to create.</p>
 ---
 
-### Extract Pro Logs
+### Extract Logs from Files
 #### Extracts diagnostic logs from ArcGIS Pro
 Extracts diagnostic logs from ArcGIS Pro
 
@@ -145,9 +145,10 @@ Extracts diagnostic logs from ArcGIS Pro
 | --------- | ------- | ----------- |
 diagnostic_files|Diagnostic Files|----missing----
 folder|Output Folder|----missing----
+logs|Logs|<p>The table with extracted logs.</p>
 ---
 
-### Extract Server Logs
+### Extract Logs from REST
 #### Extracts logs from ArcGIS Server
 Extracts logs from ArcGIS Server
 
@@ -163,6 +164,7 @@ request_ids|Request IDs|<p><p>Specifies an ID assigned to a specific server requ
 components|Component|<p><p>Specifies the server components delivering the log message.</p><p>If not specified, then all components will be queried.</p></p>
 services|Services|<p><p>Specifies whether to query all, none, or a specific service in your site.</p><p>If not specified, then all services will be queried.</p></p>
 machines|Machine Names|<p><p>Specifies whether to query all or a specific machine in your server site.</p><p>If not specified, then all machines will be queried.</p></p>
+logs|Logs|<p>The table with extracted logs.</p>
 ---
 
 ### Modify Map by Rename and Configure
@@ -224,6 +226,7 @@ trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul></p>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
 ---
+
 
 ## Instructions
 
