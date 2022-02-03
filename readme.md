@@ -89,6 +89,20 @@ output_name|Output Name|<p>The name of the output geodatabase.</p>
 output_package|Output Package|<p>The result geodatabase with new spatial reference.</p>
 ---
 
+### Asset Package Configuration Report
+#### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+<p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+asset_package|Asset Package|<p>The asset package with configuration tables.</p>
+mode|Report Mode|<p><p>The method to generate the report and adjust the UI of this tool.</p><p>Single - The configuration options are present into a list with checkboxes.  Uncheck the configurations to remove those values associated with them.</p><p>Multiple - The configuration options must be defined in a list of list.  The list must include the configurations to include(checked).</p><p>All - All combinations of the configurations will be included.  This is a powerset, so there may be a large number of combinations</p></p>
+single_configuration|Single Configuration|<p><p>Select the configuration options you want to apply to your report.</p><p>The D_Configurations table must be present in your asset package.</p><p>More information - httpss://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm</p></p>
+multiple_configurations|Multiple Configurations|<p><p>To compare multiple configurations, you must input a list of list.</p><p>A list of all configurations is predefined.  To create new set of configurations, copy and paste the  list and remove the item that you want to 'uncheck'.</p><p>Repeat this process for each combination of configurations you want to compare.</p></p>
+folder|Output Folder|<p>The location to save the output.  A unique folder starting with Configuration will be generated in this location for each run of the tool.</p>
+result_folder|Result Folder|<p>The path the folder generated in the output folder location that contains the reporting excel files.</p>
+---
+
 ### Configure UN Layers
 #### Configures utility network layers by modifying popups and display filters.
 <p><p>Configures utility network layers by modifying popups and display filters.</p><p>This tool can be run multiple times and existing properties will be updated.</p></p>
@@ -144,18 +158,18 @@ Extracts diagnostic logs from ArcGIS Pro
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
-diagnostic_files|Diagnostic Files|----missing----
-folder|Output Folder|----missing----
+diagnostic_files|Diagnostic Files|<p>The ArcGIS Pro Diagnostic Log file.  For more information on how to access it, please refer to this techinal article - https://support.esri.com/en/technical-article/000023675</p>
+folder|Output Folder|<p>The location to save the output.</p>
 logs|Logs|<p>The table with extracted logs.</p>
 ---
 
 ### Extract Logs from REST
-#### Extracts logs from ArcGIS Server
-Extracts logs from ArcGIS Server
+#### <p>Extracts logs from ArcGIS Server</p>
+<p>Extracts logs from ArcGIS Server</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
-folder|Output Folder|----missing----
+folder|Output Folder|<p>The location to save the output.</p>
 from_date|From Date|<p><p>The oldest time to include in the result set.</p><p>If not specified, then all logs will be returned.</p></p>
 to_date|To Date|<p><p>The most recent time to query.</p><p>If not specified, then the current time will be used.</p></p>
 log_level|Log Level|<p><p>Only records with a log level at or more severe than this level are returned.</p><p>If not specified, then WARNING will be used.</p></p>
@@ -216,9 +230,9 @@ summary_field|Summary Fields|<p>The numeric fields to summarize in addition to c
 output|Table|<p>The table to write the summarized results to.</p>
 ---
 
-### Trace results to Trace configurations
+### Trace to Trace Configurations
 #### Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration
-<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, run a trace from Geoprocessing and copy the results from History.</p></p>
+<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, configure a Utility Network trace and copy the python command.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
