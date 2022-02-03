@@ -46,6 +46,7 @@ trace_config|Trace Configuration Name or Field|<p>The utility network trace conf
 expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
 output_folder|Output Folder|<p>The location of the output json files and mobile geodatabase with the aggregated geometry. This parameter is only applicable for the Aggregated Geometry, Elements or Connectivity result type.</p>
 key_field|Group Field|<p><p>Field used to group starting points and barriers.</p><p>When specified, records with the same value will used for a single trace. By default, a trace is run for every starting point.</p></p>
+summary_store_field|Store Summary Information on Starting Points|<p>Optional field used to store summary results on the starting points</p>
 fields|Fields to update|<p><p>The mapping of starting points field to network source field.</p><p>This parameter is only applicable for the Calculation result type.</p><p>Mapping components are as follows:<ul><li>From Field - The field from the starting points to propagate.</li><li>Source Name - The name of the utility network source.</li><li>To Field - The field on the source class to update.</li><li>Calculation Mode - How to combine values.</li></ul></p><p>Calculation mode supports:<ul><li>Concatenate with existing - Read existing values and combine with new values.</li><li>Concatenate and overwrite - Combine new values.</li></ul></p></p>
 json_folder|Connectivity and Element file folder|<p>The folder with the files for connectivity and element information.</p>
 out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geometry.</p>
@@ -88,6 +89,20 @@ output_name|Output Name|<p>The name of the output geodatabase.</p>
 output_package|Output Package|<p>The result geodatabase with new spatial reference.</p>
 ---
 
+### Asset Package Configuration Report
+#### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+<p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+asset_package|Asset Package|<p>The asset package with configuration tables.</p>
+mode|Report Mode|<p><p>The method to generate the report and adjust the UI of this tool.</p><p>Single - The configuration options are present into a list with checkboxes.  Uncheck the configurations to remove those values associated with them.</p><p>Multiple - The configuration options must be defined in a list of list.  The list must include the configurations to include(checked).</p><p>All - All combinations of the configurations will be included.  This is a powerset, so there may be a large number of combinations</p></p>
+single_configuration|Single Configuration|<p><p>Select the configuration options you want to apply to your report.</p><p>The D_Configurations table must be present in your asset package.</p><p>More information - httpss://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm</p></p>
+multiple_configurations|Multiple Configurations|<p><p>To compare multiple configurations, you must input a list of list.</p><p>A list of all configurations is predefined.  To create new set of configurations, copy and paste the  list and remove the item that you want to 'uncheck'.</p><p>Repeat this process for each combination of configurations you want to compare.</p></p>
+folder|Output Folder|<p>The location to save the output.  A unique folder starting with Configuration will be generated in this location for each run of the tool.</p>
+result_folder|Result Folder|<p>The path the folder generated in the output folder location that contains the reporting excel files.</p>
+---
+
 ### Configure UN Layers
 #### Configures utility network layers by modifying popups and display filters.
 <p><p>Configures utility network layers by modifying popups and display filters.</p><p>This tool can be run multiple times and existing properties will be updated.</p></p>
@@ -95,8 +110,8 @@ output_package|Output Package|<p>The result geodatabase with new spatial referen
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 map_name|Map Name|<p>The map name to process.</p>
-input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to use the active project.</p>
 options|Options|<p>The options to add to the layers.<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul></p>
+input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to use the active project.</p>
 category_filters|Category Display Filters|<p><p>The display filters to add to the map.</p><p>To specify multiple categories in the same display filter, reuse the Display Filter Name.</p></p>
 output_project|Output Project|<p>The updated project.</p>
 ---
@@ -135,6 +150,36 @@ Creates Excel workbooks for visualizing and modifying Utility Network rules, cat
 network|Input Network|<p>The utility network or asset package.</p>
 workbook|Matrix Workbook|<p>The output workbook to create.</p>
 matrix_options|Matrix Options|<p>The properties to create.</p>
+---
+
+### Extract Logs from Files
+#### Extracts diagnostic logs from ArcGIS Pro
+Extracts diagnostic logs from ArcGIS Pro
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+diagnostic_files|Diagnostic Files|<p>The ArcGIS Pro Diagnostic Log file.  For more information on how to access it, please refer to this techinal article - https://support.esri.com/en/technical-article/000023675</p>
+folder|Output Folder|<p>The location to save the output.</p>
+logs|Logs|<p>The table with extracted logs.</p>
+---
+
+### Extract Logs from REST
+#### <p>Extracts logs from ArcGIS Server</p>
+<p>Extracts logs from ArcGIS Server</p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+folder|Output Folder|<p>The location to save the output.</p>
+from_date|From Date|<p><p>The oldest time to include in the result set.</p><p>If not specified, then all logs will be returned.</p></p>
+to_date|To Date|<p><p>The most recent time to query.</p><p>If not specified, then the current time will be used.</p></p>
+log_level|Log Level|<p><p>Only records with a log level at or more severe than this level are returned.</p><p>If not specified, then WARNING will be used.</p></p>
+log_codes|Log Codes|<p><p>Specifies the log codes assigned to server logs.</p><p>If not specified, then all codes will be queried.</p></p>
+process_ids|Process IDs|<p><p>Specifies the machine process IDs to query.</p><p>If not specified, then all process IDs will be queried.</p></p>
+request_ids|Request IDs|<p><p>Specifies an ID assigned to a specific server request.</p><p>If not specified, then all request IDs will be queried.</p></p>
+components|Component|<p><p>Specifies the server components delivering the log message.</p><p>If not specified, then all components will be queried.</p></p>
+services|Services|<p><p>Specifies whether to query all, none, or a specific service in your site.</p><p>If not specified, then all services will be queried.</p></p>
+machines|Machine Names|<p><p>Specifies whether to query all or a specific machine in your server site.</p><p>If not specified, then all machines will be queried.</p></p>
+logs|Logs|<p>The table with extracted logs.</p>
 ---
 
 ### Modify Map by Rename and Configure
@@ -185,9 +230,9 @@ summary_field|Summary Fields|<p>The numeric fields to summarize in addition to c
 output|Table|<p>The table to write the summarized results to.</p>
 ---
 
-### Trace results to Trace configurations
+### Trace to Trace Configurations
 #### Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration
-<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, run a trace from Geoprocessing and copy the results from History.</p></p>
+<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, configure a Utility Network trace and copy the python command.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -196,6 +241,7 @@ trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul></p>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
 ---
+
 
 ## Instructions
 
