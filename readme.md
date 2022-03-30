@@ -3,14 +3,14 @@
 Here are a set of tools to work with the utility network and the maps to interact with it.
 
 ## Features
-### Add Utility Network System Tables
-#### Add the system utility network tables to the map
-Add the system utility network tables to the map
+### Create Utility Network System Tables Views
+#### Generate views on the utility network system tables.
+<p><p>This tool generates database views for the utility network system tables for Geodatabases and table views for services.</p><p>Ensure 'Add output datasets to an open map' is checked if you want the results added to your map. </p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 network|Input Network|<p>The utility network</p>
-tables|Tables|<p>The tables to add to the map</p>
+tables|Tables|<p>The Utility Network system tables to generate views on.</p>
 out_tables|Table Views|<p>The resulting table views</p>
 ---
 
@@ -22,6 +22,7 @@ out_tables|Table Views|<p>The resulting table views</p>
 | --------- | ------- | ----------- |
 target_workspace|Target Workspace|<p>The new workspace for the layers.</p>
 maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data source in.</p>
+update_sr|Update Map Spatial Reference|<p><p>Use the spatial reference from the first feature class to update the maps spatial reference.<p>The error layers are ignored as they are always in 102100.</p></p></p>
 ---
 
 ### Select by Association
@@ -48,6 +49,7 @@ output_folder|Output Folder|<p>The location of the output json files and mobile 
 key_field|Group Field|<p><p>Field used to group starting points and barriers.</p><p>When specified, records with the same value will used for a single trace. By default, a trace is run for every starting point.</p></p>
 summary_store_field|Store Summary Information on Starting Points|<p>Optional field used to store summary results on the starting points</p>
 fields|Fields to update|<p><p>The mapping of starting points field to network source field.</p><p>This parameter is only applicable for the Calculation result type.</p><p>Mapping components are as follows:<ul><li>From Field - The field from the starting points to propagate.</li><li>Source Name - The name of the utility network source.</li><li>To Field - The field on the source class to update.</li><li>Calculation Mode - How to combine values.</li></ul></p><p>Calculation mode supports:<ul><li>Concatenate with existing - Read existing values and combine with new values.</li><li>Concatenate and overwrite - Combine new values.</li></ul></p></p>
+skip_calc_on_start|Calculate on Starting Point Features|<p>If specified, the calculate will also update the features the starting points are placed on.</p>
 json_folder|Connectivity and Element file folder|<p>The folder with the files for connectivity and element information.</p>
 out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geometry.</p>
 ---
@@ -60,10 +62,14 @@ Creates starting points based on a trace configuration.
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to trace.</p>
 trace_config|Trace Configuration Name|<p>The utility network trace configuration used to define the trace parameters.</p>
-starting_points|Starting Points|<p>The utility network subnetworks table or a table that defines starting points.</p>
-subnetwork_name|Subnetwork Name|<p>The name for the new subnetwork. If not provided, the Global ID of the trace record will be used.</p>
+starting_points|Starting Points or Line Layer|<p><p>The utility network subnetworks table or a table that defines starting points.</p><p>A Line layer can also be used, the center point of the line will be used as the starting point.</p></p>
+subnetwork_name|Output Name Field|<p>The name for the trace.Select the Global ID field for a unique name.</p>
+expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
 results_trace_config|Result Trace Config|<p>The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.</p>
-trace_results|Trace Results|<p>The results from the trace in the starting points table format. If an existing table is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
+trace_results|Trace Results|<p>The results from the trace in the starting points table format. If an existing class is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
+filter_classes|Filter Classes|<p><p>Do not store features from these classes.</p><p>This is useful when tracing a line layer to build starting points.  The tool loops over all input features and creates a starting point to trace.  If the trace results the features used to trace, they can be skipped to increases preformance.  The this filter allows you to return them and not store them in the result.</p></p>
+skip_found|Skip Found Features|<p><p>If a features global id was returned in a trace, do not trace that feature.</p></p>
+compare_subnetwork_name|Compare Subnetwork Name|<p><p>On an update, compare the subnetwork names.  When running a batch process, it is best to pick this, but may insert more records instead of updating.</p></p>
 ---
 
 ### Calculate Tolerances and Resolutions
@@ -90,17 +96,31 @@ output_package|Output Package|<p>The result geodatabase with new spatial referen
 ---
 
 ### Asset Package Configuration Report
-#### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
-<p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removded from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+#### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removed from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+<p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removed from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 asset_package|Asset Package|<p>The asset package with configuration tables.</p>
-mode|Report Mode|<p><p>The method to generate the report and adjust the UI of this tool.</p><p>Single - The configuration options are present into a list with checkboxes.  Uncheck the configurations to remove those values associated with them.</p><p>Multiple - The configuration options must be defined in a list of list.  The list must include the configurations to include(checked).</p><p>All - All combinations of the configurations will be included.  This is a powerset, so there may be a large number of combinations</p></p>
-single_configuration|Single Configuration|<p><p>Select the configuration options you want to apply to your report.</p><p>The D_Configurations table must be present in your asset package.</p><p>More information - httpss://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm</p></p>
-multiple_configurations|Multiple Configurations|<p><p>To compare multiple configurations, you must input a list of list.</p><p>A list of all configurations is predefined.  To create new set of configurations, copy and paste the  list and remove the item that you want to 'uncheck'.</p><p>Repeat this process for each combination of configurations you want to compare.</p></p>
 folder|Output Folder|<p>The location to save the output.  A unique folder starting with Configuration will be generated in this location for each run of the tool.</p>
-result_folder|Result Folder|<p>The path the folder generated in the output folder location that contains the reporting excel files.</p>
+mode|Report Mode|<p><p>The method to generate the report and adjust the UI of this tool.</p><p>Single - The configuration options are present into a list with checkboxes.  Uncheck the configurations to remove those values associated with them.</p><p>Multiple - The configuration options must be defined in a list of list.  The list must include the configurations to include (checked).</p><p>All - All combinations of the configurations will be included.  This is a powerset, so there may be a large number of combinations</p></p>
+single_configuration|Single Configuration|<p><p>Select the configuration options you want to apply to your report.</p><p>The D_Configurations table must be present in your asset package.</p><p>More information - https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm</p></p>
+multiple_configurations|Multiple Configurations|<p><p>To compare multiple configurations, you must input a list of list.</p><p>A list of all configurations is predefined.  To create new set of configurations, copy and paste the list and remove the item that you want to 'uncheck'.</p><p>Repeat this process for each combination of configurations you want to compare.</p></p>
+rename|Rename Choices|<p><p>Select the rename option you want to apply to your report.</p><p>The D_Rename table must be present in your asset package.</p><p>More information - https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-rename.htm</p></p>
+result_folder|Result Folder|<p>The path the folder generated in the output folder location that contains the reporting Excel files.</p>
+---
+
+### Asset Package Rename Report
+#### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are renamed by selecting 1 or more rename values.</p><p>Multiple renames can be selected to compare the results.</p></p>
+<p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are renamed by selecting 1 or more rename values.</p><p>Multiple renames can be selected to compare the results.</p></p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+asset_package|Asset Package|<p>The asset package with rename table.</p>
+rename|Rename Choices|<p><p>Select the rename options you want to apply to your report.</p><p>The D_Rename table must be present in your asset package.</p><p>More information - https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-rename.htm</p></p>
+folder|Output Folder|<p>The location to save the output.  A unique folder starting with Rename will be generated in this location for each run of the tool.</p>
+configuration|Configurations|<p><p>Select the configuration options you want to apply to your report.</p><p>The D_Configurations table must be present in your asset package.</p><p>More information - https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm</p></p>
+result_folder|Result Folder|<p>The path the folder generated in the output folder location that contains the reporting Excel files.</p>
 ---
 
 ### Configure UN Layers
@@ -110,7 +130,7 @@ result_folder|Result Folder|<p>The path the folder generated in the output folde
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 map_name|Map Name|<p>The map name to process.</p>
-options|Options|<p>The options to add to the layers.<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul></p>
+options|Options|<p>The options to add to the layers.<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Subnetwork Popup- Adds an entry to the popup listing the record's assigned subnetworks and parent subnetworks. Only valid for partitioned networks.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul></p>
 input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to use the active project.</p>
 category_filters|Category Display Filters|<p><p>The display filters to add to the map.</p><p>To specify multiple categories in the same display filter, reuse the Display Filter Name.</p></p>
 output_project|Output Project|<p>The updated project.</p>
@@ -153,22 +173,23 @@ matrix_options|Matrix Options|<p>The properties to create.</p>
 ---
 
 ### Extract Logs from Files
-#### Extracts diagnostic logs from ArcGIS Pro
-Extracts diagnostic logs from ArcGIS Pro
+#### <p><p>Generate a Mobile GDB with a record for each entry in a log file.</p><p>A series of views are created on top of the log table to look at log entries for particular operations.</p><p>This tool processes log files generated from either ArcGIS Server or ArcGIS Pro.</p></p>
+<p><p>Generate a Mobile GDB with a record for each entry in a log file.</p><p>A series of views are created on top of the log table to look at log entries for particular operations.</p><p>This tool processes log files generated from either ArcGIS Server or ArcGIS Pro.</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
-diagnostic_files|Diagnostic Files|<p>The ArcGIS Pro Diagnostic Log file.  For more information on how to access it, please refer to this techinal article - https://support.esri.com/en/technical-article/000023675</p>
+diagnostic_files|Diagnostic Files|<p>The ArcGIS Pro Diagnostic Log file.  For more information on how to access it, please refer to this technical article - https://support.esri.com/en/technical-article/000023675</p>
 folder|Output Folder|<p>The location to save the output.</p>
 logs|Logs|<p>The table with extracted logs.</p>
 ---
 
 ### Extract Logs from REST
-#### <p>Extracts logs from ArcGIS Server</p>
-<p>Extracts logs from ArcGIS Server</p>
+#### <p>Extracts logs from ArcGIS Server.</p>
+<p>Extracts logs from ArcGIS Server.</p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
+site|Server Site|<p>The ArcGIS Server site to query.</p>
 folder|Output Folder|<p>The location to save the output.</p>
 from_date|From Date|<p><p>The oldest time to include in the result set.</p><p>If not specified, then all logs will be returned.</p></p>
 to_date|To Date|<p><p>The most recent time to query.</p><p>If not specified, then the current time will be used.</p></p>
@@ -208,8 +229,8 @@ matrix_options|Matrix Options|<p>The properties to create.</p>
 ---
 
 ### Summarize Errors
-#### Summarizes Utility Network Errors
-<p><p>Summarizes Utility Network Errors</p><p>The Utility Network must be version 4+</p></p>
+#### Generates a Mobile GDB with features for each error in the Utility Network and summary views
+<p><p>A new Mobile GDB with features for each error in the Utility Network.  The features geometry is a buffered union of the features.</p><p>A series of views that provide summaries of errors are also included to provide quick metrics on the types and number of errors.</p><p>The Utility Network must be version 4+</p></p>
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -226,8 +247,8 @@ output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
 | --------- | ------- | ----------- |
 input_records|Input Records|<p>The table to summarize.</p>
 bit_field|Bitwise Field|<p>The field containing bit values. This field must have a coded value domain assigned of type short or long.</p>
-summary_field|Summary Fields|<p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
 output|Table|<p>The table to write the summarized results to.</p>
+summary_field|Summary Fields|<p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
 ---
 
 ### Trace to Trace Configurations
