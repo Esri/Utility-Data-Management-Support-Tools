@@ -3,6 +3,7 @@
 Here are a set of tools to work with the utility network and the maps to interact with it.
 
 ## Features
+
 ### Create Utility Network System Tables Views
 #### Generate views on the utility network system tables.
 <p><p>This tool generates database views for the utility network system tables for Geodatabases and table views for services.</p><p>Ensure 'Add output datasets to an open map' is checked if you want the results added to your map. </p></p>
@@ -69,7 +70,7 @@ results_trace_config|Result Trace Config|<p>The trace configuration to use in th
 trace_results|Trace Results|<p>The results from the trace in the starting points table format. If an existing class is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
 filter_classes|Filter Classes|<p><p>Do not store features from these classes.</p><p>This is useful when tracing a line layer to build starting points.  The tool loops over all input features and creates a starting point to trace.  If the trace results the features used to trace, they can be skipped to increases preformance.  The this filter allows you to return them and not store them in the result.</p></p>
 skip_found|Skip Found Features|<p><p>If a features global id was returned in a trace, do not trace that feature.</p></p>
-compare_subnetwork_name|Compare Subnetwork Name|<p><p>On an update, compare the subnetwork names.  When running a batch process, it is best to pick this, but may insert more records instead of updating.</p></p>
+compare_output_name|Compare Output Name Field|<p><p>On an update, compare the subnetwork names.  When running a batch process, it is best to pick this, but may insert more records instead of updating.</p></p>
 ---
 
 ### Calculate Tolerances and Resolutions
@@ -217,6 +218,17 @@ input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to u
 output_project|Output Project|<p>The updated Pro project.</p>
 ---
 
+### Generate Reporting GDB
+#### Generates a Mobile GDB with the Association and Controllers table and each Utility Network class with domain description in fields
+<p>Creates a SQLite/Mobile GDB with the Utility Network classes.  This is designed to support SQL views to support reporting.</p>
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+network|Input Network|<p>The utility network</p>
+folder|Output folder|<p>The folder where the results will be saved.</p>
+output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
+---
+
 ### Import Matrix
 #### <p>Loads the values from the rule, network category, and terminal assignment workbooks.</p>
 <p><p>Loads the values from the rule, network category, and terminal assignment workbooks.</p><p>Rules removed from the worksheet are not removed from the utility network.</p><p>New network categories can be added by adding a new column.  Assignments can be removed by deleting 1 from the cell.</p><p>Changing existing terminal assignments are not supported, only setting a terminal configuration from the default of single terminal.</p></p>
@@ -262,7 +274,6 @@ trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul></p>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
 ---
-
 
 ## Instructions
 
