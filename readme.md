@@ -44,7 +44,7 @@ count|Selected Records|<p>The number of selected records.</p>
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to trace.</p>
-starting_points|Starting Points|<p>The table from which to load starting points for trace.</p>
+trace_locations|Trace Locations|<p>The table from which to load starting points for trace.</p>
 result_types|Result Types|<p>Specifies the type of results that will be returned by the trace.<ul><li>Selection - The trace results will be returned as a selection set on the appropriate network features.</li><li>Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.</li><li>Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.</li><li>Elements - The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.</li><li>Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.</li></ul></p>
 trace_config|Trace Configuration Name or Field|<p>The utility network trace configuration used to define the trace parameters or a field with trace configurations.</p>
 expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
@@ -271,7 +271,6 @@ trace_results|Trace python calls|<p>The python code for Trace.</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul></p>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
 ---
-
 
 ## Instructions
 
