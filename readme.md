@@ -24,6 +24,7 @@ out_tables|Table Views|<p>The resulting table views</p>
 target_workspace|Target Workspace|<p>The new workspace for the layers.</p>
 maps|Maps|<p>The maps in the current ArcGIS Pro project to update the data source in.</p>
 update_sr|Update Map Spatial Reference|<p><p>Use the spatial reference from the first feature class to update the maps spatial reference.<p>The error layers are ignored as they are always in 102100.</p></p></p>
+success|Success|<p>Flag if tool succeeded</p>
 ---
 
 ### Select by Association
@@ -33,6 +34,7 @@ update_sr|Update Map Spatial Reference|<p><p>Use the spatial reference from the 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 json_payload|Selection Payload|<p>The layers and selection types to apply. For more help, see the tool usage.</p>
+count|Selected Records|<p>The number of selected records.</p>
 ---
 
 ### Batch Trace
@@ -42,7 +44,7 @@ json_payload|Selection Payload|<p>The layers and selection types to apply. For m
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to trace.</p>
-starting_points|Starting Points|<p>The table from which to load starting points for trace.</p>
+trace_locations|Trace Locations|<p>The table from which to load starting points for trace.</p>
 result_types|Result Types|<p>Specifies the type of results that will be returned by the trace.<ul><li>Selection - The trace results will be returned as a selection set on the appropriate network features.</li><li>Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.</li><li>Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.</li><li>Elements - The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.</li><li>Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.</li></ul></p>
 trace_config|Trace Configuration Name or Field|<p>The utility network trace configuration used to define the trace parameters or a field with trace configurations.</p>
 expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
@@ -63,14 +65,17 @@ Creates starting points based on a trace configuration.
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to trace.</p>
 trace_config|Trace Configuration Name|<p>The utility network trace configuration used to define the trace parameters.</p>
-starting_points|Starting Points or Line Layer|<p><p>The utility network subnetworks table or a table that defines starting points.</p><p>A Line layer can also be used, the center point of the line will be used as the starting point.</p></p>
-subnetwork_name|Output Name Field|<p>The name for the trace.Select the Global ID field for a unique name.</p>
+starting_class|Starting Points or Line Layer|<p><p>The utility network starting points layer.</p><p>A Line layer can also be used, the center point of the line will be used as the starting point.</p></p>
+subnetwork_name|Output Name Field|<p>The name for the trace. Select the Global ID field for a unique name.</p>
 expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
 results_trace_config|Result Trace Config|<p>The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.</p>
-trace_results|Trace Results|<p>The results from the trace in the starting points table format. If an existing class is specified and if the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
-filter_classes|Filter Classes|<p><p>Do not store features from these classes.</p><p>This is useful when tracing a line layer to build starting points.  The tool loops over all input features and creates a starting point to trace.  If the trace results the features used to trace, they can be skipped to increases preformance.  The this filter allows you to return them and not store them in the result.</p></p>
-skip_found|Skip Found Features|<p><p>If a features global id was returned in a trace, do not trace that feature.</p></p>
+trace_result_type|Append Results to Existing Class|<p>Determine how the results are stored.</p>
+trace_results_output|New Trace Result Class|<p>The results from the trace in the starting points featureclass format.</p>
+trace_results_input|Existing Trace Results Class|<p>The results from the trace in the Utility Network Starting Points featureclass format.If the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
+filter_classes|Only Store Results From|<p><p>Only store features in these classes.</p><p>This is useful when tracing a line layer to build starting points. The tool loops over all input features and creates a starting point to trace. If the trace results the features used to trace, they can be skipped to increases performance. This filter allows you to return them and not store them in the result.</p></p>
+skip_found|Skip Found Features|<p><p>If a feature's global id was returned in a trace, do not trace that feature.</p></p>
 compare_output_name|Compare Output Name Field|<p><p>On an update, compare the subnetwork names.  When running a batch process, it is best to pick this, but may insert more records instead of updating.</p></p>
+out_utility_network|Utility Network|<p>The utility network.</p>
 ---
 
 ### Calculate Tolerances and Resolutions
@@ -81,6 +86,7 @@ compare_output_name|Compare Output Name Field|<p><p>On an update, compare the su
 | --------- | ------- | ----------- |
 spatial_reference|Spatial Reference|<p>The spatial reference of the dataset.</p>
 measure_unit|Measure Unit|<p>Unit of measurement for the M values.</p>
+tolerances|Tolerances|<p>The calculated tolerances.</p>
 ---
 
 ### Change GDB Spatial Reference
@@ -160,6 +166,7 @@ in_utility_network|Input Utility Network|<p>The utility network that will be use
 lrs_name|LRS Name|<p>The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.</p>
 write_script|Only Write Script|<p>Option to only write a script to enable LRS and not perform the Geoprocessing calls. This script can be run through python to enable LRS. Selecting this option will enable the output folder parameter.</p>
 output_folder|Script Output Folder|<p>Output folder for the LRS script. The script name will start with "updm_lrs" and end with a unique GUID. This parameter is only valid when Write Output Script is true.</p>
+result|Result|<p>Result script or LRS.</p>
 ---
 
 ### Export Matrix
@@ -218,17 +225,6 @@ input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to u
 output_project|Output Project|<p>The updated Pro project.</p>
 ---
 
-### Generate Reporting GDB
-#### Generates a Mobile GDB with the Association and Controllers table and each Utility Network class with domain description in fields
-<p>Creates a SQLite/Mobile GDB with the Utility Network classes.  This is designed to support SQL views to support reporting.</p>
-
-| Parameter | Display | Description |
-| --------- | ------- | ----------- |
-network|Input Network|<p>The utility network</p>
-folder|Output folder|<p>The folder where the results will be saved.</p>
-output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
----
-
 ### Import Matrix
 #### <p>Loads the values from the rule, network category, and terminal assignment workbooks.</p>
 <p><p>Loads the values from the rule, network category, and terminal assignment workbooks.</p><p>Rules removed from the worksheet are not removed from the utility network.</p><p>New network categories can be added by adding a new column.  Assignments can be removed by deleting 1 from the cell.</p><p>Changing existing terminal assignments are not supported, only setting a terminal configuration from the default of single terminal.</p></p>
@@ -238,6 +234,7 @@ output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
 network|Input Network|<p>The utility network or asset package to modify.</p>
 workbook|Matrix Workbook|<p>The workbook to import.</p>
 matrix_options|Matrix Options|<p>The properties to create.</p>
+result|Result|<p>Result</p>
 ---
 
 ### Summarize Errors
