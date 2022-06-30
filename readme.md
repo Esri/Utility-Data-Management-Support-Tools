@@ -3,10 +3,13 @@
 Here are a set of tools to work with the utility network and the maps to interact with it.
 
 ## Features
-
 ### Create Utility Network System Tables Views
 #### Generate views on the utility network system tables.
 <p><p>This tool generates database views for the utility network system tables for Geodatabases and table views for services.</p><p>Ensure 'Add output datasets to an open map' is checked if you want the results added to your map. </p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -19,6 +22,10 @@ out_tables|Table Views|<p>The resulting table views</p>
 #### Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace.
 <p><p>This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.</p><p>When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.</p></p>
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 target_workspace|Target Workspace|<p>The new workspace for the layers.</p>
@@ -29,10 +36,16 @@ success|Success|<p>Flag if tool succeeded</p>
 
 ### Select by Association
 #### Expands the current selection in the map based on specified utility network association types and layers.
-<p><p>This tool requires at least 1 record be selected.</p><p>The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>associationTypes</li><li>toLayers</li></ul></p><p>Each key maps to an array of values. If the array is empty, then all valid choices are applied.</p><p>fromLayers and toLayers are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.</p><p>For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".</p><p>associationTypes is the type of association between fromLayers and toLayers. It has the following entries:<ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul></p></p>
+<p><p>This tool requires at least 1 record be selected.</p><p>The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>fromSelectionType</li><li>associationTypes</li><li>toLayers</li><li>toSelectionType</li></ul></p><p>Each key maps to an array of values. If the array is empty, then all valid choices are applied.</p><p>fromLayers and toLayers are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.</p><p>For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".</p><p>fromSelectionType determines how the selection on the fromLayers are handled. It has the following entries:<ul><li>KEEP - The selection is not changed</li><li>CLEAR - The original selection is cleared after the associated records are selected.</li></ul><p>When clearing the selection, this happens after all entries in the group are processed.</p></p><p>associationTypes is the type of association between fromLayers and toLayers. It has the following entries:<ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul></p><p>toSelectionType determines how the associated features are selected in the toLayers. It has the following entries:<ul><li>NEW</li><li>DIFFERENCE</li><li>INTERSECT</li><li>SYMDIFFERENCE</li><li>UNION</li></ul></p><p>Grouping similar entries reduces the number of queries to find associated records. Entries are processed in the order they appear, not the value of the group.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
+in_utility_network|Input Utility Network|<p>The utility network that controls the selected layers.</p>
+layer_payload|Selection Payload|<p>The layers and selection types to apply. For more help, see the tool usage.</p>
 json_payload|Selection Payload|<p>The layers and selection types to apply. For more help, see the tool usage.</p>
 count|Selected Records|<p>The number of selected records.</p>
 ---
@@ -40,6 +53,10 @@ count|Selected Records|<p>The number of selected records.</p>
 ### Batch Trace
 #### Iterate through the starting points to trace the utility network and use the results.
 <p><p>This tool uses a with starting point information to trace the utility network. The starting points are optionally grouped so set of starting points is used in each trace.</p><p>The trace results can be used to select features in a map, calculate values on results, create connectivity and element files or save the aggregated geometry with summary information.</p><p>The starting points layer uses a field to determine if a row is a starting point and/or barrier. A feature as a starting point and filter barrier is useful in a connected trace to determine all the items between the starting points.</p><p>The starting points table requires the following fields:<ul><li>FEATUREGLOBALID: GUID</li><li>TERMINALID: Short</li><li>PERCENTALONG: Double</li></ul></p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -52,7 +69,7 @@ output_folder|Output Folder|<p>The location of the output json files and mobile 
 key_field|Group Field|<p><p>Field used to group starting points and barriers.</p><p>When specified, records with the same value will used for a single trace. By default, a trace is run for every starting point.</p></p>
 summary_store_field|Store Summary Information on Starting Points|<p>Optional field used to store summary results on the starting points</p>
 fields|Fields to update|<p><p>The mapping of starting points field to network source field.</p><p>This parameter is only applicable for the Calculation result type.</p><p>Mapping components are as follows:<ul><li>From Field - The field from the starting points to propagate.</li><li>Source Name - The name of the utility network source.</li><li>To Field - The field on the source class to update.</li><li>Calculation Mode - How to combine values.</li></ul></p><p>Calculation mode supports:<ul><li>Concatenate with existing - Read existing values and combine with new values.</li><li>Concatenate and overwrite - Combine new values.</li></ul></p></p>
-skip_calc_on_start|Calculate on Starting Point Features|<p>If specified, the calculate will also update the features the starting points are placed on.</p>
+calc_on_start|Calculate on Starting Point Features|<p>If specified, the calculate will also update the features the starting points are placed on.</p>
 json_folder|Connectivity and Element file folder|<p>The folder with the files for connectivity and element information.</p>
 out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geometry.</p>
 ---
@@ -61,12 +78,16 @@ out_gdb|Aggregated GDB|<p>The mobile geodatabase with the aggregated geometry.</
 #### Creates starting points based on a trace configuration.
 Creates starting points based on a trace configuration.
 
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to trace.</p>
 trace_config|Trace Configuration Name|<p>The utility network trace configuration used to define the trace parameters.</p>
-starting_class|Starting Points or Line Layer|<p><p>The utility network starting points layer.</p><p>A Line layer can also be used, the center point of the line will be used as the starting point.</p></p>
-subnetwork_name|Output Name Field|<p>The name for the trace. Select the Global ID field for a unique name.</p>
+starting_class|Starting Points or UN Controlled Layer|<p><p>The utility network starting points layer.</p><p>A UN controlled layer can also be used, the center point of the line/polygon will be used as the starting point. For devices, a default terminal of 1 is used.</p></p>
+group_by_field|Group By Field|<p>A field with a value to group the result locations for the batch trace. Select ObjectID or Global ID to make each set of results unique.</p>
 expression|Expression|<p>The simple calculation expression used to limit the starting points used in a trace.</p>
 results_trace_config|Result Trace Config|<p>The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.</p>
 trace_result_type|Append Results to Existing Class|<p>Determine how the results are stored.</p>
@@ -82,6 +103,10 @@ out_utility_network|Utility Network|<p>The utility network.</p>
 #### Calculate the XY, Z, and M tolerances based on a measure unit for systems that will use a linear referencing system (LRS).
 <p>Specify the spatial reference and the unit of measure for the M values. The tolerances are printed as geoprocessing messages. These values should be entered when defining the spatial reference of the feature dataset.</p>
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic|Location Referencing|
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 spatial_reference|Spatial Reference|<p>The spatial reference of the dataset.</p>
@@ -92,6 +117,10 @@ tolerances|Tolerances|<p>The calculated tolerances.</p>
 ### Change GDB Spatial Reference
 #### Creates a new file geodatabase in the user-specified spatial reference.
 Creates a new file geodatabase in the user-specified spatial reference.
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -105,6 +134,10 @@ output_package|Output Package|<p>The result geodatabase with new spatial referen
 ### Asset Package Configuration Report
 #### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removed from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
 <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are include/removed from the result by selecting 1 or more configurations.</p><p>Multiple configurations can be selected to compare the results.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -121,6 +154,10 @@ result_folder|Result Folder|<p>The path the folder generated in the output folde
 #### <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are renamed by selecting 1 or more rename values.</p><p>Multiple renames can be selected to compare the results.</p></p>
 <p><p>Generate a collection of Excel Workbooks/Sheets to review the what properties are renamed by selecting 1 or more rename values.</p><p>Multiple renames can be selected to compare the results.</p></p>
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 asset_package|Asset Package|<p>The asset package with rename table.</p>
@@ -134,18 +171,28 @@ result_folder|Result Folder|<p>The path the folder generated in the output folde
 #### Configures utility network layers by modifying popups and display filters.
 <p><p>Configures utility network layers by modifying popups and display filters.</p><p>This tool can be run multiple times and existing properties will be updated.</p></p>
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 map_name|Map Name|<p>The map name to process.</p>
 options|Options|<p>The options to add to the layers.<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Subnetwork Popup- Adds an entry to the popup listing the record's assigned subnetworks and parent subnetworks. Only valid for partitioned networks.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul></p>
 input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to use the active project.</p>
 category_filters|Category Display Filters|<p><p>The display filters to add to the map.</p><p>To specify multiple categories in the same display filter, reuse the Display Filter Name.</p></p>
+remove_settings|Remove Options|<p>When checked, this will remove these options from the layers.</p>
+remove_display_filters|Display Filters to Remove|<p><p>The display filters to remove.</p></p>
 output_project|Output Project|<p>The updated project.</p>
 ---
 
 ### Create Association Lines
 #### Creates lines representing utility network associations.
 <p><p>Creates lines representing utility network associations.</p><p>For polylines and polygons, the centroid will be used.</p><p>Both features must intersect the extent to be processed.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -160,6 +207,10 @@ completely_within|Completely Within|<p>If specified, both sides of the associati
 #### Creates the script to enable LRS or enables LRS on a UPDM database with a utility network.
 Creates the script to enable LRS or enables LRS on a UPDM database with a utility network.
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic|Location Referencing|
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 in_utility_network|Input Utility Network|<p>The utility network that will be used to create the LRS.</p>
@@ -170,8 +221,12 @@ result|Result|<p>Result script or LRS.</p>
 ---
 
 ### Export Matrix
-#### Creates Excel workbooks for visualizing and modifying Utility Network rules, categories, and terminal assignments.
-Creates Excel workbooks for visualizing and modifying Utility Network rules, categories, and terminal assignments.
+#### <p>Creates Excel workbooks for visualizing and modifying Utility Network rules, categories, association roles, and terminal assignments.</p>
+<p>Creates Excel workbooks for visualizing and modifying Utility Network rules, categories, association roles, and terminal assignments.</p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -184,6 +239,10 @@ matrix_options|Matrix Options|<p>The properties to create.</p>
 #### <p><p>Generate a Mobile GDB with a record for each entry in a log file.</p><p>A series of views are created on top of the log table to look at log entries for particular operations.</p><p>This tool processes log files generated from either ArcGIS Server or ArcGIS Pro.</p></p>
 <p><p>Generate a Mobile GDB with a record for each entry in a log file.</p><p>A series of views are created on top of the log table to look at log entries for particular operations.</p><p>This tool processes log files generated from either ArcGIS Server or ArcGIS Pro.</p></p>
 
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 diagnostic_files|Diagnostic Files|<p>The ArcGIS Pro Diagnostic Log file.  For more information on how to access it, please refer to this technical article - https://support.esri.com/en/technical-article/000023675</p>
@@ -194,6 +253,10 @@ logs|Logs|<p>The table with extracted logs.</p>
 ### Extract Logs from REST
 #### <p>Extracts logs from ArcGIS Server.</p>
 <p>Extracts logs from ArcGIS Server.</p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -215,6 +278,10 @@ logs|Logs|<p>The table with extracted logs.</p>
 #### Applies rename and configuration options to maps based on an asset package.
 Applies rename and configuration options to maps based on an asset package.
 
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
+
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 maps|Maps|<p>The maps in the current ArcGIS Pro project to modify.</p>
@@ -225,9 +292,29 @@ input_project|Pro Project|<p>The Pro project to read maps from. Leave blank to u
 output_project|Output Project|<p>The updated Pro project.</p>
 ---
 
+### Generate Reporting GDB
+#### Generates a Mobile GDB with the Association and Controllers table and each Utility Network class with domain description in fields
+<p>Creates a SQLite/Mobile GDB with the Utility Network classes. This is designed to support SQL views to support reporting.</p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
+
+| Parameter | Display | Description |
+| --------- | ------- | ----------- |
+datasets|Input Datasets|<p>The datasets to export</p>
+folder|Output folder|<p>The folder where the results will be saved.</p>
+template_gdb|Template GDB|<p>The Mobile GDB used as a template</p>
+output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
+---
+
 ### Import Matrix
 #### <p>Loads the values from the rule, network category, and terminal assignment workbooks.</p>
 <p><p>Loads the values from the rule, network category, and terminal assignment workbooks.</p><p>Rules removed from the worksheet are not removed from the utility network.</p><p>New network categories can be added by adding a new column.  Assignments can be removed by deleting 1 from the cell.</p><p>Changing existing terminal assignments are not supported, only setting a terminal configuration from the default of single terminal.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -237,9 +324,13 @@ matrix_options|Matrix Options|<p>The properties to create.</p>
 result|Result|<p>Result</p>
 ---
 
-### Summarize Errors
+### Summarize Utility Network Errors
 #### Generates a Mobile GDB with features for each error in the Utility Network and summary views
 <p><p>A new Mobile GDB with features for each error in the Utility Network.  The features geometry is a buffered union of the features.</p><p>A series of views that provide summaries of errors are also included to provide quick metrics on the types and number of errors.</p><p>The Utility Network must be version 4+</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
@@ -248,28 +339,38 @@ folder|Output folder|<p>The folder where the results will be saved.</p>
 output_gdb|Output Geodatabase|<p>The geodatabase with results.</p>
 ---
 
-### Summary By Bits
+### Summary by Bits
 #### Summarizes records containing a bitwise coded value domain.
 <p><p>Summarizes records containing a bitwise coded value domain.</p><p>The output table containing summary information will have chart(s) associated with it.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Basic||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
 input_records|Input Records|<p>The table to summarize.</p>
 bit_field|Bitwise Field|<p>The field containing bit values. This field must have a coded value domain assigned of type short or long.</p>
-output|Table|<p>The table to write the summarized results to.</p>
-summary_field|Summary Fields|<p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
+report_bits|Reporting Bits|<p><p>A list of bits and their description to use to split the summary field value by.</p></p>
+summary_fields|Summary Fields|<p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
+output_table|Result Table|<p>The table to write the summarized results to.</p>
 ---
 
 ### Trace to Trace Configurations
 #### Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration
-<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, configure a Utility Network trace and copy the python command.</p></p>
+<p><p>Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</p><p>To capture the python code, configure a Utility Network trace and copy the python command.</p><p>If the name of the trace configuration already exists, a number will be appended for uniqueness.</p></p>
+
+| License | Extensions |
+| ------- | ---------- |
+|Standard||
 
 | Parameter | Display | Description |
 | --------- | ------- | ----------- |
-trace_configuration_name|Trace Configuration Name|<p>The name of the trace configuration to create. If the name already exists, a number will be appended to make it unique.</p>
-trace_results|Trace python calls|<p>The python code for Trace.</p>
+trace_configuration_name|Trace Configuration Name|<p><p>The names of the trace configurations to create.</p><p>The number of names must match the number of trace calls.</p></p>
+trace_results|Trace python calls|<p>The python code for Trace. Multiple traces can be entered</p>
 execute|Create trace configurations|<p>Option to immediately add the configurations<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul></p>
 output_script|Save python calls to script|<p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
+created_names|Created Names|<p>The unique names created by AddTraceConfiguration.</p>
 ---
 
 ## Instructions
