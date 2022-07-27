@@ -244,29 +244,24 @@
 	</script>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateQuadTrees</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">GenerateReportGDB</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Create Quadtrees</p>
+				Generate Reporting GDB</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Creates quadtrees from a collection of input features.</pre>
+        <pre class="wrap">Generates a Mobile GDB with the Association and Controllers table and each Utility Network class with domain description in fields.</pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Usage</h3>
       <p>
-        <pre class="wrap">
-          <span>
-Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum depth:
-<ul><li>Vertices - The quadtree will be subdivided if it contains more than the maximum number of vertices.</li><li>Vertices &amp; Depth - Same as above, except it will stop subdividing beyond maximum depth.</li><li>Depth - Quadtrees are subdivided maximum depth times.</li></ul>
-	</span>
-        </pre>
+        <pre class="wrap">Creates a SQLite/Mobile GDB with the Utility Network classes. This is designed to support SQL views to support reporting.</pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateQuadTrees (in_features, out_features, {count}, {depth}, {create_empty}, {create_square}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>GenerateReportGDB (datasets, folder, {template_gdb}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -274,94 +269,46 @@ Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum 
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">in_features</td>
+          <td class="gp">datasets</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The input features to partition.</p>
+              <p>The datasets to export.</p>
             </span>
             <p>
               <span class="noContent">There is no python reference for this parameter.</span>
             </p>
           </td>
-          <td class="gp" align="left">GPFeatureLayer</td>
+          <td class="gp" align="left">GPValueTable</td>
         </tr>
         <tr>
-          <td class="gp">out_features</td>
+          <td class="gp">folder</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The output polygon feature class.</p>
+              <p>The folder where the results will be saved.</p>
             </span>
             <p>
               <span class="noContent">There is no python reference for this parameter.</span>
             </p>
           </td>
-          <td class="gp" align="left">DEFeatureClass</td>
+          <td class="gp" align="left">DEFolder</td>
         </tr>
         <tr>
-          <td class="gp">count (Optional) </td>
+          <td class="gp">template_gdb (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The maximum number of feature vertices that will be enclosed by each quadtree.</p>
+              <p>The Mobile GDB used as a template.</p>
             </span>
             <p>
               <span class="noContent">There is no python reference for this parameter.</span>
             </p>
           </td>
-          <td class="gp" align="left">GPLong</td>
-        </tr>
-        <tr>
-          <td class="gp">depth (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The number of quadtree levels that will be generated. This ranges from 1-32.</p>
-            </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
-          </td>
-          <td class="gp" align="left">GPLong</td>
-        </tr>
-        <tr>
-          <td class="gp">create_empty (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>
-Controls how quadtrees with no data will be handled.
-<ul><li>Checked - Creates all quadtrees.</li><li>Unchecked - Only creates quadtrees that intersect with the input features. This is the default.</li></ul>
-			</p>
-            </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
-          </td>
-          <td class="gp" align="left">GPBoolean</td>
-        </tr>
-        <tr>
-          <td class="gp">create_square (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>
-Controls the shape of quadtrees.
-<ul><li>Checked - Creates square quadtrees.</li><li>Unchecked - Creates rectangular quadtrees. This is the default.</li></ul>
-			</p>
-            </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
-          </td>
-          <td class="gp" align="left">GPBoolean</td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
       </table>
     </div>
