@@ -1,3 +1,4 @@
+import datetime
 import pathlib
 import lxml.html
 
@@ -25,3 +26,5 @@ for folder in docs.glob('*'):
                         description = pre.text_content()
                     break
             writer.write(f"| {name} | {alias} | {description} |\n")
+
+        writer.write(f'\n`Last built {datetime.date.today()}`')
