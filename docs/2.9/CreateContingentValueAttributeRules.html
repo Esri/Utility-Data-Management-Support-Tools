@@ -221,47 +221,32 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateUNTerminalContingentValues</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateContingentValueAttributeRules</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Create Terminal Contingent Values</p>
+				Contingent Values to Attribute Rules</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <span class="noContent">There is no description for this item.</span>
+        <pre class="wrap">Create a series of attribute rules from the Contingent Values.</pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Usage</h3>
       <p>
-        <span class="noContent">There is no usage for this tool.</span>
+        <pre class="wrap">
+          <span>
+The target table must have field groups and contingent values set up.
+Restrictive field groups generate Constraint and Non-Restrictive field groups generate Validation Attribute Rules.
+
+<h3>License</h3>Standard</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateUNTerminalContingentValues (network, folder) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CreateContingentValueAttributeRules (input_table, ar_type, attribute_rules_file) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -269,50 +254,46 @@
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">network</td>
+          <td class="gp">input_table</td>
           <td class="gp" align="left">
-            <p>
-              <span class="noContent">There is no explanation for this parameter.</span>
-            </p>
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The table with field groups.</p>
+            </span>
           </td>
-          <td class="gp" align="left">GPUtilityNetworkLayer</td>
+          <td class="gp" align="left">DETable</td>
         </tr>
         <tr>
-          <td class="gp">folder</td>
+          <td class="gp">ar_type</td>
           <td class="gp" align="left">
-            <p>
-              <span class="noContent">There is no explanation for this parameter.</span>
-            </p>
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Defines the attribute rule type:
+<ul><li>Defined by Field Group - The type of the field group defines the rule type.</li><li>Validation - All rules will be defined as Validation rules.</li><li>Constraint - All rules will be defined as Constraint rules.</li></ul>
+			</p>
+            </span>
           </td>
-          <td class="gp" align="left">DEFolder</td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">attribute_rules_file</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The output .csv file containing attribute rules.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

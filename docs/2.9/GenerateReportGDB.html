@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">GenerateReportGDB</h1>
@@ -256,7 +235,12 @@
     <div xmlns="">
       <h3>Usage</h3>
       <p>
-        <pre class="wrap">Creates a SQLite/Mobile GDB with the Utility Network classes. This is designed to support SQL views to support reporting.</pre>
+        <pre class="wrap">
+          <span>
+Creates a SQLite/Mobile GDB with the Utility Network classes. This is designed to support SQL views to support reporting.
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -276,9 +260,6 @@
             <span>
               <p>The datasets to export.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -290,9 +271,6 @@
             <span>
               <p>The folder where the results will be saved.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
@@ -304,9 +282,6 @@
             <span>
               <p>The Mobile GDB used as a template.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -314,29 +289,7 @@
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

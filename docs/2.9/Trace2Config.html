@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">Trace2Config</h1>
@@ -257,9 +236,12 @@
       <h3>Usage</h3>
       <p>
         <pre class="wrap">
+          <span>
 To capture the python code, configure a Utility Network trace and copy the python command.
 If the name of the trace configuration already exists, a number will be appended for uniqueness.
-	</pre>
+
+<h3>License</h3>Standard</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -277,11 +259,11 @@ If the name of the trace configuration already exists, a number will be appended
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The names of the trace configurations to create. The number of names must match the number of trace calls.</p>
+              <p>
+The names of the trace configurations to create.
+The number of names must match the number of trace calls.
+			</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -291,11 +273,8 @@ If the name of the trace configuration already exists, a number will be appended
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The python code for Trace. Multiple traces can be entered</p>
+              <p>The python code for Trace. Multiple traces can be entered.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -307,12 +286,9 @@ If the name of the trace configuration already exists, a number will be appended
             <span>
               <p>
 Option to immediately add the configurations
-<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Do nothing. This is the default.</li></ul>
+<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Generate the call to add the trace configuration in the script specified. This is the default.</li></ul>
 			</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -324,9 +300,6 @@ Option to immediately add the configurations
             <span>
               <p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
@@ -334,29 +307,7 @@ Option to immediately add the configurations
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

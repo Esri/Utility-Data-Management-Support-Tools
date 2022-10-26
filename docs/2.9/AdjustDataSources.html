@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">AdjustDataSources</h1>
@@ -257,9 +236,12 @@
       <h3>Usage</h3>
       <p>
         <pre class="wrap">
+          <span>
 This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.
 When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.
-	</pre>
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -279,9 +261,6 @@ When changing from or to a feature service, the layer alias name in the service 
             <span>
               <p>The new workspace for the layers.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -293,9 +272,6 @@ When changing from or to a feature service, the layer alias name in the service 
             <span>
               <p>The maps in the current ArcGIS Pro project to update the data source in.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPMap</td>
         </tr>
@@ -307,9 +283,6 @@ When changing from or to a feature service, the layer alias name in the service 
             <span>
               <p>Use the spatial reference from the first feature class to update the maps spatial reference. The error layers are ignored as they are always in 102100.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -317,29 +290,7 @@ When changing from or to a feature service, the layer alias name in the service 
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

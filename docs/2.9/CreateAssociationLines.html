@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateAssociationLines</h1>
@@ -256,7 +235,12 @@
     <div xmlns="">
       <h3>Usage</h3>
       <p>
-        <pre class="wrap">For polylines and polygons, the centroid will be used.</pre>
+        <pre class="wrap">
+          <span>
+For polylines and polygons, the centroid will be used.
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -276,9 +260,6 @@
             <span>
               <p>The utility network or asset package to process.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPComposite</td>
         </tr>
@@ -293,9 +274,6 @@ The association types to generate
 <ul><li>Junction Junction Connectivity</li><li>Containment</li><li>Structural Attachment</li></ul>
 			</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -307,9 +285,6 @@ The association types to generate
             <span>
               <p>The output line feature class.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
         </tr>
@@ -321,9 +296,6 @@ The association types to generate
             <span>
               <p>If specified, only generate lines for features intersecting this extent. By default, the entire network is processed.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPExtent</td>
         </tr>
@@ -335,9 +307,6 @@ The association types to generate
             <span>
               <p>If specified, both sides of the association must be present in the extent. This option is only valid when specifying an extent.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -345,29 +314,7 @@ The association types to generate
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

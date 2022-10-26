@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">BuildStartingPoints</h1>
@@ -257,8 +236,11 @@
       <h3>Usage</h3>
       <p>
         <pre class="wrap">
+          <span>
 The Utility Network must be at least Schema Version 5.
-	</pre>
+
+<h3>License</h3>Standard</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -278,9 +260,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The utility network that will be used to trace.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -292,9 +271,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The utility network trace configuration used to define the trace parameters.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -306,9 +282,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The utility network starting points layer. A UN controlled layer can also be used, the center point of the line/polygon will be used as the starting point. For devices, a default terminal of 1 is used.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPComposite</td>
         </tr>
@@ -320,9 +293,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>A field with a value to group the result locations for the batch trace. Select ObjectID or Global ID to make each set of results unique.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -334,9 +304,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The simple calculation expression used to limit the starting points used in a trace.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
         </tr>
@@ -348,9 +315,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -362,9 +326,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>Determine how the results are stored.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -376,9 +337,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The results from the trace in the starting points featureclass format.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
         </tr>
@@ -390,9 +348,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>The results from the trace in the Utility Network Starting Points featureclass format. If the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPFeatureLayer</td>
         </tr>
@@ -404,9 +359,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>Only store features in these classes. This is useful when tracing a line layer to build starting points. The tool loops over all input features and creates a starting point to trace. If the trace results the features used to trace, they can be skipped to increase performance. This filter allows you to return them and not store them in the result.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -418,9 +370,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>If a feature's global id was returned in a trace, do not trace that feature.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -432,9 +381,6 @@ The Utility Network must be at least Schema Version 5.
             <span>
               <p>On an update, compare the subnetwork names. When running a batch process, it is best to pick this, but may insert more records instead of updating.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -442,29 +388,7 @@ The Utility Network must be at least Schema Version 5.
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SummaryByBits</h1>
@@ -257,8 +236,11 @@
       <h3>Usage</h3>
       <p>
         <pre class="wrap">
+          <span>
 The output table containing summary information will have chart(s) associated with it.
-	</pre>
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -278,9 +260,6 @@ The output table containing summary information will have chart(s) associated wi
             <span>
               <p>The table to summarize.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPTableView</td>
         </tr>
@@ -292,9 +271,6 @@ The output table containing summary information will have chart(s) associated wi
             <span>
               <p>The field containing bit values. This field must have a coded value domain assigned of type short or long.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">Field</td>
         </tr>
@@ -306,9 +282,6 @@ The output table containing summary information will have chart(s) associated wi
             <span>
               <p>A list of bits and their description to use to split the summary field value by.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -320,9 +293,6 @@ The output table containing summary information will have chart(s) associated wi
             <span>
               <p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">Field</td>
         </tr>
@@ -334,9 +304,6 @@ The output table containing summary information will have chart(s) associated wi
             <span>
               <p>The table to write the summarized results to.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DETable</td>
         </tr>
@@ -344,29 +311,7 @@ The output table containing summary information will have chart(s) associated wi
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

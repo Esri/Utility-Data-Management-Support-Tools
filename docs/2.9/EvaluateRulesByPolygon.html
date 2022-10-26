@@ -221,49 +221,31 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SummarizeAttributeRules</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">EvaluateRulesByPolygon</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Summarize Attribute Rules</p>
+				Evaluate Rules by Polygon</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Generates a Mobile GDB that summarizes the attribute rules in the workspace.</pre>
+        <pre class="wrap">Runs the Evaluate Rules Geoprocessing tool for every input polygon.</pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Usage</h3>
       <p>
         <pre class="wrap">
-A series of database views are created to provide various summaries.
-	</pre>
+          <span>
+When there is an active map, the Output Class will be added to the map during execution so progress can be monitored.
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>SummarizeAttributeRules (in_workspace, folder, {options}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>EvaluateRulesByPolygon (in_workspace, in_features, evaluation_types, {run_async}, {partition_class}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -276,72 +258,66 @@ A series of database views are created to provide various summaries.
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The input geodatabase.</p>
+              <p>A local geodatabase or feature service URL.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
-          <td class="gp">folder</td>
+          <td class="gp">in_features</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The folder where the results will be saved.</p>
+              <p>The polygon feature class used to define evaluation areas. The extent of each feature will be used as input to Evaluate Rules.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
-          <td class="gp" align="left">DEFolder</td>
+          <td class="gp" align="left">GPFeatureLayer</td>
         </tr>
         <tr>
-          <td class="gp">options (Optional) </td>
+          <td class="gp">evaluation_types</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
               <p>
-The data to export:
-<ul><li>Summarize geodatabase error tables - Exports all the error table entries</li></ul>
+Specifies the types of evaluation that will be used.
+<ul><li>CALCULATION_RULES — Batch calculation attribute rules will be evaluated.</li><li>VALIDATION_RULES — Validation attribute rules will be evaluated.</li></ul>
 			</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">run_async (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Specifies whether the evaluation will run synchronously or asynchronously. This parameter is only supported when the input workspace is a feature service.
+<ul><li>ASYNC — The evaluation will run asynchronously. This option dedicates server resources to run the evaluation with a longer time-out. Running asynchronously is recommended when evaluating large datasets that contain many features requiring calculation or validation. This is the default.</li><li>SYNC — The evaluation will run synchronously. This option has a shorter time-out and is best used when evaluating an extent with a small number of features requiring calculation or validation.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">partition_class (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The output feature class where results will be written. This can be used to track evaluation progress.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFeatureClass</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>

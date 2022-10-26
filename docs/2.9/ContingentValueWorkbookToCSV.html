@@ -223,13 +223,13 @@
   </style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">ImportUtilityNetworkMatrix</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">ContingentValueWorkbookToCSV</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Import Matrix</p>
+				Convert Contingent Values Workbook</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Loads the values from the rule, network category, and terminal assignment workbooks.</pre>
+        <pre class="wrap">Converts a Contingent Values Workbook to CSV files to be used for importing.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -237,18 +237,15 @@
       <p>
         <pre class="wrap">
           <span>
-Use this tool along with <b>ExportUtilityNetworkMatrix</b> to modify properties in bulk.
-Rules removed from the worksheet are not removed from the utility network.
-New network categories can be added by adding a new column. Assignments can be removed by deleting 1 from the cell.
-Changing existing terminal assignments are not supported, only setting a terminal configuration from the default of single terminal.
+The CSV files can be imported using Design View or the Import Contingent Values geoprocessing tool.
 
-<h3>License</h3>Standard</span>
+<h3>License</h3>Basic</span>
         </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>ImportUtilityNetworkMatrix (network, workbook, matrix_options) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ContingentValueWorkbookToCSV (workbook, field_groups_file, contingent_values_file) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -256,37 +253,37 @@ Changing existing terminal assignments are not supported, only setting a termina
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">network</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The utility network or asset package to modify.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPComposite</td>
-        </tr>
-        <tr>
           <td class="gp">workbook</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The workbook to import.</p>
+              <p>The Contingent Values Workbook.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
         <tr>
-          <td class="gp">matrix_options</td>
+          <td class="gp">field_groups_file</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The properties to modify.</p>
+              <p>The output .csv file containing information about the field groups.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">DEFile</td>
+        </tr>
+        <tr>
+          <td class="gp">contingent_values_file</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The output .csv file containing information about the contingent values.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
         </tr>
       </table>
     </div>

@@ -221,27 +221,6 @@
       clear: left;
     }
   </style>
-    <script xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/javascript">
-	/*  */
-		function hideShow(divID) {
-			var item = document.getElementById(divID);
-			var itemShow = document.getElementById(divID + 'Show');
-			var itemHide = document.getElementById(divID + 'Hide');
-			if (item) {
-				if (item.className == 'hide') {
-					item.className='show';
-					itemShow.className='hide';
-					itemHide.className='show';
-				}
-				else {
-					item.className='hide';
-					itemShow.className='show';
-					itemHide.className='hide';
-				}
-			}
-		}
-	/*  */
-	</script>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CompareConfigurations</h1>
@@ -256,7 +235,12 @@
     <div xmlns="">
       <h3>Usage</h3>
       <p>
-        <pre class="wrap">Multiple configurations can be selected to compare the results.</pre>
+        <pre class="wrap">
+          <span>
+Multiple configurations can be selected to compare the results.
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
@@ -276,9 +260,6 @@
             <span>
               <p>The asset package with configuration tables.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -290,9 +271,6 @@
             <span>
               <p>The location to save the output. A unique folder starting with <b>Configuration</b> will be generated in this location for each run of the tool.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
@@ -307,9 +285,6 @@ The method to generate the report and adjust the UI of this tool.
 <ul><li>Single - The configuration options are present into a list with checkboxes. Uncheck the configurations to remove those values associated with them.</li><li>Multiple - The configuration options must be defined in a list of list. The list must include the configurations to include (checked).</li><li>All - All combinations of the configurations will be included. This is a powerset, so there may be a large number of combinations</li></ul>
 			</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -321,9 +296,6 @@ The method to generate the report and adjust the UI of this tool.
             <span>
               <p>Select the configuration options you want to apply to your report. The <a target="_blank" href="https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-configurations.htm">D_Configurations</a> table must be present in your asset package.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -335,9 +307,6 @@ The method to generate the report and adjust the UI of this tool.
             <span>
               <p>To compare multiple configurations, you must input a list of list. A list of all configurations is predefined. To create new set of configurations, copy and paste the list and remove the item that you want to 'uncheck'. Repeat this process for each combination of configurations you want to compare.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -349,9 +318,6 @@ The method to generate the report and adjust the UI of this tool.
             <span>
               <p>Select the rename option you want to apply to your report. The <a target="_blank" href="https://solutions.arcgis.com/utilities/help/utility-network-automation/asset-package-reference/d-rename.htm">D_Rename</a> table must be present in your asset package.</p>
             </span>
-            <p>
-              <span class="noContent">There is no python reference for this parameter.</span>
-            </p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -359,29 +325,7 @@ The method to generate the report and adjust the UI of this tool.
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo">
-        <p>
-          <span class="noContent">There are no code samples for this tool.</span>
-        </p>
-      </div>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Tags</h3>
-      <p>
-        <span class="noContent">There are no tags for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Credits</h3>
-      <p>
-        <span class="noContent">There are no credits for this item.</span>
-      </p>
-    </div>
-    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
-      <h3>Use limitations</h3>
-      <p>
-        <span class="noContent">There are no access and use limitations for this item.</span>
-      </p>
+      <div class="gpItemInfo"></div>
     </div>
   </body>
 </html>
