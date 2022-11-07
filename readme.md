@@ -22,3 +22,7 @@
 # Log an Issue
 
 - [Issues](https://github.com/Esri/Utility-Data-Management-Support-Tools/issues)
+
+# FAQ
+
+- [Batch Trace and Build Starting Points](https://github.com/Esri/Utility-Data-Management-Support-Tools/wiki/FAQ)
