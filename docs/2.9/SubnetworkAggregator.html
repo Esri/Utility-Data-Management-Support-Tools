@@ -234,7 +234,7 @@
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>SubnetworkAggregator (in_utility_network, output_folder, {calc_functions}, {subnetwork_table}, {expression}, out_gdb) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SubnetworkAggregator (in_utility_network, output_folder, {calc_functions}, {subnetwork_table}, {expression}, {trace_override_tag}, out_gdb) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -285,6 +285,16 @@
             <p class="gp">&lt;p&gt;The sql expression used to limit the subnetworks traced.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
+        </tr>
+        <tr>
+          <td class="gp">trace_override_tag (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;The name of a tag used in trace configurations to override the subnetwork trace parameters.  This tag is used to find a trace config that matches the tier of the subnetwork.
+				To limit the trace configuration shown, the trace configuration must of a tag of SubnetworkOverride.  All tags from these configurations are shown.  To load different trace configuration per tier, create a trace configuration for each tier and use the same tag to group them together.  &lt;/p&gt;</p>
+          </td>
+          <td class="gp" align="left">GPString</td>
         </tr>
         <tr>
           <td class="gp"></td>

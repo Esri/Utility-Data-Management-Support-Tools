@@ -234,7 +234,7 @@
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>BuildStartingPoints (in_utility_network, trace_config, starting_class, group_by_field, {expression}, {results_trace_config}, {trace_result_type}, {trace_results_output}, {trace_results_input}, {filter_classes}, {skip_found}, {compare_output_name}, out_utility_network) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>BuildStartingPoints (in_utility_network, trace_config, starting_class, group_by_field, {expression}, {results_trace_config}, {trace_result_type}, {trace_results_output}, {trace_results_input}, {filter_classes}, {skip_found}, {compare_output_name}, out_utility_network, {remove_dup_groups}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -345,7 +345,7 @@
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;On an update, compare the subnetwork names. When running a batch process, it is best to pick this, but may insert more records instead of updating.&lt;/p&gt;</p>
+            <p class="gp">&lt;p&gt;On an update, compare the group by names. When running a batch process, it is best to pick this, but may insert more records instead of updating.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -353,6 +353,15 @@
           <td class="gp"></td>
           <td class="gp" align="left"></td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
+        </tr>
+        <tr>
+          <td class="gp">remove_dup_groups (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;Option to remove duplicate sets of results if they were discovered in a previous trace.&lt;/p&gt;</p>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>
     </div>

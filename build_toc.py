@@ -27,4 +27,4 @@ for folder in docs.glob('*'):
                     break
             writer.write(f"| {name} | {alias} | {description} |\n")
 
-        writer.write(f'\n`Last built {datetime.date.today()}`')
+        writer.write(f'\n`Last built {datetime.date.today()}`\n')

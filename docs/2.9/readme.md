@@ -27,7 +27,8 @@
 | [SubnetworkAggregator](./SubnetworkAggregator.html) | Subnetwork Aggregator | Generate aggregated geometry for subnetworks in the Utility Network. |
 | [SummarizeUNErrors](./SummarizeUNErrors.html) | Summarize Utility Network Errors | Generates a Mobile GDB summarizing utility network errors and data inconsistencies |
 | [SummaryByBits](./SummaryByBits.html) | Summary by Bits | Summarizes records containing a bitwise coded value domain. |
+| [SwapBits](./SwapBits.html) | Swap Bits | Swap bits on features |
 | [Trace2Config](./Trace2Config.html) | Trace to Trace Configurations | Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration |
 | [ValidateByPolygon](./ValidateByPolygon.html) | Validate by Polygon | Runs the Validate Network Topology Geoprocessing tool for every input polygon. |
 
-`Last built 2022-10-26`
+`Last built 2023-02-01`
