@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,18 +233,6 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum depth:
-<ul><li>Vertices - The quadtree will be subdivided if it contains more than the maximum number of vertices.</li><li>Vertices &amp; Depth - Same as above, except it will stop subdividing beyond maximum depth.</li><li>Depth - Quadtrees are subdivided maximum depth times.</li></ul>
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
       <p>CreateQuadTrees (in_features, out_features, {count}, {depth}, {create_empty}, {create_square}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
@@ -258,20 +246,16 @@ Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The input features to partition.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The input features to partition.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPFeatureLayer</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">out_features</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The output polygon feature class.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The output polygon feature class.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
         </tr>
@@ -280,9 +264,7 @@ Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The maximum number of feature vertices that will be enclosed by each quadtree.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The maximum number of feature vertices that will be enclosed by each quadtree.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPLong</td>
         </tr>
@@ -291,9 +273,7 @@ Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The number of quadtree levels that will be generated. This ranges from 1-32.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The number of quadtree levels that will be generated. This ranges from 1-32.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPLong</td>
         </tr>
@@ -302,12 +282,10 @@ Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Controls how quadtrees with no data will be handled.
-<ul><li>Checked - Creates all quadtrees.</li><li>Unchecked - Only creates quadtrees that intersect with the input features. This is the default.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Checked - Creates all quadtrees.&lt;/li&gt;&lt;li&gt;Unchecked - Only creates quadtrees that intersect with the input features. This is the default.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -316,12 +294,10 @@ Controls how quadtrees with no data will be handled.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Controls the shape of quadtrees.
-<ul><li>Checked - Creates square quadtrees.</li><li>Unchecked - Creates rectangular quadtrees. This is the default.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Checked - Creates square quadtrees.&lt;/li&gt;&lt;li&gt;Unchecked - Creates rectangular quadtrees. This is the default.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -330,6 +306,10 @@ Controls the shape of quadtrees.
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

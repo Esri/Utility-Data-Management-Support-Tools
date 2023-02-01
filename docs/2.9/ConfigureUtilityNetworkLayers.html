@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-This tool can be run multiple times and existing properties will be updated.
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>ConfigureUtilityNetworkLayers (map_name, options, {input_project}, {category_filters}, {remove_settings}, {remove_display_filters}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ConfigureUtilityNetworkLayers (map_name, options, {input_project}, {category_filters}, {remove_settings}, {remove_display_filters}, output_project) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,9 +246,7 @@ This tool can be run multiple times and existing properties will be updated.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The map name to process.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The map name to process.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -268,23 +255,19 @@ This tool can be run multiple times and existing properties will be updated.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 The options to add to the layers.
-<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Subnetwork Popup- Adds an entry to the popup listing the record's assigned subnetworks and parent subnetworks. Only valid for partitioned networks.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.&lt;/li&gt;&lt;li&gt;Category Popup - Adds an entry to the popup listing the record's assigned network categories.&lt;/li&gt;&lt;li&gt;Subnetwork Popup- Adds an entry to the popup listing the record's assigned subnetworks and parent subnetworks. Only valid for partitioned networks.&lt;/li&gt;&lt;li&gt;Category Display Filter - Adds display filters to show/hide features with the assigned network categories.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">input_project (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The Pro project to read maps from. Leave blank to use the active project.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The Pro project to read maps from. Leave blank to use the active project.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
@@ -293,9 +276,7 @@ The options to add to the layers.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The display filters to add to the map. To specify multiple categories in the same display filter, reuse the Display Filter Name.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The display filters to add to the map. To specify multiple categories in the same display filter, reuse the Display Filter Name.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -304,9 +285,7 @@ The options to add to the layers.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>When checked, this will remove these options from the layers.</p>
-            </span>
+            <p class="gp">&lt;p&gt;When checked, this will remove these options from the layers.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -315,17 +294,24 @@ The options to add to the layers.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The display filters to remove.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The display filters to remove.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DEFile</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

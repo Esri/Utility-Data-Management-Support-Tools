@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,22 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Use this tool along with <b>ExportUtilityNetworkMatrix</b> to modify properties in bulk.
-Rules removed from the worksheet are not removed from the utility network.
-New network categories can be added by adding a new column. Assignments can be removed by deleting 1 from the cell.
-Changing existing terminal assignments are not supported, only setting a terminal configuration from the default of single terminal.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>ImportUtilityNetworkMatrix (network, workbook, matrix_options) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ImportUtilityNetworkMatrix (network, workbook, matrix_options, result) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -260,9 +246,7 @@ Changing existing terminal assignments are not supported, only setting a termina
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network or asset package to modify.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network or asset package to modify.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPComposite</td>
         </tr>
@@ -271,9 +255,7 @@ Changing existing terminal assignments are not supported, only setting a termina
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The workbook to import.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The workbook to import.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
@@ -282,17 +264,24 @@ Changing existing terminal assignments are not supported, only setting a termina
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The properties to modify.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The properties to modify.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPComposite</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

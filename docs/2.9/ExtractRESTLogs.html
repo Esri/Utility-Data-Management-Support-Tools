@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,20 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-By default, all logs are extracted. This can be a time intensive process, so consider filtering by time and/or service name.
-When you have access to the directory with the ArcGIS Server logs, it is typically faster to use <b>ExtractFileLogs</b>.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>ExtractRESTLogs (site, folder, {from_date}, {to_date}, {log_level}, {log_codes}, {process_ids}, {request_ids}, {components}, {services}, {machines}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ExtractRESTLogs (site, folder, {from_date}, {to_date}, {log_level}, {log_codes}, {process_ids}, {request_ids}, {components}, {services}, {machines}, logs) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -258,9 +246,7 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The ArcGIS Server site to query.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The ArcGIS Server site to query.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -269,9 +255,7 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The location to save the output.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The location to save the output.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
@@ -280,9 +264,7 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The oldest time to include in the result set. If not specified, then all logs will be returned.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The oldest time to include in the result set. If not specified, then all logs will be returned.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPDate</td>
         </tr>
@@ -291,9 +273,7 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The most recent time to query. If not specified, then the current time will be used.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The most recent time to query. If not specified, then the current time will be used.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPDate</td>
         </tr>
@@ -302,9 +282,7 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Only records with a log level at or more severe than this level are returned. If not specified, then WARNING will be used.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Only records with a log level at or more severe than this level are returned. If not specified, then WARNING will be used.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -313,72 +291,69 @@ When you have access to the directory with the ArcGIS Server logs, it is typical
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies the log codes assigned to server logs. If not specified, then all codes will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies the log codes assigned to server logs. If not specified, then all codes will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPLong</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">process_ids (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies the machine process IDs to query. If not specified, then all process IDs will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies the machine process IDs to query. If not specified, then all process IDs will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPLong</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">request_ids (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies an ID assigned to a specific server request. If not specified, then all request IDs will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies an ID assigned to a specific server request. If not specified, then all request IDs will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">components (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies the server components delivering the log message. If not specified, then all components will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies the server components delivering the log message. If not specified, then all components will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">services (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies whether to query all, none, or a specific service in your site. If not specified, then all services will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies whether to query all, none, or a specific service in your site. If not specified, then all services will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">machines (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Specifies whether to query all or a specific machine in your server site. If not specified, then all machines will be queried.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Specifies whether to query all or a specific machine in your server site. If not specified, then all machines will be queried.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DETable</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

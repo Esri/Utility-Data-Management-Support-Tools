@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,20 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-This tool changes the data source of the maps to a new workspace. This will convert between file geodatabase, enterprise geodatabase, and feature services.
-When changing from or to a feature service, the layer alias name in the service (with or without spaces) must match the class name alias.
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>AdjustDataSources (target_workspace, maps, {update_sr}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>AdjustDataSources (target_workspace, maps, {update_sr}, success) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -258,9 +246,7 @@ When changing from or to a feature service, the layer alias name in the service 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The new workspace for the layers.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The new workspace for the layers.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -269,21 +255,22 @@ When changing from or to a feature service, the layer alias name in the service 
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The maps in the current ArcGIS Pro project to update the data source in.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The maps in the current ArcGIS Pro project to update the data source in.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPMap</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">update_sr (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Use the spatial reference from the first feature class to update the maps spatial reference. The error layers are ignored as they are always in 102100.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Use the spatial reference from the first feature class to update the maps spatial reference. The error layers are ignored as they are always in 102100.&lt;/p&gt;</p>
           </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>
@@ -291,6 +278,10 @@ When changing from or to a feature service, the layer alias name in the service 
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

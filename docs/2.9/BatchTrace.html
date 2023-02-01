@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,24 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-This tool uses a with starting point information to trace the utility network. The starting points are optionally grouped so set of starting points is used in each trace.
-The trace results can be used to select features in a map, calculate values on results, create connectivity and element files or save the aggregated geometry with summary information.
-The starting points layer uses a field to determine if a row is a starting point and/or barrier. A feature as a starting point and filter barrier is useful in a connected trace to determine all the items between the starting points.
-
-The starting points table requires the following fields:
-<ul><li>FEATUREGLOBALID: GUID</li><li>TERMINALID: Short</li><li>PERCENTALONG: Double</li></ul>
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}, json_folder, out_gdb) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -262,9 +246,7 @@ The starting points table requires the following fields:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network that will be used to trace.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network that will be used to trace.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -273,9 +255,7 @@ The starting points table requires the following fields:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The table from which to load starting points for trace.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The table from which to load starting points for trace.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPTableView</td>
         </tr>
@@ -284,23 +264,19 @@ The starting points table requires the following fields:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Specifies the type of results that will be returned by the trace.
-<ul><li>Selection - The trace results will be returned as a selection set on the appropriate network features.</li><li>Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.</li><li>Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.</li><li>Elements - The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.</li><li>Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Selection - The trace results will be returned as a selection set on the appropriate network features.&lt;/li&gt;&lt;li&gt;Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.&lt;/li&gt;&lt;li&gt;Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Elements - The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">trace_config</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network trace configuration used to define the trace parameters or a field with trace configurations.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network trace configuration used to define the trace parameters or a field with trace configurations.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -309,9 +285,7 @@ Specifies the type of results that will be returned by the trace.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The simple calculation expression used to limit the starting points used in a trace.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The simple calculation expression used to limit the starting points used in a trace.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
         </tr>
@@ -320,9 +294,7 @@ Specifies the type of results that will be returned by the trace.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The location of the output json files and mobile geodatabase with the aggregated geometry. This parameter is only applicable for the Aggregated Geometry, Elements or Connectivity result type.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The location of the output json files and mobile geodatabase with the aggregated geometry. This parameter is only applicable for the Aggregated Geometry, Elements or Connectivity result type.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
@@ -331,9 +303,7 @@ Specifies the type of results that will be returned by the trace.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Field used to group starting points and barriers. When specified, records with the same value will used for a single trace. By default, a trace is run for every starting point.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Field used to group starting points and barriers. When specified, records with the same value will used for a single trace. By default, a trace is run for every starting point.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">Field</td>
         </tr>
@@ -342,9 +312,7 @@ Specifies the type of results that will be returned by the trace.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Optional field used to store summary results on the starting points.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Optional field used to store summary results on the starting points.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -353,14 +321,12 @@ Specifies the type of results that will be returned by the trace.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 The mapping of starting points field to network source field. This parameter is only applicable for the Calculation result type. Mapping components are as follows:
-<ul><li>From Field - The field from the starting points to propagate.</li><li>Source Name - The name of the utility network source.</li><li>To Field - The field on the source class to update.</li><li>Calculation Mode - How to combine values.</li></ul>
+&lt;ul&gt;&lt;li&gt;From Field - The field from the starting points to propagate.&lt;/li&gt;&lt;li&gt;Source Name - The name of the utility network source.&lt;/li&gt;&lt;li&gt;To Field - The field on the source class to update.&lt;/li&gt;&lt;li&gt;Calculation Mode - How to combine values.&lt;/li&gt;&lt;/ul&gt;
 Calculation mode supports:
-<ul><li>Concatenate with existing - Read existing values and combine with new values.</li><li>Concatenate and overwrite - Combine new values.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Concatenate with existing - Read existing values and combine with new values.&lt;/li&gt;&lt;li&gt;Concatenate and overwrite - Combine new values.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -369,17 +335,29 @@ Calculation mode supports:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>If specified, the calculate will also update the features the starting points are placed on.</p>
-            </span>
+            <p class="gp">&lt;p&gt;If specified, the calculate will also update the features the starting points are placed on.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DEFolder</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

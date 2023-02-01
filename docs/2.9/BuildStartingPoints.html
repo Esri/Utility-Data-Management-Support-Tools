@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-The Utility Network must be at least Schema Version 5.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>BuildStartingPoints (in_utility_network, trace_config, starting_class, group_by_field, {expression}, {results_trace_config}, {trace_result_type}, {trace_results_output}, {trace_results_input}, {filter_classes}, {skip_found}, {compare_output_name}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>BuildStartingPoints (in_utility_network, trace_config, starting_class, group_by_field, {expression}, {results_trace_config}, {trace_result_type}, {trace_results_output}, {trace_results_input}, {filter_classes}, {skip_found}, {compare_output_name}, out_utility_network) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,9 +246,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network that will be used to trace.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network that will be used to trace.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -268,9 +255,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network trace configuration used to define the trace parameters.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network trace configuration used to define the trace parameters.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -279,9 +264,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network starting points layer. A UN controlled layer can also be used, the center point of the line/polygon will be used as the starting point. For devices, a default terminal of 1 is used.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network starting points layer. A UN controlled layer can also be used, the center point of the line/polygon will be used as the starting point. For devices, a default terminal of 1 is used.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPComposite</td>
         </tr>
@@ -290,9 +273,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>A field with a value to group the result locations for the batch trace. Select ObjectID or Global ID to make each set of results unique.</p>
-            </span>
+            <p class="gp">&lt;p&gt;A field with a value to group the result locations for the batch trace. Select ObjectID or Global ID to make each set of results unique.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -301,9 +282,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The simple calculation expression used to limit the starting points used in a trace.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The simple calculation expression used to limit the starting points used in a trace.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
         </tr>
@@ -312,9 +291,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The trace configuration to use in the result. If not provided, the trace configuration used to find the results will be used.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -323,9 +300,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Determine how the results are stored.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Determine how the results are stored.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -334,9 +309,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The results from the trace in the starting points featureclass format.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The results from the trace in the starting points featureclass format.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
         </tr>
@@ -345,9 +318,7 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The results from the trace in the Utility Network Starting Points featureclass format. If the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The results from the trace in the Utility Network Starting Points featureclass format. If the row with the Global ID/Terminal ID exists, the ISDIRTY field will be updated. If the row does not exist, it will be inserted.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPFeatureLayer</td>
         </tr>
@@ -356,20 +327,16 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Only store features in these classes. This is useful when tracing a line layer to build starting points. The tool loops over all input features and creates a starting point to trace. If the trace results the features used to trace, they can be skipped to increase performance. This filter allows you to return them and not store them in the result.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Only store features in these classes. This is useful when tracing a line layer to build starting points. The tool loops over all input features and creates a starting point to trace. If the trace results the features used to trace, they can be skipped to increase performance. This filter allows you to return them and not store them in the result.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">skip_found (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>If a feature's global id was returned in a trace, do not trace that feature.</p>
-            </span>
+            <p class="gp">&lt;p&gt;If a feature's global id was returned in a trace, do not trace that feature.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -378,17 +345,24 @@ The Utility Network must be at least Schema Version 5.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>On an update, compare the subnetwork names. When running a batch process, it is best to pick this, but may insert more records instead of updating.</p>
-            </span>
+            <p class="gp">&lt;p&gt;On an update, compare the subnetwork names. When running a batch process, it is best to pick this, but may insert more records instead of updating.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

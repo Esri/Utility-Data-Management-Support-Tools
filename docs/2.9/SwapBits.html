@@ -223,18 +223,18 @@
   </style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">FilterMap</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SwapBits</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Modify Map by Rename and Configure</p>
+				Swap Bits</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Applies rename and configuration options to maps based on an asset package.</pre>
+        <pre class="wrap">Swap bits on features</pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>FilterMap (maps, asset_package, {configurations}, {rename_field}, {input_project}, output_project) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SwapBits (input_records, bit_field, {swap_bits}, {zero_to_code}, result) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -242,54 +242,49 @@
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">maps</td>
+          <td class="gp">input_records</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The maps in the current ArcGIS Pro project to modify.&lt;/p&gt;</p>
+            <p class="gp">&lt;p&gt;The table to summarize.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
-          <td class="gp">asset_package</td>
+          <td class="gp">bit_field</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The asset package with rename and/or configuration tables.&lt;/p&gt;</p>
+            <p class="gp">&lt;p&gt;The field containing bit values. This field must have a coded value domain assigned of type short or long.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">DEWorkspace</td>
+          <td class="gp" align="left">Field</td>
         </tr>
         <tr>
-          <td class="gp">configurations (Optional) </td>
+          <td class="gp">swap_bits (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The configurations to keep. The deselected options will be removed from the map.&lt;/p&gt;</p>
+            <p class="gp">&lt;p&gt;A list of the existing bit and the bit to swap too.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPMultiValue</td>
+          <td class="gp" align="left">GPValueTable</td>
         </tr>
         <tr>
-          <td class="gp">rename_field (Optional) </td>
+          <td class="gp">zero_to_code (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The rename field to apply. Items in the map will have their names changed.&lt;/p&gt;</p>
+            <p class="gp">&lt;p&gt;An optional value to change rows with 0 to an bit or combination of bit values.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
-        </tr>
-        <tr>
-          <td class="gp">input_project (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <p class="gp">&lt;p&gt;The Pro project to read maps from. Leave blank to use the active project.&lt;/p&gt;</p>
-          </td>
-          <td class="gp" align="left">DEFile</td>
+          <td class="gp" align="left">GPLong</td>
         </tr>
         <tr>
           <td class="gp"></td>
-          <td class="gp" align="left"></td>
-          <td class="gp" align="left">DEFile</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;Flag to denote if the process updated records.&lt;/p&gt;</p>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>
     </div>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Creates a new file geodatabase in the user-specified spatial reference.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>ChangeGDBSpatialReference (gdb, spatial_reference, output_folder, output_name) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ChangeGDBSpatialReference (gdb, spatial_reference, output_folder, output_name, output_package) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,9 +246,7 @@ Creates a new file geodatabase in the user-specified spatial reference.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The input gdb that will be copied.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The input gdb that will be copied.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -268,9 +255,7 @@ Creates a new file geodatabase in the user-specified spatial reference.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The spatial reference of the new geodatabase.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The spatial reference of the new geodatabase.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSpatialReference</td>
         </tr>
@@ -279,9 +264,7 @@ Creates a new file geodatabase in the user-specified spatial reference.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The folder location where the asset package will be created.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The folder location where the asset package will be created.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
@@ -290,17 +273,24 @@ Creates a new file geodatabase in the user-specified spatial reference.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The name of the output geodatabase.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The name of the output geodatabase.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>MResolution, MTolerance, XYResolution, XYTolerance, ZResolution, ZTolerance</p>
     </div>
   </body>
 </html>

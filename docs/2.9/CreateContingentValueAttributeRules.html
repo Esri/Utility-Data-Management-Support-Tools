@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,18 +233,6 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-The target table must have field groups and contingent values set up.
-Restrictive field groups generate Constraint and Non-Restrictive field groups generate Validation Attribute Rules.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
       <p>CreateContingentValueAttributeRules (input_table, ar_type, attribute_rules_file) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
@@ -258,9 +246,7 @@ Restrictive field groups generate Constraint and Non-Restrictive field groups ge
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The table with field groups.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The table with field groups.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DETable</td>
         </tr>
@@ -269,12 +255,10 @@ Restrictive field groups generate Constraint and Non-Restrictive field groups ge
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Defines the attribute rule type:
-<ul><li>Defined by Field Group - The type of the field group defines the rule type.</li><li>Validation - All rules will be defined as Validation rules.</li><li>Constraint - All rules will be defined as Constraint rules.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Defined by Field Group - The type of the field group defines the rule type.&lt;/li&gt;&lt;li&gt;Validation - All rules will be defined as Validation rules.&lt;/li&gt;&lt;li&gt;Constraint - All rules will be defined as Constraint rules.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -283,9 +267,7 @@ Defines the attribute rule type:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The output .csv file containing attribute rules.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The output .csv file containing attribute rules.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
@@ -294,6 +276,10 @@ Defines the attribute rule type:
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

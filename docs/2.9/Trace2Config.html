@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,20 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-To capture the python code, configure a Utility Network trace and copy the python command.
-If the name of the trace configuration already exists, a number will be appended for uniqueness.
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>Trace2Config (trace_configuration_name, trace_results, execute, {output_script}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>Trace2Config (trace_configurations, execute, {output_script}, created_names) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -254,41 +242,26 @@ If the name of the trace configuration already exists, a number will be appended
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">trace_configuration_name</td>
+          <td class="gp">trace_configurations</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
-The names of the trace configurations to create.
-The number of names must match the number of trace calls.
-			</p>
-            </span>
+            <p class="gp">&lt;p&gt;
+The Trace Configurations to create.
+&lt;ul&gt;&lt;li&gt;Python - The python code for Trace.&lt;/li&gt;&lt;li&gt;Name - The name of the trace configuration that will be created.&lt;/li&gt;&lt;li&gt;Description - A short description of the trace. This is optional.&lt;/li&gt;&lt;li&gt;Tags - Keywords used during search. Enter multiple tags on newlines. This is optional.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
-        </tr>
-        <tr>
-          <td class="gp">trace_results</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The python code for Trace. Multiple traces can be entered.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPValueTable</td>
         </tr>
         <tr>
           <td class="gp">execute</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Option to immediately add the configurations
-<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Generate the call to add the trace configuration in the script specified. This is the default.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Checked - Add the trace configurations.&lt;/li&gt;&lt;li&gt;Unchecked - Generate the call to add the trace configuration in the script specified. This is the default.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -297,17 +270,24 @@ Option to immediately add the configurations
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Create a python script with the call to arcpy.un.AddTraceConfiguration.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFile</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

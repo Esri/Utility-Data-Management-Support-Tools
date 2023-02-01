@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Creates the script to enable LRS or enables LRS on a UPDM database with a utility network.
-
-<h3>License</h3>Basic<h3>Extensions</h3>Location Referencing</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>EnableLRSUPDM (in_utility_network, lrs_name, write_script, {output_folder}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>EnableLRSUPDM (in_utility_network, lrs_name, write_script, {output_folder}, result) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,9 +246,7 @@ Creates the script to enable LRS or enables LRS on a UPDM database with a utilit
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network that will be used to create the LRS.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network that will be used to create the LRS.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -268,9 +255,7 @@ Creates the script to enable LRS or enables LRS on a UPDM database with a utilit
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The name of the LRS to create. The name for the LRS cannot already exist in the geodatabase.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -279,9 +264,7 @@ Creates the script to enable LRS or enables LRS on a UPDM database with a utilit
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Option to only write a script to enable LRS and not perform the Geoprocessing calls. This script can be run through python to enable LRS. Selecting this option will enable the output folder parameter.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Option to only write a script to enable LRS and not perform the Geoprocessing calls. This script can be run through python to enable LRS. Selecting this option will enable the output folder parameter.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -290,17 +273,24 @@ Creates the script to enable LRS or enables LRS on a UPDM database with a utilit
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Output folder for the LRS script. The script name will start with "updm_lrs" and end with a unique GUID. This parameter is only valid when Write Output Script is true.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Output folder for the LRS script. The script name will start with "updm_lrs" and end with a unique GUID. This parameter is only valid when Write Output Script is true.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFolder</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPString</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

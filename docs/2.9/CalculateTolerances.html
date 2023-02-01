@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,20 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Specify the spatial reference and the unit of measure for the M values.
-The tolerances are printed as geoprocessing messages. These values should be entered when defining the spatial reference of the feature dataset.
-
-<h3>License</h3>Basic<h3>Extensions</h3>Location Referencing</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>CalculateTolerances (spatial_reference, {measure_unit}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CalculateTolerances (spatial_reference, {measure_unit}, tolerances) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -258,9 +246,7 @@ The tolerances are printed as geoprocessing messages. These values should be ent
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The spatial reference of the dataset.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The spatial reference of the dataset.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSpatialReference</td>
         </tr>
@@ -269,10 +255,13 @@ The tolerances are printed as geoprocessing messages. These values should be ent
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Unit of measurement for the M values.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Unit of measurement for the M values.&lt;/p&gt;</p>
           </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
           <td class="gp" align="left">GPString</td>
         </tr>
       </table>
@@ -280,6 +269,10 @@ The tolerances are printed as geoprocessing messages. These values should be ent
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

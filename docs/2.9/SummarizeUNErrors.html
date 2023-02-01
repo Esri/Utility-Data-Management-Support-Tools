@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,23 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-For best performance, run this tool with a client-server database connection.
-The Utility Network must be at least Schema Version 4 to extract dirty areas.
-
-The output geodatabase has a series of tables:
-<ul><li>AssociationStatus - Network sources where the <b>AssociationStatus</b> field is out of sync.</li><li>DuplicateGlobalID - Network sources that share the same GlobalID.</li><li>AssociationErrors:<ul><li>Duplicate Associations - Associations that exist multiple times.</li><li>Dangling Association - Associations where the <b>From</b> and/or <b>To</b> side do not exist.</li></ul></li><li>SubnetworkErrors:<ul><li>Duplicate Terminal - Subnetwork controllers sharing the same terminal.</li><li>Duplicate Subnetwork Name - Subnetwork controllers in different tiers with the same subnetwork name.</li><li>Controller in Multiple Tiers - Subnetwork controllers in different tiers on the same record.</li></ul></li><li>errors - Dirty Areas and Associations with errors that have been enriched with information from feature space.</li><li>view_error_summary - A count of errors by table and error code.</li><li>view_errors_by_type - A count of errors by table, error code, origin, and destination.</li></ul>
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>SummarizeUNErrors (network, folder, {options}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SummarizeUNErrors (network, folder, output_gdb, {options}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -261,9 +246,7 @@ The output geodatabase has a series of tables:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -272,31 +255,36 @@ The output geodatabase has a series of tables:
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The folder where the results will be saved.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The folder where the results will be saved.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFolder</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
           <td class="gp">options (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 The options to check for in the utility network.
-<ul><li>Extract Dirty Areas and Associations in Error - Enriches error features with asset group/type and origin/destination geometry.</li><li>Identify Records with Incorrect Association Status - Identifies records with AssociationStatus out of sync with association table.</li><li>Identify Association Inconsistencies - Identifies data issues in the association table.</li><li>Identify Subnetwork Inconsistencies - Identifies data issues in the subnetwork table.</li><li>Identify Duplicate GlobalIDs - Identifies records with the same GlobalID across the utility network.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Extract Dirty Areas and Associations in Error - Enriches error features with asset group/type and origin/destination geometry.&lt;/li&gt;&lt;li&gt;Identify Records with Incorrect Association Status - Identifies records with AssociationStatus out of sync with association table.&lt;/li&gt;&lt;li&gt;Identify Association Inconsistencies - Identifies data issues in the association table.&lt;/li&gt;&lt;li&gt;Identify Subnetwork Inconsistencies - Identifies data issues in the subnetwork table.&lt;/li&gt;&lt;li&gt;Identify Duplicate GlobalIDs - Identifies records with the same GlobalID across the utility network.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

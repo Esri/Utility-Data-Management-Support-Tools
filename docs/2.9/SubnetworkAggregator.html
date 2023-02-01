@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-Generate output geometry and summary information for the subnetworks in an utility network.  This can be used to generate partial geometry on subnetworks with error features
-
-<h3>License</h3>Standard</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>SubnetworkAggregator (in_utility_network, output_folder, {calc_functions}, {subnetwork_table}, {expression}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SubnetworkAggregator (in_utility_network, output_folder, {calc_functions}, {subnetwork_table}, {expression}, out_gdb) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,9 +246,7 @@ Generate output geometry and summary information for the subnetworks in an utili
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The input utility network.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The input utility network.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -268,9 +255,7 @@ Generate output geometry and summary information for the subnetworks in an utili
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The folder where the results will be saved.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The folder where the results will be saved.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
@@ -279,9 +264,7 @@ Generate output geometry and summary information for the subnetworks in an utili
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>Option to calculate and store subnetwork functions on the output.</p>
-            </span>
+            <p class="gp">&lt;p&gt;Option to calculate and store subnetwork functions on the output.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
@@ -290,9 +273,7 @@ Generate output geometry and summary information for the subnetworks in an utili
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The subnetwork table or table view.  If omitted, all the subnetworks from the utility network are used.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The subnetwork table or table view.  If omitted, all the subnetworks from the utility network are used.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPTableView</td>
         </tr>
@@ -301,17 +282,28 @@ Generate output geometry and summary information for the subnetworks in an utili
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The sql expression used to limit the subnetworks traced.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The sql expression used to limit the subnetworks traced.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;The output mobile geodatabase generated with the aggregated geometry.&lt;/p&gt;</p>
+          </td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

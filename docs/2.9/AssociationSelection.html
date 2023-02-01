@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,36 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-This tool requires at least 1 record be selected.
-
-The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>fromSelectionType</li><li>associationTypes</li><li>toLayers</li><li>toSelectionType</li></ul>
-Each key maps to an array of values. If the array is empty, then all valid choices are applied.
-<b>fromLayers</b> and <b>toLayers</b> are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.
-For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".
-
-<b>fromSelectionType</b> determines how the selection on the <b>fromLayers</b> is handled.
-It has the following entries:
-<ul><li>KEEP - The selection is not changed</li><li>CLEAR - The original selection is cleared after the associated records are selected.</li></ul>
-When clearing the selection, this happens after all entries in the group are processed.
-
-<b>associationTypes</b> is the type of association between <b>fromLayers</b> and <b>toLayers</b>.
-It has the following entries:
-<ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul><b>toSelectionType</b> determines how the associated features are selected in the <b>toLayers</b>.
-It has the following entries:
-<ul><li>NEW</li><li>DIFFERENCE</li><li>INTERSECT</li><li>SYMDIFFERENCE</li><li>UNION</li></ul>
-Grouping similar entries reduces the number of queries to find associated records. Entries are processed in the order they appear, not the value of the group.
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>AssociationSelection (in_utility_network, {layer_payload}, {json_payload}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>AssociationSelection (in_utility_network, {layer_payload}, {json_payload}, count) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -274,9 +246,7 @@ Grouping similar entries reduces the number of queries to find associated record
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The utility network that controls the selected layers.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The utility network that controls the selected layers.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
@@ -285,9 +255,7 @@ Grouping similar entries reduces the number of queries to find associated record
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The layers and selection types to apply. For more help, see the tool usage.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The layers and selection types to apply. For more help, see the tool usage.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -296,17 +264,24 @@ Grouping similar entries reduces the number of queries to find associated record
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The layers and selection types to apply. For more help, see the tool usage.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The layers and selection types to apply. For more help, see the tool usage.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPLong</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>
