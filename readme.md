@@ -18,7 +18,7 @@
 
 - [Import and Export Matrix Help](./help/ImportExport_matrix.md)
 
-- [Batch Trace Videa](./help/BatchTrace.mp4)
+- [Batch Trace Video](./help/BatchTrace.mp4)
 
 # Download
 
