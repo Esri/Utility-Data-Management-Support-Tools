@@ -16,6 +16,10 @@
 
 - [3.1](./docs/3.1)
 
+- [Import and Export Matrix Help](./help/ImportExport_matrix.md)
+
+- [Batch Trace Videa](./help/BatchTrace.mp4)
+
 # Download
 
 - [2.9](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/2.9/UtilityDataManagementSupport.atbx)
