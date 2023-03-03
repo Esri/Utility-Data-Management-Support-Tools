@@ -14,10 +14,13 @@
 
 - [3.0](./docs/3.0)
 
+- [3.1](./docs/3.1)
+
 # Download
 
 - [2.9](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/2.9/UtilityDataManagementSupport.atbx)
 - [3.0](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/3.0/UtilityDataManagementSupport.atbx)
+- [3.1](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/3.1/UtilityDataManagementSupport.atbx)
 
 # Log an Issue
 

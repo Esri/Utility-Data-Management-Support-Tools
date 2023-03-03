@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -223,18 +223,29 @@
   </style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">GenerateReportGDB</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SummaryByBits</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Generate Reporting GDB</p>
+				Summary by Bits</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Generates a Mobile GDB with the Association and Controllers table and each Utility Network class with domain description in fields.</pre>
+        <pre class="wrap">Summarizes records containing a bitwise coded value domain.</pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Usage</h3>
+      <p>
+        <pre class="wrap">
+          <span>
+The output table containing summary information will have chart(s) associated with it.
+
+<h3>License</h3>Basic</span>
+        </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>GenerateReportGDB (datasets, folder, {template_gdb}, output_gdb) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SummaryByBits (input_records, bit_field, report_bits, summary_fields, output_table, {selection_mode}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -242,46 +253,79 @@
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">datasets</td>
+          <td class="gp">input_records</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The datasets to export.&lt;/p&gt;</p>
+            <span>
+              <p>The table to summarize.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPTableView</td>
+        </tr>
+        <tr>
+          <td class="gp">bit_field</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The field containing bit values. This field must have a coded value domain assigned of type short or long. The first dataset specified in the Input Records parameter defines the list of fields.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">Field</td>
+        </tr>
+        <tr>
+          <td class="gp">report_bits</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>A list of bits and their description to use to split the summary field value by.</p>
+            </span>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
         <tr>
-          <td class="gp">folder</td>
+          <td class="gp">summary_fields</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The folder where the results will be saved.&lt;/p&gt;</p>
+            <span>
+              <p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created. The first dataset specified in the Input Records parameter defines the list of fields.</p>
+            </span>
           </td>
-          <td class="gp" align="left">DEFolder</td>
+          <td class="gp" align="left">Field</td>
         </tr>
         <tr>
-          <td class="gp">template_gdb (Optional) </td>
+          <td class="gp">output_table</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <p class="gp">&lt;p&gt;The Mobile GDB used as a template.&lt;/p&gt;</p>
+            <span>
+              <p>The table to write the summarized results to.</p>
+            </span>
           </td>
-          <td class="gp" align="left">DEWorkspace</td>
+          <td class="gp" align="left">DETable</td>
         </tr>
         <tr>
-          <td class="gp"></td>
-          <td class="gp" align="left"></td>
-          <td class="gp" align="left">DEWorkspace</td>
+          <td class="gp">selection_mode (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Specifies how layers without selection are processed
+<ul><li>PROCESS_ALL — Every record is evaluated. This is the default.</li><li>PROCESS_SELECTED_ONLY — Layers without selections are skipped. Only selected records are evaluated.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
-    </div>
-    <div xmlns="">
-      <h3>Environments</h3>
-      <p>workspace</p>
     </div>
   </body>
 </html>

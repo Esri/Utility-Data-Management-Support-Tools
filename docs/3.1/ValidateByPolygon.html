@@ -292,13 +292,13 @@
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateAssociationLines</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">ValidateByPolygon</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Create Association Lines</p>
+				Validate by Polygon</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Creates lines representing utility network associations.</pre>
+        <pre class="wrap">Runs the Validate Network Topology Geoprocessing tool for every input polygon.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -306,7 +306,7 @@
       <p>
         <pre class="wrap">
           <span>
-For polylines and polygons, the centroid will be used.
+When there is an active map, the Output Class will be added to the map during execution so progress can be monitored.
 
 <h3>License</h3>Basic</span>
         </pre>
@@ -314,7 +314,7 @@ For polylines and polygons, the centroid will be used.
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateAssociationLines (network, association_types, output_lines, {extent}, {completely_within}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ValidateByPolygon (in_network, in_features, {partition_class}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -322,105 +322,74 @@ For polylines and polygons, the centroid will be used.
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">network</td>
+          <td class="gp">in_network</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The utility network or asset package to process.</p>
+              <p>The utility network.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPComposite</td>
+          <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
         <tr>
-          <td class="gp">association_types</td>
+          <td class="gp">in_features</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>
-The association types to generate
-<ul><li>Junction Junction Connectivity</li><li>Containment</li><li>Structural Attachment</li></ul>
-			</p>
+              <p>The polygon feature class used to define validation areas. The extent of each feature will be used as input to Validate Network Topology.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPString</td>
+          <td class="gp" align="left">GPFeatureLayer</td>
         </tr>
         <tr>
-          <td class="gp">output_lines</td>
+          <td class="gp">partition_class (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The output line feature class.</p>
+              <p>The output feature class where results will be written. This can be used to track evaluation progress.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
-        </tr>
-        <tr>
-          <td class="gp">extent (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>If specified, only generate lines for features intersecting this extent. By default, the entire network is processed.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPExtent</td>
-        </tr>
-        <tr>
-          <td class="gp">completely_within (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>If specified, both sides of the association must be present in the extent. This option is only valid when specifying an extent.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <p>
-        <span class="span.SubContentHeader">CreateAssociationLines example 1 (Python window)</span>
+        <span class="span.SubContentHeader">ValidateByPolygon example 1 (Python window)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Synthesize all Junction-Junction associations.</pre>
+        <pre class="wrap">Validates all dirty areas by quadrants.</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateAssociationLines</span><span class="p">(</span><span class="s2">"Naperville Network"</span><span class="p">,</span> <span class="s2">"JUNCTION_JUNCTION"</span><span class="p">,</span> <span class="s2">"memory/AssociationLines"</span><span class="p">)</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">ValidateByPolygon</span><span class="p">(</span><span class="s2">"Naperville Network"</span><span class="p">,</span> <span class="s2">"memory/quads"</span><span class="p">)</span>
 </pre>
       </div>
       <br />
       <p>
-        <span class="span.SubContentHeader">CreateAssociationLines example 2 (stand-alone script)</span>
+        <span class="span.SubContentHeader">ValidateByPolygon example 2 (stand-alone script)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Synthesize Junction-Junction and attachment associations in the current map extent.</pre>
+        <pre class="wrap">Runs ValidateNetworkTopology across all input quadrants.</pre>
       </p>
       <div class="highlight">
-        <pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="kn">import</span> <span class="nn">arcpy</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://acme.com/server/rest/services/MyUtilityNetwork/FeatureServer/9"</span>
+<span class="n">quadrants</span> <span class="o">=</span> <span class="s2">"D:/data/network.gdb/quads"</span>
+<span class="n">output</span> <span class="o">=</span> <span class="s2">"memory/ValidateResults"</span>
 
-<span class="n">network</span> <span class="o">=</span> <span class="s2">"Naperville Network"</span>
-
-<span class="c1"># Get extent from the active view.</span>
-<span class="n">aprx</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">ArcGISProject</span><span class="p">(</span><span class="s2">"CURRENT"</span><span class="p">)</span>
-<span class="n">extent</span> <span class="o">=</span> <span class="n">aprx</span><span class="o">.</span><span class="n">activeView</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">getExtent</span><span class="p">()</span>
-
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateAssociationLines</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">association_types</span><span class="o">=</span><span class="p">[</span><span class="s2">"JUNCTION_JUNCTION"</span><span class="p">,</span> <span class="s2">"STRUCTURAL_ATTACHMENT"</span><span class="p">],</span>
-    <span class="n">output_lines</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aprx</span><span class="o">.</span><span class="n">defaultGeodatabase</span><span class="p">,</span> <span class="s2">"AssociationLines"</span><span class="p">),</span>
-    <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span>
-    <span class="n">completely_within</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">ValidateByPolygon</span><span class="p">(</span>
+    <span class="n">in_network</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">in_features</span><span class="o">=</span><span class="n">quadrants</span><span class="p">,</span>
+    <span class="n">partition_class</span><span class="o">=</span><span class="n">output</span><span class="p">,</span>
 <span class="p">)</span>
 </pre>
       </div>

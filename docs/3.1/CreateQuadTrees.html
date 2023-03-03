@@ -292,13 +292,13 @@
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateAssociationLines</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateQuadTrees</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Create Association Lines</p>
+				Create Quadtrees</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Creates lines representing utility network associations.</pre>
+        <pre class="wrap">Creates quadtrees from a collection of input features.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -306,7 +306,8 @@
       <p>
         <pre class="wrap">
           <span>
-For polylines and polygons, the centroid will be used.
+Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum depth:
+<ul><li>Vertices - The quadtree will be subdivided if it contains more than the maximum number of vertices.</li><li>Vertices &amp; Depth - Same as above, except it will stop subdividing beyond maximum depth.</li><li>Depth - Quadtrees are subdivided maximum depth times.</li></ul>
 
 <h3>License</h3>Basic</span>
         </pre>
@@ -314,7 +315,7 @@ For polylines and polygons, the centroid will be used.
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateAssociationLines (network, association_types, output_lines, {extent}, {completely_within}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CreateQuadTrees (in_features, out_features, {count}, {depth}, {create_empty}, {create_square}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -322,59 +323,73 @@ For polylines and polygons, the centroid will be used.
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">network</td>
+          <td class="gp">in_features</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The utility network or asset package to process.</p>
+              <p>The input features to partition.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPComposite</td>
+          <td class="gp" align="left">GPFeatureLayer</td>
         </tr>
         <tr>
-          <td class="gp">association_types</td>
+          <td class="gp">out_features</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>
-The association types to generate
-<ul><li>Junction Junction Connectivity</li><li>Containment</li><li>Structural Attachment</li></ul>
-			</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPString</td>
-        </tr>
-        <tr>
-          <td class="gp">output_lines</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The output line feature class.</p>
+              <p>The output polygon feature class.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
         </tr>
         <tr>
-          <td class="gp">extent (Optional) </td>
+          <td class="gp">count (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>If specified, only generate lines for features intersecting this extent. By default, the entire network is processed.</p>
+              <p>The maximum number of feature vertices that will be enclosed by each quadtree.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPExtent</td>
+          <td class="gp" align="left">GPLong</td>
         </tr>
         <tr>
-          <td class="gp">completely_within (Optional) </td>
+          <td class="gp">depth (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>If specified, both sides of the association must be present in the extent. This option is only valid when specifying an extent.</p>
+              <p>The number of quadtree levels that will be generated. This ranges from 1-32.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPLong</td>
+        </tr>
+        <tr>
+          <td class="gp">create_empty (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Controls how quadtrees with no data will be handled.
+<ul><li>Checked - Creates all quadtrees.</li><li>Unchecked - Only creates quadtrees that intersect with the input features. This is the default.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">create_square (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Controls the shape of quadtrees.
+<ul><li>Checked - Creates square quadtrees.</li><li>Unchecked - Creates rectangular quadtrees. This is the default.</li></ul>
+			</p>
             </span>
           </td>
           <td class="gp" align="left">GPBoolean</td>
@@ -384,43 +399,47 @@ The association types to generate
     <div xmlns="">
       <h3>Code Samples</h3>
       <p>
-        <span class="span.SubContentHeader">CreateAssociationLines example 1 (Python window)</span>
+        <span class="span.SubContentHeader">CreateQuadTrees example 1 (Python window)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Synthesize all Junction-Junction associations.</pre>
+        <pre class="wrap">Creates rectangular quadtrees dividing the device class into 10k quadrants.</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateAssociationLines</span><span class="p">(</span><span class="s2">"Naperville Network"</span><span class="p">,</span> <span class="s2">"JUNCTION_JUNCTION"</span><span class="p">,</span> <span class="s2">"memory/AssociationLines"</span><span class="p">)</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateQuadTrees</span><span class="p">(</span><span class="s2">"ElectricDevice"</span><span class="p">,</span> <span class="s2">"memory/quads"</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">)</span>
 </pre>
       </div>
       <br />
       <p>
-        <span class="span.SubContentHeader">CreateAssociationLines example 2 (stand-alone script)</span>
+        <span class="span.SubContentHeader">CreateQuadTrees example 2 (stand-alone script)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Synthesize Junction-Junction and attachment associations in the current map extent.</pre>
+        <pre class="wrap">Creates quadtrees from all selected features in the map.</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">network</span> <span class="o">=</span> <span class="s2">"Naperville Network"</span>
-
-<span class="c1"># Get extent from the active view.</span>
 <span class="n">aprx</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">ArcGISProject</span><span class="p">(</span><span class="s2">"CURRENT"</span><span class="p">)</span>
-<span class="n">extent</span> <span class="o">=</span> <span class="n">aprx</span><span class="o">.</span><span class="n">activeView</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">getExtent</span><span class="p">()</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateAssociationLines</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">association_types</span><span class="o">=</span><span class="p">[</span><span class="s2">"JUNCTION_JUNCTION"</span><span class="p">,</span> <span class="s2">"STRUCTURAL_ATTACHMENT"</span><span class="p">],</span>
-    <span class="n">output_lines</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aprx</span><span class="o">.</span><span class="n">defaultGeodatabase</span><span class="p">,</span> <span class="s2">"AssociationLines"</span><span class="p">),</span>
-    <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span>
-    <span class="n">completely_within</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="c1"># Find all layers with a selection.</span>
+<span class="n">layers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">layer</span><span class="o">.</span><span class="n">longName</span>
+    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">aprx</span><span class="o">.</span><span class="n">activeMap</span><span class="o">.</span><span class="n">listLayers</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">layer</span><span class="o">.</span><span class="n">isBroken</span> <span class="ow">and</span> <span class="n">layer</span><span class="o">.</span><span class="n">isFeatureLayer</span> <span class="ow">and</span> <span class="n">layer</span><span class="o">.</span><span class="n">getSelectionSet</span><span class="p">()</span>
+<span class="p">]</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateQuadTrees</span><span class="p">(</span>
+    <span class="n">in_features</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span>
+    <span class="n">out_features</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">aprx</span><span class="o">.</span><span class="n">defaultGeodatabase</span><span class="p">,</span> <span class="s2">"quadTrees"</span><span class="p">),</span>
+    <span class="n">count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">create_empty</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">create_square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre>
       </div>
