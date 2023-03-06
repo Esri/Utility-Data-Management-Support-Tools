@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,19 +233,8 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-This is used for a phase swap.
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
-      <p>SwapBits (input_records, bit_field, {swap_bits}, {zero_to_code}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SwapBits (input_records, bit_field, {swap_bits}, {zero_to_code}, result) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -257,22 +246,16 @@ This is used for a phase swap.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The table to summarize.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The table to summarize.&lt;/p&gt;</p>
           </td>
-          <td class="gp" align="left">GPTableView</td>
+          <td class="gp" align="left">GPMultiValue</td>
         </tr>
         <tr>
           <td class="gp">bit_field</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The field containing bit values. This field must have a coded value domain assigned of type
-                short or long.
-            </p>
-            </span>
+            <p class="gp">&lt;p&gt;The field containing bit values. This field must have a coded value domain assigned of type short or long.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">Field</td>
         </tr>
@@ -281,9 +264,7 @@ This is used for a phase swap.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>A list of the existing bit and the bit to swap too.</p>
-            </span>
+            <p class="gp">&lt;p&gt;A list of the existing bit and the bit to swap to.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPValueTable</td>
         </tr>
@@ -292,18 +273,28 @@ This is used for a phase swap.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>An optional value to change rows with 0 to an bit or combination of bit values.
-            </p>
-            </span>
+            <p class="gp">&lt;p&gt;An optional value to change rows with 0 to a bit or combination of bit values.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPLong</td>
+        </tr>
+        <tr>
+          <td class="gp"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;Flag to denote if the process updated records.&lt;/p&gt;</p>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>

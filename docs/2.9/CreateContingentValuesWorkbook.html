@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
@@ -233,17 +233,6 @@
       </p>
     </div>
     <div xmlns="">
-      <h3>Usage</h3>
-      <p>
-        <pre class="wrap">
-          <span>
-The target table must have at least one field field group.
-
-<h3>License</h3>Basic</span>
-        </pre>
-      </p>
-    </div>
-    <div xmlns="">
       <h3>Syntax</h3>
       <p>CreateContingentValuesWorkbook (input_table, workbook, mode) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
@@ -257,9 +246,7 @@ The target table must have at least one field field group.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The table with field groups.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The table with field groups.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPTableView</td>
         </tr>
@@ -268,9 +255,7 @@ The target table must have at least one field field group.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>The output Excel file containing information about field groups and contingent values.</p>
-            </span>
+            <p class="gp">&lt;p&gt;The output Excel file containing information about field groups and contingent values.&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
@@ -279,12 +264,10 @@ The target table must have at least one field field group.
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
-            <span>
-              <p>
+            <p class="gp">&lt;p&gt;
 Defines from where the contingent values will be generated:
-<ul><li>Create empty - Do not create any contingent value entries. This is the default.</li><li>Use schema - Create contingent values from all combinations of domains. This is the default.</li><li>Use data - Create contingent values from existing rows in the table.</li></ul>
-			</p>
-            </span>
+&lt;ul&gt;&lt;li&gt;Create empty - Do not create any contingent value entries. This is the default.&lt;/li&gt;&lt;li&gt;Use schema - Create contingent values from all combinations of domains. This is the default.&lt;/li&gt;&lt;li&gt;Use data - Create contingent values from existing rows in the table.&lt;/li&gt;&lt;/ul&gt;
+			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
@@ -293,6 +276,10 @@ Defines from where the contingent values will be generated:
     <div xmlns="">
       <h3>Code Samples</h3>
       <div class="gpItemInfo"></div>
+    </div>
+    <div xmlns="">
+      <h3>Environments</h3>
+      <p>workspace</p>
     </div>
   </body>
 </html>
