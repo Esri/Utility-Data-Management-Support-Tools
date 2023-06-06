@@ -266,7 +266,7 @@
             <br />
             <p class="gp">&lt;p&gt;
 Specifies the type of results that will be returned by the trace.
-&lt;ul&gt;&lt;li&gt;Selection - The trace results will be returned as a selection set on the appropriate network features.&lt;/li&gt;&lt;li&gt;Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.&lt;/li&gt;&lt;li&gt;Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option enables the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Elements - The trace results will be returned as feature-based information in a specified output .json file. This option enables the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.&lt;/li&gt;&lt;/ul&gt;
+&lt;ul&gt;&lt;li&gt;Selection - The trace results will be returned as a selection set on the appropriate network features.&lt;/li&gt;&lt;li&gt;Aggregated Geometry - The trace results will be aggregated by geometry type and stored in multipart feature classes displayed in the layers in the active map.&lt;/li&gt;&lt;li&gt;Connectivity - The trace results will be returned as a connectivity graph in a specified output .json file. This option requires the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Elements - The trace results will be returned as feature-based information in a specified output .json file. This option requires the Output JSON parameter.&lt;/li&gt;&lt;li&gt;Calculate - Update a field in the trace results from information on the starting points. If multiple starting points are used, the value from the lowest OID is used.&lt;/li&gt;&lt;/ul&gt;
 			&lt;/p&gt;</p>
           </td>
           <td class="gp" align="left">GPMultiValue</td>
@@ -344,12 +344,20 @@ Calculation mode supports:
         </tr>
         <tr>
           <td class="gp"></td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;The output folder for the elememtn and connectivity files.  This is returned when Connectivity or Elements results type is selected.&lt;/p&gt;</p>
+          </td>
           <td class="gp" align="left">DEFolder</td>
         </tr>
         <tr>
           <td class="gp"></td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;The output aggregate geodatabase if Aggregated Geometry is selected as a result type.&lt;/p&gt;</p>
+          </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
@@ -363,7 +371,11 @@ Calculation mode supports:
         </tr>
         <tr>
           <td class="gp"></td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <p class="gp">&lt;p&gt;A table with information about execution of the batch trace.  This is only created when an output folder is specified.&lt;/p&gt;</p>
+          </td>
           <td class="gp" align="left">DETable</td>
         </tr>
       </table>
