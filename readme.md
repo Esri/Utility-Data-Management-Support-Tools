@@ -8,6 +8,8 @@
 
 [2.9.0 Release](https://www.esri.com/arcgis-blog/products/arcgis-solutions/electric-gas/utility-data-management-support-tools-2-9-0-release)
 
+[2.9.3/3.1.1 Release](https://www.esri.com/arcgis-blog/products/arcgis-solutions/electric-gas/utility-data-management-support-tools-2-9-3-3-1-1-release/)
+
 # Help
 
 - [2.9](./docs/2.9)
