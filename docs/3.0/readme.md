@@ -24,4 +24,4 @@
 | [SummaryByBits](./SummaryByBits.html) | Summary by Bits | Summarizes records containing a bitwise coded value domain. |
 | [Trace2Config](./Trace2Config.html) | Trace to Trace Configurations | Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration |
 
-`Last built 2023-03-03`
+`Last built 2023-06-06`

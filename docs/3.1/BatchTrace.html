@@ -250,7 +250,7 @@ The starting points table requires the following fields:
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}, {history_field}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -321,7 +321,10 @@ Specifies the type of results that will be returned by the trace.
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The location of the output json files and mobile geodatabase with the aggregated geometry. This parameter is only applicable for the Aggregated Geometry, Elements or Connectivity result type.</p>
+              <p>The location of the output items.  If specified, a stats mobile geodatabase is created here.
+The folder is required for the Connectivity, Elements and Aggregated Results result types.
+For Connectivity and Elements result types, the json_files folder will contain the resulting files.
+For the Aggregated Results result type, a mobile geodatabase called AggregatedGeometry is created in this location.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFolder</td>
@@ -374,6 +377,17 @@ Calculation mode supports:
             </span>
           </td>
           <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">history_field (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>A field with a historical date value(as a string) that will be used to run a trace in a previous moment to compare to the current moment.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">Field</td>
         </tr>
       </table>
     </div>
