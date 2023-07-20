@@ -1,5 +1,5 @@
 # 2.9 Users
-This is for 3.1, for 2.9, you need to download the tools from the [2.9 branch](https://github.com/Esri/Utility-Data-Management-Support-Tools/2.9)
+This is for 3.1, for 2.9, you need to download the tools from the [2.9 branch](https://github.com/Esri/Utility-Data-Management-Support-Tools/tree/2.9)
 
 # Utility-Data-Management-Support-Tools
 
