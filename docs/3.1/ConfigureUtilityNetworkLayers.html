@@ -245,7 +245,7 @@ This tool can be run multiple times and existing properties will be updated.
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>ConfigureUtilityNetworkLayers (map_name, options, {input_project}, {category_filters}, {remove_settings}, {remove_display_filters}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>ConfigureUtilityNetworkLayers (map_name, options, {input_project}, {category_filters}, {remove_settings}, {remove_display_filters}, {hierarchical_tiers}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -317,6 +317,17 @@ The options to add to the layers.
             <br />
             <span>
               <p>The display filters to remove.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">hierarchical_tiers (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>For a Hierarchical domain network, select the tier(s) to show in the subnetwork pop up.</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>

@@ -221,6 +221,75 @@
       clear: left;
     }
   </style>
+    <style>.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   </head>
   <body oncontextmenu="return true">
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">Trace2Config</h1>
@@ -229,7 +298,7 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</pre>
+        <pre class="wrap">Converts arcpy.un.Trace to arcpy.un.ImportTraceConfigurations</pre>
       </p>
     </div>
     <div xmlns="">
@@ -275,7 +344,7 @@ The Trace Configurations to create.
             <span>
               <p>
 Option to immediately add the configurations
-<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Generate the call to add the trace configuration in the script specified. This is the default.</li></ul>
+<ul><li>Checked - Add the trace configurations.</li><li>Unchecked - Generate the call to add the trace configuration in the file specified. This is the default.</li></ul>
 			</p>
             </span>
           </td>
@@ -287,7 +356,7 @@ Option to immediately add the configurations
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>Create a python script with the call to arcpy.un.AddTraceConfiguration.</p>
+              <p>Creates the trace configuration JSON file to be used in arcpy.un.ImportTraceConfigurations.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFile</td>
@@ -296,7 +365,158 @@ Option to immediately add the configurations
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
-      <div class="gpItemInfo"></div>
+      <p>
+        <span class="span.SubContentHeader">Trace2Config example 1 (Python window)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">Trace2Config</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+<span class="w">            </span><span class="sa">r</span><span class="sd">"""arcpy.un.Trace(</span>
+<span class="sd">    in_utility_network=\"d:/data/Electric_UtilityNetwork.gdb/UtilityNetwork\Network\",</span>
+<span class="sd">    trace_type=\"UPSTREAM\",</span>
+<span class="sd">    starting_points=None,</span>
+<span class="sd">    barriers=None,</span>
+<span class="sd">    domain_network=\"Electric\",</span>
+<span class="sd">    tier=\"Electric Distribution\",</span>
+<span class="sd">    target_tier=\"\",</span>
+<span class="sd">    subnetwork_name=\"\",</span>
+<span class="sd">    shortest_path_network_attribute_name=\"\",</span>
+<span class="sd">    include_containers=\"INCLUDE_CONTAINERS\",</span>
+<span class="sd">    include_content=\"INCLUDE_CONTENT\",</span>
+<span class="sd">    include_structures=\"INCLUDE_STRUCTURES\",</span>
+<span class="sd">    include_barriers=\"INCLUDE_BARRIERS\",</span>
+<span class="sd">    validate_consistency=\"VALIDATE_CONSISTENCY\",</span>
+<span class="sd">    condition_barriers=\"\'E:Operating Status Normal\' IS_EQUAL_TO SPECIFIC_VALUE 1 OR;\'E:Operating Status Normal\' IS_EQUAL_TO SPECIFIC_VALUE 2 OR;\'Lifecycle Status\' DOES_NOT_INCLUDE_ANY SPECIFIC_VALUE 6 OR;Category IS_EQUAL_TO SPECIFIC_VALUE E:Ground OR;Category IS_EQUAL_TO SPECIFIC_VALUE \'E:Open Point\' #\",</span>
+<span class="sd">    function_barriers=None,</span>
+<span class="sd">    traversability_scope=\"BOTH_JUNCTIONS_AND_EDGES\",</span>
+<span class="sd">    filter_barriers=None,</span>
+<span class="sd">    filter_function_barriers=None,</span>
+<span class="sd">    filter_scope=\"BOTH_JUNCTIONS_AND_EDGES\",</span>
+<span class="sd">    filter_bitset_network_attribute_name=\"\",</span>
+<span class="sd">    filter_nearest=\"DO_NOT_FILTER\",</span>
+<span class="sd">    nearest_count=None,</span>
+<span class="sd">    nearest_cost_network_attribute=\"\",</span>
+<span class="sd">    nearest_categories=None,</span>
+<span class="sd">    nearest_assets=None,</span>
+<span class="sd">    functions=None,</span>
+<span class="sd">    propagators=\"\'E:Phases Propagated\' \'E:Phases Substitution\' PROPAGATED_BITWISE_AND INCLUDES_ANY 7\",</span>
+<span class="sd">    output_assettypes=None,</span>
+<span class="sd">    output_conditions=None,</span>
+<span class="sd">    include_isolated_features=\"EXCLUDE_ISOLATED_FEATURES\",</span>
+<span class="sd">    ignore_barriers_at_starting_points=\"DO_NOT_IGNORE_BARRIERS_AT_STARTING_POINTS\",</span>
+<span class="sd">    include_up_to_first_spatial_container=\"DO_NOT_INCLUDE_UP_TO_FIRST_SPATIAL_CONTAINER\",</span>
+<span class="sd">    result_types=None,</span>
+<span class="sd">    selection_type=\"NEW_SELECTION\",</span>
+<span class="sd">    clear_all_previous_trace_results=\"CLEAR_ALL_PREVIOUS_TRACE_RESULTS\",</span>
+<span class="sd">    trace_name=\"\",</span>
+<span class="sd">    aggregated_points=\"Trace_Results_Aggregated_Points\",</span>
+<span class="sd">    aggregated_lines=\"Trace_Results_Aggregated_Lines\",</span>
+<span class="sd">    aggregated_polygons=\"Trace_Results_Aggregated_Polygons\",</span>
+<span class="sd">    allow_indeterminate_flow=\"TRACE_INDETERMINATE_FLOW\",</span>
+<span class="sd">    validate_locatability=\"DO_NOT_VALIDATE_LOCATABILITY\",</span>
+<span class="sd">    use_trace_config=\"DO_NOT_USE_TRACE_CONFIGURATION\",</span>
+<span class="sd">    trace_config_name=\"\",</span>
+<span class="sd">    out_json_file=None,</span>
+<span class="sd">    run_async=\"RUN_SYNCHRONOUSLY\",</span>
+<span class="sd">    include_geometry=\"EXCLUDE_GEOMETRY\",</span>
+<span class="sd">    include_domain_descriptions=\"EXCLUDE_DOMAIN_DESCRIPTIONS\",</span>
+<span class="sd">    result_network_attributes=None,</span>
+<span class="sd">    result_fields=None</span>
+<span class="sd">)"""</span><span class="p">,</span>
+            <span class="s2">"Upstream: Distribution"</span><span class="p">,</span>
+            <span class="s2">"An upstream trace in the distribution tier."</span><span class="p">,</span>
+            <span class="s2">"electric, distribution"</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">"ADD_CONFIGS"</span><span class="p">,</span>
+    <span class="s2">"d:/data/tc_out.py"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+      </div>
+      <br />
+      <p>
+        <span class="span.SubContentHeader">Trace2Config example 2 (stand-alone script)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">Converts arcpy.un.Trace to arcpy.un.AddTraceConfiguration</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">Trace2Config</span><span class="p">(</span>
+    <span class="n">trace_configurations</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span>
+<span class="w">            </span><span class="sa">r</span><span class="sd">"""arcpy.un.Trace(</span>
+<span class="sd">    in_utility_network=\"d:/data/Electric_UtilityNetwork.gdb/UtilityNetwork\Network\",</span>
+<span class="sd">    trace_type=\"UPSTREAM\",</span>
+<span class="sd">    starting_points=None,</span>
+<span class="sd">    barriers=None,</span>
+<span class="sd">    domain_network=\"Electric\",</span>
+<span class="sd">    tier=\"Electric Distribution\",</span>
+<span class="sd">    target_tier=\"\",</span>
+<span class="sd">    subnetwork_name=\"\",</span>
+<span class="sd">    shortest_path_network_attribute_name=\"\",</span>
+<span class="sd">    include_containers=\"INCLUDE_CONTAINERS\",</span>
+<span class="sd">    include_content=\"INCLUDE_CONTENT\",</span>
+<span class="sd">    include_structures=\"INCLUDE_STRUCTURES\",</span>
+<span class="sd">    include_barriers=\"INCLUDE_BARRIERS\",</span>
+<span class="sd">    validate_consistency=\"VALIDATE_CONSISTENCY\",</span>
+<span class="sd">    condition_barriers=\"\'E:Operating Status Normal\' IS_EQUAL_TO SPECIFIC_VALUE 1 OR;\'E:Operating Status Normal\' IS_EQUAL_TO SPECIFIC_VALUE 2 OR;\'Lifecycle Status\' DOES_NOT_INCLUDE_ANY SPECIFIC_VALUE 6 OR;Category IS_EQUAL_TO SPECIFIC_VALUE E:Ground OR;Category IS_EQUAL_TO SPECIFIC_VALUE \'E:Open Point\' #\",</span>
+<span class="sd">    function_barriers=None,</span>
+<span class="sd">    traversability_scope=\"BOTH_JUNCTIONS_AND_EDGES\",</span>
+<span class="sd">    filter_barriers=None,</span>
+<span class="sd">    filter_function_barriers=None,</span>
+<span class="sd">    filter_scope=\"BOTH_JUNCTIONS_AND_EDGES\",</span>
+<span class="sd">    filter_bitset_network_attribute_name=\"\",</span>
+<span class="sd">    filter_nearest=\"DO_NOT_FILTER\",</span>
+<span class="sd">    nearest_count=None,</span>
+<span class="sd">    nearest_cost_network_attribute=\"\",</span>
+<span class="sd">    nearest_categories=None,</span>
+<span class="sd">    nearest_assets=None,</span>
+<span class="sd">    functions=None,</span>
+<span class="sd">    propagators=\"\'E:Phases Propagated\' \'E:Phases Substitution\' PROPAGATED_BITWISE_AND INCLUDES_ANY 7\",</span>
+<span class="sd">    output_assettypes=None,</span>
+<span class="sd">    output_conditions=None,</span>
+<span class="sd">    include_isolated_features=\"EXCLUDE_ISOLATED_FEATURES\",</span>
+<span class="sd">    ignore_barriers_at_starting_points=\"DO_NOT_IGNORE_BARRIERS_AT_STARTING_POINTS\",</span>
+<span class="sd">    include_up_to_first_spatial_container=\"DO_NOT_INCLUDE_UP_TO_FIRST_SPATIAL_CONTAINER\",</span>
+<span class="sd">    result_types=None,</span>
+<span class="sd">    selection_type=\"NEW_SELECTION\",</span>
+<span class="sd">    clear_all_previous_trace_results=\"CLEAR_ALL_PREVIOUS_TRACE_RESULTS\",</span>
+<span class="sd">    trace_name=\"\",</span>
+<span class="sd">    aggregated_points=\"Trace_Results_Aggregated_Points\",</span>
+<span class="sd">    aggregated_lines=\"Trace_Results_Aggregated_Lines\",</span>
+<span class="sd">    aggregated_polygons=\"Trace_Results_Aggregated_Polygons\",</span>
+<span class="sd">    allow_indeterminate_flow=\"TRACE_INDETERMINATE_FLOW\",</span>
+<span class="sd">    validate_locatability=\"DO_NOT_VALIDATE_LOCATABILITY\",</span>
+<span class="sd">    use_trace_config=\"DO_NOT_USE_TRACE_CONFIGURATION\",</span>
+<span class="sd">    trace_config_name=\"\",</span>
+<span class="sd">    out_json_file=None,</span>
+<span class="sd">    run_async=\"RUN_SYNCHRONOUSLY\",</span>
+<span class="sd">    include_geometry=\"EXCLUDE_GEOMETRY\",</span>
+<span class="sd">    include_domain_descriptions=\"EXCLUDE_DOMAIN_DESCRIPTIONS\",</span>
+<span class="sd">    result_network_attributes=None,</span>
+<span class="sd">    result_fields=None</span>
+<span class="sd">)"""</span><span class="p">,</span>
+            <span class="s2">"Upstream: Distribution"</span><span class="p">,</span>
+            <span class="s2">"An upstream trace in the distribution tier."</span><span class="p">,</span>
+            <span class="s2">"electric, distribution"</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">],</span>
+    <span class="n">execute</span><span class="o">=</span><span class="s2">"ADD_CONFIGS"</span><span class="p">,</span>
+    <span class="n">output_script</span><span class="o">=</span><span class="s2">"d:/data/tc_out.py"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+      </div>
     </div>
   </body>
 </html>

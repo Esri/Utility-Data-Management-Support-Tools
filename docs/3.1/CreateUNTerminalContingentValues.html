@@ -292,13 +292,13 @@
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SummaryByBits</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateUNTerminalContingentValues</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Summary by Bits</p>
+				Create Terminal Contingent Values</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">Creates contingent values for Utility Network terminal fields.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -306,7 +306,9 @@
       <p>
         <pre class="wrap">
           <span>
-The output table containing summary information will have chart(s) associated with it.
+This tool creates contingent values on these sources and fields:
+<table><thead><tr><th style="text-align: center">Source</th><th style="text-align: center">Field</th><th style="text-align: center">Logic</th></tr></thead><tbody><tr><td>Line</td><td>FromDeviceTerminal</td><td>Network Rules</td></tr><tr><td>Line</td><td>ToDeviceTerminal</td><td>Network Rules</td></tr><tr><td>Device</td><td>TerminalConfiguration</td><td>Assigned Terminal</td></tr><tr><td>JunctionObject</td><td>TerminalConfiguration</td><td>Assigned Terminal</td></tr></tbody></table>
+The necessary coded value domains will be created and assigned for the contingent values to work.
 
 <h3>License</h3>Basic</span>
         </pre>
@@ -314,7 +316,7 @@ The output table containing summary information will have chart(s) associated wi
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>SummaryByBits (input_records, bit_field, report_bits, summary_fields, output_table, {selection_mode}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CreateUNTerminalContingentValues (network, folder, {apply_changes}, {remove_schema}, {terminal_fields}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -322,70 +324,62 @@ The output table containing summary information will have chart(s) associated wi
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">input_records</td>
+          <td class="gp">network</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The table to summarize.</p>
+              <p>The utility network</p>
             </span>
           </td>
-          <td class="gp" align="left">GPTableView</td>
+          <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
         <tr>
-          <td class="gp">bit_field</td>
+          <td class="gp">folder</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The field containing bit values. The first dataset specified in the Input Records parameter defines the list of fields.</p>
+              <p>The output folder where the csv files and python script will be saved. A uniquely named folder <b>ContingentValues</b> will be created here.</p>
             </span>
           </td>
-          <td class="gp" align="left">Field</td>
+          <td class="gp" align="left">DEFolder</td>
         </tr>
         <tr>
-          <td class="gp">report_bits</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>A list of bits and their description to use to split the summary field value by.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPValueTable</td>
-        </tr>
-        <tr>
-          <td class="gp">summary_fields</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created. The first dataset specified in the Input Records parameter defines the list of fields.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">Field</td>
-        </tr>
-        <tr>
-          <td class="gp">output_table</td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The table to write the summarized results to.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">DETable</td>
-        </tr>
-        <tr>
-          <td class="gp">selection_mode (Optional) </td>
+          <td class="gp">apply_changes (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
               <p>
-Specifies how layers without selection are processed
-<ul><li>Evaluate all records in layers(PROCESS_ALL) — Every record is evaluated. This is the default.</li><li>Evaluate only selected record in layers(PROCESS_SELECTED_ONLY) — Layers without selections are skipped. Only selected records are evaluated.</li></ul>
+Specifies if schema modifications are applied.
+<ul><li>Unchecked - Save the python script only.</li><li>Checked - Save and run the python script. This is the default.</li></ul>
 			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">remove_schema (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Specifies if the schema is added or removed.
+<ul><li>Unchecked - Add the schema for the contingent values. This is the default</li><li>Checked - Remove the schema for the contingent values.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">terminal_fields (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Additional <b>SHORT</b> fields on the domain device and junction object classes to assign contingent values. The fields must not have any network attribute assignments or have an existing domain assigned at the field level.</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>
@@ -395,43 +389,40 @@ Specifies how layers without selection are processed
     <div xmlns="">
       <h3>Code Samples</h3>
       <p>
-        <span class="span.SubContentHeader">SummaryByBits example 1 (Python window)</span>
+        <span class="span.SubContentHeader">CreateUNTerminalContingentValues example 1 (Python window)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">Create Contingent Value CSVs for the valid terminal combinations.</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">SummaryByBits</span><span class="p">(</span>
-    <span class="s2">"D:/data/AssetPackage.gdb/UtilityNetwork/UNDevice"</span><span class="p">,</span>
-    <span class="s2">"phasesnormal"</span><span class="p">,</span>
-    <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">]],</span>
-    <span class="s2">"ratedpower"</span><span class="p">,</span>
-    <span class="s2">"D:/data/output.gdb/UNDevice_SummaryByBits"</span><span class="p">,</span>
-    <span class="s2">"PROCESS_SELECTED_ONLY"</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateUNTerminalContingentValues</span><span class="p">(</span><span class="s2">"Naperville Network"</span><span class="p">,</span> <span class="s2">"D:/data/cav"</span><span class="p">)</span>
 </pre>
       </div>
       <br />
       <p>
-        <span class="span.SubContentHeader">SummaryByBits example 2 (stand-alone script)</span>
+        <span class="span.SubContentHeader">CreateUNTerminalContingentValues example 2 (stand-alone script)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">Create Contingent Value CSVs for the valid terminal combinations.</pre>
       </p>
       <div class="highlight">
-        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+        <pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">SummaryByBits</span><span class="p">(</span>
-    <span class="n">input_records</span><span class="o">=</span><span class="s2">"D:/data/AssetPackage.gdb/UtilityNetwork/UNDevice"</span><span class="p">,</span>
-    <span class="n">bit_field</span><span class="o">=</span><span class="s2">"phasesnormal"</span><span class="p">,</span>
-    <span class="n">report_bits</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">]],</span>
-    <span class="n">summary_fields</span><span class="o">=</span><span class="s2">"ratedpower"</span><span class="p">,</span>
-    <span class="n">output_table</span><span class="o">=</span><span class="s2">"D:/data/output.gdb/UNDevice_SummaryByBits"</span><span class="p">,</span>
-    <span class="n">selection_mode</span><span class="o">=</span><span class="s2">"PROCESS_SELECTED_ONLY"</span><span class="p">,</span>
+<span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">un</span> <span class="o">=</span> <span class="s2">"D:/data/network.gdb/UtilityNetwork/Network"</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">un</span><span class="p">)</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="s2">"CAV"</span>
+<span class="n">folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateUNTerminalContingentValues</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">un</span><span class="p">,</span>
+    <span class="n">folder</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">folder</span><span class="p">),</span>
+    <span class="n">apply_changes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">remove_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 </pre>
       </div>

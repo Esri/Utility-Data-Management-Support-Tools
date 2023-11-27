@@ -292,13 +292,13 @@
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">SummaryByBits</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">TraceFilesToGeodatabase</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Summary by Bits</p>
+				Trace Files To Geodatabase</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">Converts the JSON files from a Utility Network trace to a geodatabase.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -306,7 +306,20 @@
       <p>
         <pre class="wrap">
           <span>
-The output table containing summary information will have chart(s) associated with it.
+Only specify <b>Utility Network</b> if the output schema needs to be changed. The tool is additive, so new tables and fields can be added to an existing geodatabase.
+The output geodatabase will always have the following tables prefixed with <b>I_</b>. Additional tables will be created based on <b>Schema Options</b>:
+<ul><li>I_File - Stores the name of the JSON file and an incrementing ID</li><li>I_NetworkAttributes - Stores metadata about Utility Network network attributes</li><li>I_Pairs - Stores left/right <b>fileKey</b> values used in the difference views</li><li>I_Sources - Stores metadata about Utility Network source tables</li><li>I_SourceFilter - Stores the names of the sources, fields, and network attributes used when defining the output schema</li></ul>
+The difference views can manually be configured by populating the <b>I_Pairs</b> table after loading at least 2 JSON files. For automatic loading, the following JSON can be added to each file which will be used to populate this table. The <b>Batch Trace</b> tool adds the JSON payload for you.
+<code>
+{
+    "traceInfo": {
+        "name": "My Subnetwork",     // This will be written to I_File. If not specified, the base name of the file will be used.
+        "moment": 1693260302.855814, // This will be written to I_File. If not specified, the current time will be used.
+        "key": "a",                  // Two files with the same value populates I_Pairs.
+        "side": "left"               // "left" represents current/original and "right" represents newer/modified.
+    }
+}
+</code>
 
 <h3>License</h3>Basic</span>
         </pre>
@@ -314,7 +327,7 @@ The output table containing summary information will have chart(s) associated wi
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>SummaryByBits (input_records, bit_field, report_bits, summary_fields, output_table, {selection_mode}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>TraceFilesToGeodatabase (output_gdb, {truncate_tables}, {trace_files}, {controller_dataset}, {schema_options}, {output_options}, {source_filter_csv}, {source_filter_json}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -322,116 +335,141 @@ The output table containing summary information will have chart(s) associated wi
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">input_records</td>
+          <td class="gp">output_gdb</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The table to summarize.</p>
+              <p>The target geodatabase to convert the trace results files into.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPTableView</td>
+          <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
-          <td class="gp">bit_field</td>
+          <td class="gp">truncate_tables (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The field containing bit values. The first dataset specified in the Input Records parameter defines the list of fields.</p>
+              <p>Truncates the tables listed in the <b>I_Sources</b> table.</p>
             </span>
           </td>
-          <td class="gp" align="left">Field</td>
+          <td class="gp" align="left">GPBoolean</td>
         </tr>
         <tr>
-          <td class="gp">report_bits</td>
+          <td class="gp">trace_files (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>A list of bits and their description to use to split the summary field value by.</p>
+              <p>JSON files from <b>Trace</b> or <b>Export Subnetwork</b>. If a folder is specified, it will be recursively traversed for JSON files.</p>
             </span>
           </td>
-          <td class="gp" align="left">GPValueTable</td>
+          <td class="gp" align="left">GPComposite</td>
         </tr>
         <tr>
-          <td class="gp">summary_fields</td>
+          <td class="gp">controller_dataset (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The numeric fields to summarize in addition to counting the bits. For each summary field, an additional chart will be created. The first dataset specified in the Input Records parameter defines the list of fields.</p>
+              <p>The Utility Network used to define the output schema. Leave blank if the output schema already exists.</p>
             </span>
           </td>
-          <td class="gp" align="left">Field</td>
+          <td class="gp" align="left">GPUtilityNetworkLayer</td>
         </tr>
         <tr>
-          <td class="gp">output_table</td>
+          <td class="gp">schema_options (Optional) </td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The table to write the summarized results to.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">DETable</td>
-        </tr>
-        <tr>
-          <td class="gp">selection_mode (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>
-Specifies how layers without selection are processed
-<ul><li>Evaluate all records in layers(PROCESS_ALL) — Every record is evaluated. This is the default.</li><li>Evaluate only selected record in layers(PROCESS_SELECTED_ONLY) — Layers without selections are skipped. Only selected records are evaluated.</li></ul>
+              <p>The tables to create in the <b>Output Geodatabase</b><ul><li>Associations: A table to store association records.</li><li>Attachment/Containment: A table to store structural attachment and containment associations.</li><li>Connectivity: A table to store from/to/via connectivity information. If <b>Include Geometry</b> is enabled, this table will be a polyline feature class.</li><li>Elements: A series of tables prefixed with <b>E_</b> representing Utility Network elements. If <b>Include Geometry</b> is enabled, these tables will be feature classes.</li><li>Features: A series of tables prefixed with <b>F_</b> representing Utility Network features. If <b>Include Geometry</b> is enabled, these tables will be feature classes.</li></ul>
 			</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">output_options (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Options enabled when a controller is provided.<ul><li>Include Geometry: The outputs will include the geometry of the original elements and features.</li><li>Create Database Views: Creates a series of difference views. This requires <b>Features</b> to be selected.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">source_filter_csv (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>A table with the sources to include and their fields and network attributes. Use the recordset to define the schema. This parameter cannot be used at the same time as <b>Source Filter JSON</b>.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPRecordSet</td>
+        </tr>
+        <tr>
+          <td class="gp">source_filter_json (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Specify one of the output trace results files to restrict the sources and fields in the results. This parameter cannot be used at the same time as <b>Source Filter Table.</b></p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
         </tr>
       </table>
     </div>
     <div xmlns="">
       <h3>Code Samples</h3>
       <p>
-        <span class="span.SubContentHeader">SummaryByBits example 1 (Python window)</span>
+        <span class="span.SubContentHeader">TraceFilesToGeodatabase example 1 (Python window)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">convert the trace results from trace_results1 and trace_results2 into features and elements in the report database</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">SummaryByBits</span><span class="p">(</span>
-    <span class="s2">"D:/data/AssetPackage.gdb/UtilityNetwork/UNDevice"</span><span class="p">,</span>
-    <span class="s2">"phasesnormal"</span><span class="p">,</span>
-    <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">]],</span>
-    <span class="s2">"ratedpower"</span><span class="p">,</span>
-    <span class="s2">"D:/data/output.gdb/UNDevice_SummaryByBits"</span><span class="p">,</span>
-    <span class="s2">"PROCESS_SELECTED_ONLY"</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results1.json"</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results2.json"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">report_database</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\trace_report.geodatabase"</span>
+<span class="n">un</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\sample_un.geodatabase\network\utility_network"</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">TraceFilesToGeodatabase</span><span class="p">(</span><span class="n">report_database</span><span class="p">,</span> <span class="n">un</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
 </pre>
       </div>
       <br />
       <p>
-        <span class="span.SubContentHeader">SummaryByBits example 2 (stand-alone script)</span>
+        <span class="span.SubContentHeader">TraceFilesToGeodatabase example 2 (stand-alone script)</span>
         <br />
       </p>
       <p>
-        <pre class="wrap">Splits the specified attributes by the specified bits present and generates data for reporting.</pre>
+        <pre class="wrap">convert the trace results from trace_results1 and trace_results2 into features and elements in the report database</pre>
       </p>
       <div class="highlight">
         <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
 
-<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">SummaryByBits</span><span class="p">(</span>
-    <span class="n">input_records</span><span class="o">=</span><span class="s2">"D:/data/AssetPackage.gdb/UtilityNetwork/UNDevice"</span><span class="p">,</span>
-    <span class="n">bit_field</span><span class="o">=</span><span class="s2">"phasesnormal"</span><span class="p">,</span>
-    <span class="n">report_bits</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">]],</span>
-    <span class="n">summary_fields</span><span class="o">=</span><span class="s2">"ratedpower"</span><span class="p">,</span>
-    <span class="n">output_table</span><span class="o">=</span><span class="s2">"D:/data/output.gdb/UNDevice_SummaryByBits"</span><span class="p">,</span>
-    <span class="n">selection_mode</span><span class="o">=</span><span class="s2">"PROCESS_SELECTED_ONLY"</span><span class="p">,</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results1.json"</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results2.json"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">report_database</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\trace_report.geodatabase"</span>
+<span class="n">un</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\sample_un.geodatabase\network\utility_network"</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">TraceFilesToGeodatabase</span><span class="p">(</span>
+    <span class="n">output_gdb</span><span class="o">=</span><span class="n">report_database</span><span class="p">,</span>
+    <span class="n">controller_dataset</span><span class="o">=</span><span class="n">un</span><span class="p">,</span>
+    <span class="n">trace_files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
 <span class="p">)</span>
 </pre>
       </div>
