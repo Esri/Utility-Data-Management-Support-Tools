@@ -229,7 +229,21 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Iterate through the starting points to trace the utility network and use the results.</pre>
+        <pre class="wrap">
+          <p>
+            <p>This tool uses a with starting point information to trace the utility network. The starting points are optionally grouped so set of starting points is used in each trace.</p>
+            <p>The trace results can be used to select features in a map, calculate values on results, create connectivity and element files or save the aggregated geometry with summary information.</p>
+            <p>The starting points layer uses a field to determine if a row is a starting point and/or barrier. A feature as a starting point and filter barrier is useful in a connected trace to determine all the items between the starting points.</p>
+            <p>The starting points table requires the following fields:</p>
+            <p>
+              <ul>
+                <li>FEATUREGLOBALID: GUID</li>
+                <li>TERMINALID: Short</li>
+                <li>PERCENTALONG: Double</li>
+              </ul>
+            </p>
+          </p>
+        </pre>
       </p>
     </div>
     <div xmlns="">

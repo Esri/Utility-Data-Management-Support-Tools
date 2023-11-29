@@ -229,7 +229,38 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Expands the current selection in the map based on specified utility network association types and layers.</pre>
+        <pre class="wrap">
+          <p>
+            <p>This tool requires at least 1 record be selected.</p>
+            <p>The Selection Payload parameter must be specified in JSON as a list of dictionaries with the following keys:<ul><li>fromLayers</li><li>fromSelectionType</li><li>associationTypes</li><li>toLayers</li><li>toSelectionType</li></ul></p>
+            <p>Each key maps to an array of values. If the array is empty, then all valid choices are applied.</p>
+            <p>fromLayers and toLayers are the from and to side of the association, respectively. Each entry corresponds to a layer in the map.</p>
+            <p>For subtype group layers, specify as "SubtypeGroupLayer/SubtypeLayer".</p>
+            <p>fromSelectionType determines how the selection on the fromLayers is handled.</p>
+            <p>It has the following entries:</p>
+            <p>
+              <ul>
+                <li>KEEP - The selection is not changed</li>
+                <li>CLEAR - The original selection is cleared after the associated records are selected.</li>
+              </ul>
+            </p>
+            <p>When clearing the selection, this happens after all entries in the group are processed.</p>
+            <p>associationTypes is the type of association between fromLayers and toLayers.</p>
+            <p>It has the following entries:</p>
+            <p><ul><li>Junction Junction</li><li>Contained By</li><li>Containing</li><li>Attached To</li><li>Attaching</li><li>Junction Edge From</li><li>Junction Edge Midspan</li><li>Junction Edge To</li></ul>toSelectionType determines how the associated features are selected in the toLayers.</p>
+            <p>It has the following entries:</p>
+            <p>
+              <ul>
+                <li>NEW</li>
+                <li>DIFFERENCE</li>
+                <li>INTERSECT</li>
+                <li>SYMDIFFERENCE</li>
+                <li>UNION</li>
+              </ul>
+            </p>
+            <p>Grouping similar entries reduces the number of queries to find associated records. Entries are processed in the order they appear, not the value of the group.</p>
+          </p>
+        </pre>
       </p>
     </div>
     <div xmlns="">

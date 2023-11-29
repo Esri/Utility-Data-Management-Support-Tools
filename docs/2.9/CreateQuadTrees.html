@@ -229,7 +229,18 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Creates quadtrees from a collection of input features.</pre>
+        <pre class="wrap">
+          <p>
+            <p>Quadtree generation is controlled by specifying Maximum Vertices and/or Maximum depth:</p>
+            <p>
+              <ul>
+                <li>Vertices - The quadtree will be subdivided if it contains more than the maximum number of vertices.</li>
+                <li>Vertices &amp; Depth - Same as above, except it will stop subdividing beyond maximum depth.</li>
+                <li>Depth - Quadtrees are subdivided maximum depth times.</li>
+              </ul>
+            </p>
+          </p>
+        </pre>
       </p>
     </div>
     <div xmlns="">

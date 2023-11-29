@@ -229,7 +229,16 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Exports tables with domain descriptions to an output geodatabase.</pre>
+        <pre class="wrap">
+          <p>
+            <p>- For optimal read performance, a database connection is recommended.</p>
+            <p>- For optimal write performance, a mobile geodatabase (sqlite) is recommended for the Output Geodatabase.</p>
+            <p>- File geodatabases only support a subset of views.</p>
+            <p>- If you specify the utility network controller dataset, association and controller views will only be created to the input datasets if the target dataset name matches the class name in the source utility network.</p>
+            <p>- You can target the same target dataset with multiple Input Datasets. This allows you to specify the layers with definition queries or subtype group layers for the Input Datasets and load their records to a single target dataset.</p>
+            <p>- If the length of the view name exceeds the table name limit, the subtype description will be replaced with its code.</p>
+          </p>
+        </pre>
       </p>
     </div>
     <div xmlns="">
