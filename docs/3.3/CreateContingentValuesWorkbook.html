@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
+    body {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #4C4C4C;
+      background-color: #FFFFFF;
+      margin: 6px, 6px, 6px, 6px;
+    }
+    h1 {
+      font-family: "Segoe UI Light", "Segoe UI", Arial, Sans-serif;
+      font-size: 14pt;
+      color: #0079C1;
+      margin: 0px 0px 8px 0px;
+    }
+    h3 {
+      font-family: "Segoe UI semibold", "Segoe UI", Arial, Sans-serif;
+      font-size: 12pt;
+      margin: 10px 0px 4px 0px;
+    }
+    span.ContentHeader {
+      font-family: "Segoe UI semibold", "Segoe UI", Arial, Sans-serif;
+      font-size: 12pt;
+    }
+    span.SubContentHeader {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #6D6C70;
+    }
+    span.ElementLabel {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #929497;
+    }
+    div {
+      margin: 0px 0px 0px 0px;
+    }
+    p {
+      margin: 0px 0px 6px 0px;
+    }
+    .center {
+      text-align: center;
+    }
+    img {
+      margin: 8px 0px 8px 0px;
+    }
+    img.summary {
+      width: 210px;
+      height: 133px;
+      margin: 8px 0px 8px 0px;
+    }
+    img.center {
+      text-align: center;
+      display: block;
+    }
+    img.gp {
+      width: auto;
+    }
+    .noThumbnail {
+      #color: rgb(70%, 70%, 70%);
+      color: #A6A8AB;
+      border-width: 1px;
+      border-style: solid;
+      #color: rgb(70%, 70%, 70%);
+      border-color: #A6A8AB;
+      padding: 3em 3em;
+      position: relative;
+      text-align: center;
+      width: 210px;
+      height: 140px;
+      margin: 8px 0px 8px 0px;
+    }
+    .noContent {
+      #color: rgb(70%, 70%, 70%);
+      color: #A6A8AB;
+    }
+    h3 a.expander:link {
+      color: #4C4C4C;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    h3 a.expander:visited {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    h3 a.expander:link:hover, h3 a.expander:visited:hover {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a.expander:link {
+      color: #323232;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a.expander:visited {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a.expander:link:hover, a.expander:visited:hover {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a:link {
+      color: #5A9359;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #5A9359;
+      text-decoration: none;
+    }
+    a:link:hover, a:visited:hover {
+      color: #257824;
+      text-decoration: underline;
+    }
+    div.hide {
+      display: none;
+      margin: 0px 0px 20px 0px;
+      color: #6D6C70;
+    }
+    div.show {
+      display: block;
+      margin: 0px 0px 20px 0px;
+    }
+    span.hide {
+      display: none;
+      font-family: Times;
+    }
+    span.show {
+      display: inline-block;
+      font-style: normal;
+      font-family: Times;
+    }
+    table {
+      margin: 0px 0px 0px 0px;
+      padding: 0px 0px 8px 0px;
+      border-collapse:collapse;
+      font-size: 10pt;
+    }
+    th {
+      font-family: "Segoe UI Semibold", Arial, Sans-serif;
+      color: #4C4C4C;
+      /* color: #6C6D70 for dialog/python reference heading; */
+      text-align: left;
+      vertical-align: bottom;
+      border-bottom: 1px solid #4C4C4C;
+    }
+    td {
+      text-align: left;
+      vertical-align: top;
+    }
+    td.description {
+      vertical-align: center;
+    }
+    td.gp {
+      padding: 8px 8px 8px 8px;
+      border-bottom: 1px solid #4C4C4C;
+    }
+    ul {
+      margin: 0px 0px 0px 10px;
+      padding: 0px 0px 0px 10px;
+    }
+    li {
+      margin: 0px 0px 0px 0px;
+      padding: 0px 0px 0px 10px;
+    }
+    ul ul {
+      list-style-type: square;
+    }
+    pre.wrap {
+      width: 99%;
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      margin: 0px 0px 0px 0px;
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    pre.wrap p {
+      padding-bottom: 1em;
+    }
+    pre.wrap li {
+      padding-bottom: 1em;
+    }
+    pre.wrap br {
+      display: block;
+    }
+    pre.gp {
+      font-family: Courier New, Courier, monospace;
+    }
+    .gpcode {
+      border: 1px dashed #ACC6D8;
+      padding: 10px;
+      background-color:#EEEEEE;
+      height: auto;
+      overflow: scroll; 
+      width: 98%;
+    }
+    .code {
+      font-family: monospace;
+    }
+
+    p.gp {
+      margin: 7px 0px 7px 0px;
+    }
+    dl {
+      margin: 0px 0px 0px 0px;
+    }
+    dt {
+      margin: 0px 0px 0px 15px;
+      clear: left;
+    }
+    dd {
+      margin: 0px 0px 0px 15px;
+      clear: left;
+    }
+  </style>
+    <style>.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  </head>
+  <body oncontextmenu="return true">
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateContingentValuesWorkbook</h1>
+    <p xmlns=""><span class="ContentHeader">Title</span> 
+				Create Contingent Values Workbook</p>
+    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
+      <h3>Description</h3>
+      <p>
+        <pre class="wrap">Creates an excel workbook to review and modify contingent values defined by data, schema or existing values.</pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Usage</h3>
+      <p>
+        <pre class="wrap">
+          <span>
+The target table must have at least one field field group.
+
+<h3>License</h3>Basic</span>
+        </pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Syntax</h3>
+      <p>CreateContingentValuesWorkbook (input_table, workbook, mode) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
+        <tr>
+          <th width="30%">Parameter</th>
+          <th width="50%">Explanation</th>
+          <th width="20%">Data Type</th>
+        </tr>
+        <tr>
+          <td class="gp">input_table</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The table with field groups.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPTableView</td>
+        </tr>
+        <tr>
+          <td class="gp">workbook</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The output Excel file containing information about field groups and contingent values.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
+        </tr>
+        <tr>
+          <td class="gp">mode</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Defines from where the contingent values will be generated:
+<ul><li>Create empty - Do not create any contingent value entries. This is the default.</li><li>Use schema - Create contingent values from all combinations of domains. This is the default.</li><li>Use data - Create contingent values from existing rows in the table.</li>\
+<li>Use contingent values - Creates the workbook with the existing contingent values.</li>
+</ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+      </table>
+    </div>
+    <div xmlns="">
+      <h3>Code Samples</h3>
+      <p>
+        <span class="span.SubContentHeader">CreateContingentValuesWorkbook example 1 (Python window)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">Creates an excel workbook to review and modify contingent values defined by data, schema or existing values.</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateContingentValuesWorkbook</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">"D:/data/UtilityNetwork.gdb\UtilityNetwork\UNDevice"</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s2">"D:/data"</span><span class="p">,</span>
+    <span class="s2">"DATA"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+      </div>
+      <br />
+      <p>
+        <span class="span.SubContentHeader">CreateContingentValuesWorkbook example 2 (stand-alone script)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">Creates an excel workbook to review and modify contingent values defined by data, schema or existing values.</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">CreateContingentValuesWorkbook</span><span class="p">(</span>
+    <span class="n">input_table</span><span class="o">=</span><span class="sa">r</span><span class="s2">"D:/data/UtilityNetwork.gdb\UtilityNetwork\UNDevice"</span><span class="p">,</span>
+    <span class="n">workbook</span><span class="o">=</span><span class="sa">r</span><span class="s2">"D:/data"</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"DATA"</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+      </div>
+    </div>
+  </body>
+</html>
