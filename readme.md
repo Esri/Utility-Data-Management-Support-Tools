@@ -1,6 +1,8 @@
-# 2.9 Users
-This is for 3.1, for 2.9, you need to download the tools from the [2.9 branch](https://github.com/Esri/Utility-Data-Management-Support-Tools/tree/2.9)
-
+# 2.9 and 3.1 Users
+This is for 3.3
+  - For 2.9, you need to download the tools from the [2.9 branch](https://github.com/Esri/Utility-Data-Management-Support-Tools/tree/2.9)
+  - For 3.1, you need to download the tools from the [3.1 branch](https://github.com/Esri/Utility-Data-Management-Support-Tools/tree/3.1)
+    
 # Utility-Data-Management-Support-Tools
 
 Here are a set of tools to work with the utility network and the maps to interact with it.
@@ -16,7 +18,7 @@ Here are a set of tools to work with the utility network and the maps to interac
 
 ## Requirements
 
-* ArcGIS Pro 3.1
+* ArcGIS Pro 3.3
 
 ## Resources
 
