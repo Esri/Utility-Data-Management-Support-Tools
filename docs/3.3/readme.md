@@ -2,7 +2,7 @@
 | --- | --- | --- | --- |
 | Utility Network | [AddUNSystemTables](./AddUNSystemTables.html) | Create Utility Network System Tables Views | Generate views on the utility network system tables. |
 | Map | [AdjustDataSources](./AdjustDataSources.html) | Update Data Sources | Use this tool to convert the data source of layers in the maps in the current ArcGIS Pro project to a workspace. |
-|  | [ApplyNetworkCopyingWorkbook](./ApplyNetworkCopyingWorkbook.html) | Apply Utility Network Copy Workbook |  |
+| Asset Package | [ApplyNetworkCopyingWorkbook](./ApplyNetworkCopyingWorkbook.html) | Apply Utility Network Copy Workbook | Add the Asset Group/Types listed in the workbook from the Source Asset Package to the Target Asset Package |
 | Utility Network | [AssociationSelection](./AssociationSelection.html) | Select by Association | Expands the current selection in the map based on specified utility network association types and layers. |
 | Utility Network | [BatchTrace](./BatchTrace.html) | Batch Trace | Iterate through the starting points to trace the utility network and use the results. |
 | Utility Network | [BuildStartingPoints](./BuildStartingPoints.html) | Build Starting Points | Creates starting points based on a trace configuration. |
@@ -19,7 +19,7 @@
 | Contingent Values | [CreateContingentValues](./CreateContingentValues.html) | Create Contingent Values | Creates contingent values from schema or data. |
 | Contingent Values | [CreateContingentValuesWorkbook](./CreateContingentValuesWorkbook.html) | Create Contingent Values Workbook | Creates an excel workbook to review and modify contingent values defined by data, schema or existing values. |
 | Data Migration | [CreateMigrationWorkspace](./CreateMigrationWorkspace.html) | Create Migration Workspace | This tool is used to create a data model and data loading workspace suitable for use with the Data Loading tool. |
-|  | [CreateNetworkCopyingWorkbook](./CreateNetworkCopyingWorkbook.html) | Create Utility Network Copy Workbook |  |
+| Asset Package | [CreateNetworkCopyingWorkbook](./CreateNetworkCopyingWorkbook.html) | Create Utility Network Copy Workbook | Create an Excel workbook with the properties of the Source Asset Package that can be copied into the Target Asset Package |
 | Subset | [CreateQuadTrees](./CreateQuadTrees.html) | Create Quadtrees | Creates quadtrees from a collection of input features. |
 | Data Migration | [CreateSimpleDataMapping](./CreateSimpleDataMapping.html) | Create Simple Data Mapping | This tool creates a spreadsheet you can use to map your current geodatabase schema to the schema of an asset packge for a utility network. |
 | Utility Network | [CreateUNTerminalContingentValues](./CreateUNTerminalContingentValues.html) | Create Terminal Contingent Values | Creates contingent values for Utility Network terminal fields. |
