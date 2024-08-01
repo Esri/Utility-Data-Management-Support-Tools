@@ -226,6 +226,23 @@
     <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">CreateNetworkCopyingWorkbook</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
 				Create Utility Network Copy Workbook</p>
+    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
+      <h3>Description</h3>
+      <p>
+        <pre class="wrap">Create an Excel workbook with the properties of the Source Asset Package that can be copied into the Target Asset Package</pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Usage</h3>
+      <p>
+        <pre class="wrap">
+          <span>
+
+
+<h3>License</h3>Basic<h3>Toolset</h3>Asset Package</span>
+        </pre>
+      </p>
+    </div>
     <div xmlns="">
       <h3>Syntax</h3>
       <p>CreateNetworkCopyingWorkbook (source_network, target_network, workbook) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
@@ -237,17 +254,35 @@
         </tr>
         <tr>
           <td class="gp">source_network</td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The asset package with Utility Network properties to be copied.</p>
+            </span>
+          </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
           <td class="gp">target_network</td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The target asset package to apply the Utility Network properties in.</p>
+            </span>
+          </td>
           <td class="gp" align="left">DEWorkspace</td>
         </tr>
         <tr>
           <td class="gp">workbook</td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The output Excel workbook with the utility network properties.</p>
+            </span>
+          </td>
           <td class="gp" align="left">DEFile</td>
         </tr>
       </table>

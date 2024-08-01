@@ -240,13 +240,15 @@
 This tool uses a simple data mapping workbook that has been populated with source/target mappings to extend the data model of an asset package to support the data as defined by the mappings.
 Use the 'Create Simple Data Mapping' tool to create a blank source/target mapping workbook.
 
+In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass adding fields to a target class when the copy field option is checked.  List the target class name(not qualified) and the name of the field that you do not want copied from the source.
+
 <h3>License</h3>Standard<h3>Toolset</h3>Data Migration</span>
         </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateMigrationWorkspace (source_database, asset_package, mapping_spreadsheet, service_territory, output_folder, output_name, {dlt_mapping_table}, {add_missing_fields}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CreateMigrationWorkspace (source_database, asset_package, mapping_spreadsheet, service_territory, output_folder, output_name, {dlt_mapping_table}, {add_missing_fields}, {match_options}, {calc_stats}, {match_subtypes}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -262,7 +264,7 @@ Use the 'Create Simple Data Mapping' tool to create a blank source/target mappin
               <p>The source feature dataset or workspace you want to migrate</p>
             </span>
           </td>
-          <td class="gp" align="left">DEWorkspace</td>
+          <td class="gp" align="left">GPComposite</td>
         </tr>
         <tr>
           <td class="gp">asset_package</td>
@@ -339,6 +341,21 @@ Use the 'Create Simple Data Mapping' tool to create a blank source/target mappin
               <p>Copy fields from the source data that do not exist in the target</p>
             </span>
           </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">match_options (Optional) </td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">calc_stats (Optional) </td>
+          <td class="gp" align="left"></td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">match_subtypes (Optional) </td>
+          <td class="gp" align="left"></td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>

@@ -314,13 +314,24 @@ The starting points layer uses a field to determine if a row is a starting point
 The starting points table requires the following fields:
 <ul><li>FEATUREGLOBALID: GUID or GLOBALID: GlobalID</li><li>TERMINALID: Short</li><li>PERCENTALONG: Double</li></ul>
 
+<b>Calculation and Functions</b>
+To call the function in the calculation, list the function name with () as the source field.
+
+The code block is used to define functions that are called by listing the function name with () in the source field.
+The function must have one parameter and the attributes are accessed by specifying their name as a key on the parameter.
+		
+Example function, where the starting location layer has a layerid attribute:
+
+def layer_id_details(row):
+	return f"The Layer ID is {str(row['layerid'])}"
+
 <h3>License</h3>Standard<h3>Toolset</h3>Utility Network</span>
         </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}, {history_field}, {default_terminal_id}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>BatchTrace (in_utility_network, trace_locations, result_types, trace_config, {expression}, {output_folder}, {key_field}, {summary_store_field}, {fields}, {calc_on_start}, {history_field}, {default_terminal_id}, {code_block}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -469,6 +480,17 @@ Calculation mode supports:
             </span>
           </td>
           <td class="gp" align="left">GPLong</td>
+        </tr>
+        <tr>
+          <td class="gp">code_block (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Define user functions used in the calculation of target fields.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
         </tr>
       </table>
     </div>

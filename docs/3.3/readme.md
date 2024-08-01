@@ -14,14 +14,15 @@
 | Map | [ConfigureUtilityNetworkLayers](./ConfigureUtilityNetworkLayers.html) | Configure UN Layers | Configures utility network layers by modifying popups and display filters. |
 | Contingent Values | [ContingentValueWorkbookToCSV](./ContingentValueWorkbookToCSV.html) | Convert Contingent Values Workbook | Converts a Contingent Values Workbook to CSV files to be used for importing. |
 | Schema | [CopyFieldsAndDomains](./CopyFieldsAndDomains.html) | Copy Fields and Domains | Copies fields and domains from FeatureClass/Table to FeatureClass/Table |
+| Data Migration | [CopyFieldsAndDomainsFromMapping](./CopyFieldsAndDomainsFromMapping.html) | Copy Fields and Domains From Mapping | Copies fields and domains from FeatureClass/Table to FeatureClass/Table defined in the mapping worksheet. |
 | Utility Network | [CreateAssociationLines](./CreateAssociationLines.html) | Create Association Lines | Creates lines representing utility network associations. |
 | Contingent Values | [CreateContingentValueAttributeRules](./CreateContingentValueAttributeRules.html) | Contingent Values to Attribute Rules | Create a series of attribute rules from the Contingent Values. |
 | Contingent Values | [CreateContingentValues](./CreateContingentValues.html) | Create Contingent Values | Creates contingent values from schema or data. |
-| Contingent Values | [CreateContingentValuesWorkbook](./CreateContingentValuesWorkbook.html) | Create Contingent Values Workbook | Creates an excel workbook to review and modify contingent values defined by data, schema or existing values. |
+| Contingent Values | [CreateContingentValuesWorkbook](./CreateContingentValuesWorkbook.html) | Create Contingent Values Workbook | Creates an Excel workbook to review and modify contingent values defined by data, schema or existing values. |
 | Data Migration | [CreateMigrationWorkspace](./CreateMigrationWorkspace.html) | Create Migration Workspace | This tool is used to create a data model and data loading workspace suitable for use with the Data Loading tool. |
 | Asset Package | [CreateNetworkCopyingWorkbook](./CreateNetworkCopyingWorkbook.html) | Create Utility Network Copy Workbook | Create an Excel workbook with the properties of the Source Asset Package that can be copied into the Target Asset Package |
 | Subset | [CreateQuadTrees](./CreateQuadTrees.html) | Create Quadtrees | Creates quadtrees from a collection of input features. |
-| Data Migration | [CreateSimpleDataMapping](./CreateSimpleDataMapping.html) | Create Simple Data Mapping | This tool creates a spreadsheet you can use to map your current geodatabase schema to the schema of an asset packge for a utility network. |
+| Data Migration | [CreateSimpleDataMapping](./CreateSimpleDataMapping.html) | Create Simple Data Mapping | This tool creates a spreadsheet you can use to map your current geodatabase schema to the schema of an asset package for a utility network. |
 | Utility Network | [CreateUNTerminalContingentValues](./CreateUNTerminalContingentValues.html) | Create Terminal Contingent Values | Creates contingent values for Utility Network terminal fields. |
 | APR | [EnableLRSUPDM](./EnableLRSUPDM.html) | Enable APR on UPDM | Creates the script to enable LRS or enables LRS on a UPDM database with a utility network. |
 | Subset | [EvaluateRulesByPolygon](./EvaluateRulesByPolygon.html) | Evaluate Rules by Polygon | Runs the Evaluate Rules Geoprocessing tool for every input polygon. |
@@ -44,4 +45,4 @@
 | Asset Package | [TransferUtilityNetworkData](./TransferUtilityNetworkData.html) | Transfer Utility Network Data | Merge the data from one or more asset packages to an asset package or utility network. |
 | Subset | [ValidateByPolygon](./ValidateByPolygon.html) | Validate by Polygon | Runs the Validate Network Topology Geoprocessing tool for every input polygon. |
 
-`Last built 2024-06-01`
+`Last built 2024-08-01`

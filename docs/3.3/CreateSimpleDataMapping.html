@@ -229,7 +229,7 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">This tool creates a spreadsheet you can use to map your current geodatabase schema to the schema of an asset packge for a utility network.</pre>
+        <pre class="wrap">This tool creates a spreadsheet you can use to map your current geodatabase schema to the schema of an asset package for a utility network.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -238,7 +238,9 @@
         <pre class="wrap">
           <span>
 Once you've used this tool to create a data mapping spreadsheet you will then manually populate it with the mappings from your current (source) data model to the new (utility network) model.
-Once you've populated the spreadsheet you will run the the 'Create Migration Workspace' tool to create a data loading workspace and data model suitable for performing the data conversion.
+Once you've populated the spreadsheet you will run the 'Create Migration Workspace' tool to create a data loading workspace and data model suitable for performing the data conversion.
+
+In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass adding fields to a target class when the copy field option is checked.  List the target class name(not qualified) and the name of the field that you do not want copied from the source.
 
 <h3>License</h3>Standard<h3>Toolset</h3>Data Migration</span>
         </pre>
@@ -246,7 +248,7 @@ Once you've populated the spreadsheet you will run the the 'Create Migration Wor
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>CreateSimpleDataMapping (source_dataset, asset_package, output_folder, output_name, {count_features}, {source_type_table}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>CreateSimpleDataMapping (source_dataset, asset_package, output_folder, output_name, {count_features}, {source_type_table}, {existing_mapping}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -320,6 +322,17 @@ Once you've populated the spreadsheet you will run the the 'Create Migration Wor
             </span>
           </td>
           <td class="gp" align="left">GPRecordSet</td>
+        </tr>
+        <tr>
+          <td class="gp">existing_mapping (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>An existing Data Mapping workbook to copy the definitions from.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
         </tr>
       </table>
     </div>
