@@ -319,7 +319,7 @@ The output geodatabase has a series of tables:
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>SummarizeUNErrors (network, folder, {options}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>SummarizeUNErrors (network, folder, {options}, {include_geometry}, {output_name}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -358,6 +358,31 @@ The output geodatabase has a series of tables:
 The options to check for in the utility network.
 <ul><li>Extract Dirty Areas and Associations in Error - Enriches error features with asset group/type and origin/destination geometry.</li><li>Identify Records with Incorrect Association Status - Identifies records with AssociationStatus out of sync with association table.</li><li>Identify Association Inconsistencies - Identifies data issues in the association table.</li><li>Identify Subnetwork Inconsistencies - Identifies data issues in the subnetwork table.</li><li>Identify Duplicate GlobalIDs - Identifies records with the same GlobalID across the utility network.</li><li>Identify EID Mapping Inconsistencies - Identifies inconsistencies between the EIDMappings table, dirty areas, associations, and source tables.</li></ul>
 			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">include_geometry (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>
+Include source geometries in output feature classes. For large datasets or those with many errors or inconsistencies, this should be unchecked.
+<ul><li>Checked - Include source geometries. This is the default.</li><li>Unchecked - Exclude source geometries.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">output_name (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The name of the summary geodatabase. Defaults to `Summary`.</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>

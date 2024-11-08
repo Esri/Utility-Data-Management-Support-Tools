@@ -294,7 +294,7 @@ In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass a
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>Features from this class will be loaded to the Asset Packages Service Territory class.</p>
+              <p>The extent and spatial reference used in the extended output asset package.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFeatureClass</td>
@@ -305,7 +305,7 @@ In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass a
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>Folder to contain the output</p>
+              <p>The location to create a unique folder based on the value of the Output Folder Name parameter that will contain a modified copy of the input Asset Package and Data Loading Workspace.</p>
             </span>
           </td>
           <td class="gp" align="left">DEFolder</td>
@@ -316,7 +316,7 @@ In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass a
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>Name for the newly created files</p>
+              <p>The name of the folder created in the location specified in the Output Location Parameter.  If a folder already exist with provided name, a numerator will be appended to the end of the name.</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>
@@ -327,7 +327,7 @@ In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass a
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>A table that will be used to perform substring matching for datasets, values, and attribute domain coded value descriptions. Use the table to create matches or block them</p>
+              <p>A table that will be used to perform substring matching for datasets, values, and attribute domain coded value descriptions. Use the table to create matches or block them.</p>
             </span>
           </td>
           <td class="gp" align="left">GPRecordSet</td>
@@ -345,17 +345,40 @@ In the DataMapping workbook, the Exclude Copy Field sheet allows you to bypass a
         </tr>
         <tr>
           <td class="gp">match_options (Optional) </td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Specifies whether field names or domain value descriptions will be matched.
+
+<ul><li>Field Name Similarity—Field names will be matched based on similarity between the source and target fields.</li><li>Domain Coded Value Description Similarity—Attribute domain value descriptions will be matched based on similarity between the source and target fields. When this option is specified, fields will not be matched by name if the source or target field has a domain.</li></ul>
+			</p>
+            </span>
+          </td>
           <td class="gp" align="left">GPString</td>
         </tr>
         <tr>
           <td class="gp">calc_stats (Optional) </td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Specifies whether the count and percentage of filled-in values will be calculated for fields in the source schema.
+<ul><li>Checked—The count and percentage of filled-in values will be calculated.</li><li>Unchecked—No calculations will be performed on the field values. This is the default.</li></ul>
+</p>
+            </span>
+          </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
         <tr>
           <td class="gp">match_subtypes (Optional) </td>
-          <td class="gp" align="left"></td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Parameter is deprecated and has no affect on outcome of tool.  This is managed internally when calling the Data Loading Tools.</p>
+            </span>
+          </td>
           <td class="gp" align="left">GPBoolean</td>
         </tr>
       </table>

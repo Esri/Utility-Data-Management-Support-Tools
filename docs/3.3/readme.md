@@ -8,6 +8,7 @@
 | Utility Network | [BuildStartingPoints](./BuildStartingPoints.html) | Build Starting Points | Creates starting points based on a trace configuration. |
 | APR | [CalculateTolerances](./CalculateTolerances.html) | Calculate Tolerances and Resolutions | Calculate the XY, Z, and M tolerances based on a measure unit for systems that will use a linear referencing system (LRS). |
 |  | [ChangeGDBSpatialReference](./ChangeGDBSpatialReference.html) | Change GDB Spatial Reference | Creates a new file geodatabase in the user-specified spatial reference. |
+| Schema | [CombineClasses](./CombineClasses.html) | Combine Classes | Combine a series of classes into a single non-subtyped class |
 | Asset Package | [CompareConfigurations](./CompareConfigurations.html) | Asset Package Configuration Report | Generates a collection of Excel Workbooks/Sheets to review the various Asset Package configuration options. |
 | Asset Package | [CompareRenames](./CompareRenames.html) | Asset Package Rename Report | Generates a collection of Excel Workbooks/Sheets to review the various Asset Package rename options. |
 | Utility Network | [Config2Trace](./Config2Trace.html) | Trace Configurations to Files | Converts Trace Configurations to a series of files |
@@ -35,14 +36,14 @@
 | Map | [MapLayersToCSV](./MapLayersToCSV.html) | Map Layers to CSV | Use this tool to create a csv report with field information from your tables and layers. |
 | Map | [SetFieldPropsFromCSV](./SetFieldPropsFromCSV.html) | Set Field Properties from CSV | Set a field's alias and other field properties for layers and tables. |
 | Utility Network | [SubnetworkAggregator](./SubnetworkAggregator.html) | Subnetwork Aggregator | This tools generates aggregated geometry and asset summaries for the subnetworks in an utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present. |
+| Schema | [SubtypesToClasses](./SubtypesToClasses.html) | Convert Subtypes to Classes | Convert each subtype of a class to a class. |
 |  | [SummarizeAttributeRules](./SummarizeAttributeRules.html) | Report and Summarize Attribute Rules | Generates a Mobile GDB that has a report of all the attribute rules in the workspace. |
 | Utility Network | [SummarizeUNErrors](./SummarizeUNErrors.html) | Summarize Utility Network Errors | Generates a Mobile GDB summarizing utility network errors and data inconsistencies |
 |  | [SummaryByBits](./SummaryByBits.html) | Summary by Bits | Splits the specified attributes by the specified bits present and generates data for reporting. |
-|  | [SwapBits](./SwapBits.html) | Swap Bits | Evaluates the values of an integer field as a bit gate and swaps bit values. |
 | Asset Package | [SyncAssetPackageDataTables](./SyncAssetPackageDataTables.html) | Sync the C Tables Asset Group/Type | Sync the Asset Group and Asset Type of the Asset Package data tables to the domain tables. |
 | Utility Network | [Trace2Config](./Trace2Config.html) | Trace to Trace Configurations | Converts arcpy.un.Trace to arcpy.un.ImportTraceConfigurations |
 | Utility Network | [TraceFilesToGeodatabase](./TraceFilesToGeodatabase.html) | Trace Results To Geodatabase | Converts the JSON files from a Utility Network trace to a geodatabase. |
 | Asset Package | [TransferUtilityNetworkData](./TransferUtilityNetworkData.html) | Transfer Utility Network Data | Merge the data from one or more asset packages to an asset package or utility network. |
 | Subset | [ValidateByPolygon](./ValidateByPolygon.html) | Validate by Polygon | Runs the Validate Network Topology Geoprocessing tool for every input polygon. |
 
-`Last built 2024-08-01`
+`Last built 2024-11-08`
