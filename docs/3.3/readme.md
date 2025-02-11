@@ -27,7 +27,6 @@
 | Utility Network | [CreateUNTerminalContingentValues](./CreateUNTerminalContingentValues.html) | Create Terminal Contingent Values | Creates contingent values for Utility Network terminal fields. |
 | APR | [EnableLRSUPDM](./EnableLRSUPDM.html) | Enable APR on UPDM | Creates the script to enable LRS or enables LRS on a UPDM database with a utility network. |
 | Subset | [EvaluateRulesByPolygon](./EvaluateRulesByPolygon.html) | Evaluate Rules by Polygon | Runs the Evaluate Rules Geoprocessing tool for every input polygon. |
-| Data Manipulation | [ExplodeMultipartInPlace](./ExplodeMultipartInPlace.html) | Explode Multipart In Place | Convert Multiparts into new rows. |
 |  | [ExportReportingData](./ExportReportingData.html) | Export Reporting Data | Exports tables with domain descriptions to an output geodatabase. |
 | Matrix | [ExportUtilityNetworkMatrix](./ExportUtilityNetworkMatrix.html) | Export Matrix | Creates Excel workbooks for visualizing and modifying Utility Network rules, categories, association roles, and terminal assignments. |
 |  | [ExtractFileLogs](./ExtractFileLogs.html) | Extract Logs from Files | Generates a Mobile GDB with a record for each entry in a log file. |
@@ -35,9 +34,7 @@
 | Map | [FilterMap](./FilterMap.html) | Modify Map by Rename and Configure | Applies rename and configuration options to maps based on an asset package. |
 | Matrix | [ImportUtilityNetworkMatrix](./ImportUtilityNetworkMatrix.html) | Import Matrix | Loads the values from the rule, network category, and terminal assignment workbooks. |
 | Map | [MapLayersToCSV](./MapLayersToCSV.html) | Map Layers to CSV | Use this tool to create a csv report with field information from your tables and layers. |
-| Data Manipulation | [RemoveDuplicateVertices](./RemoveDuplicateVertices.html) | Remove Duplicate Vertices | Remove Duplicate Vertices ff  |
 | Map | [SetFieldPropsFromCSV](./SetFieldPropsFromCSV.html) | Set Field Properties from CSV | Set a field's alias and other field properties for layers and tables. |
-| Data Manipulation | [SplitLineInPlace](./SplitLineInPlace.html) | Split Line In Place | Breaks line features based on intersection or proximity to point features. |
 | Utility Network | [SubnetworkAggregator](./SubnetworkAggregator.html) | Subnetwork Aggregator | This tools generates aggregated geometry and asset summaries for the subnetworks in an utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present. |
 | Schema | [SubtypesToClasses](./SubtypesToClasses.html) | Convert Subtypes to Classes | Convert each subtype of a class to a class. |
 |  | [SummarizeAttributeRules](./SummarizeAttributeRules.html) | Report and Summarize Attribute Rules | Generates a Mobile GDB that has a report of all the attribute rules in the workspace. |
@@ -50,4 +47,4 @@
 | Asset Package | [TransferUtilityNetworkData](./TransferUtilityNetworkData.html) | Transfer Utility Network Data | Merge the data from one or more asset packages to an asset package or utility network. |
 | Subset | [ValidateByPolygon](./ValidateByPolygon.html) | Validate by Polygon | Runs the Validate Network Topology Geoprocessing tool for every input polygon. |
 
-`Last built 2025-02-10`
+`Last built 2025-02-11`
