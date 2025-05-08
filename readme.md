@@ -37,16 +37,16 @@ Instructions
 Help
 ------------
 
-[Help for ArcGIS Pro 3.5](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.5/)
-[Help for ArcGIS Pro 3.3](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.3/)
-[Help for ArcGIS Pro 3.1](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.1/)
+- [Help for ArcGIS Pro 3.5](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.5/)
+- [Help for ArcGIS Pro 3.3](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.3/)
+- [Help for ArcGIS Pro 3.1](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.1/)
 
 Resources
 ---------
 
-* [What is the Utility Network](https://pro.arcgis.com/en/pro-app/latest/help/data/utility-network/what-is-a-utility-network-.htm)
-* [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
-* [twitter@esri](http://twitter.com/esri)
+- [What is the Utility Network](https://pro.arcgis.com/en/pro-app/latest/help/data/utility-network/what-is-a-utility-network-.htm)
+- [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
+- [twitter@esri](http://twitter.com/esri)
 
 Issues
 ------
