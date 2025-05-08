@@ -9,7 +9,7 @@ By leveraging the UDMS toolbox, utility organizations can efficiently manage the
 Download
 --------
 
-![GitHub All Releases](https://img.shields.io/github/downloads/esri/deep-learning-frameworks/total?style=for-the-badge)
+![GitHub All Releases](https://img.shields.io/github/downloads/esri/Utility-Data-Management-Support-Tools/total?style=for-the-badge)
 - **[Utility Data Management Support (UDMS) toolbox for ArcGIS Pro 3.5](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3_5/UtilityDataManagementSupport.atbx)**
 - **[Utility Data Management Support (UDMS) toolbox for ArcGIS Pro 3.3](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3-3-4/UtilityDataManagementSupport.atbx)**
 - **[Utility Data Management Support (UDMS) toolbox for ArcGIS Pro 3.1](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/6_1_2023_3.1.1/UtilityDataManagementSupport.atbx)**
