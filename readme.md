@@ -7,9 +7,7 @@ By leveraging the UDMS toolbox, utility organizations can efficiently manage the
 
 # Download
 
-- [2.9](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/2.9/UtilityDataManagementSupport.atbx)
-- [3.1](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/3.1/UtilityDataManagementSupport.atbx)
-- [3.3](https://github.com/Esri/Utility-Data-Management-Support-Tools/raw/3.3/UtilityDataManagementSupport.atbx)
+- [Download](https://github.com/Esri/Utility-Data-Management-Support-Tools)
 
 # Help
 
@@ -18,6 +16,8 @@ By leveraging the UDMS toolbox, utility organizations can efficiently manage the
 - [3.1](./docs/3.1)
 
 - [3.3](./docs/3.3)
+
+- [3.5](./docs/3.5)
 
 - [Import and Export Matrix Help](./help/ImportExport_matrix.md)
 
