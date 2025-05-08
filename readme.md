@@ -31,7 +31,7 @@ ArcGIS Pro
 Instructions
 ------------
 
-1. Download the appropiate version
+1. Download the appropriate version
 2. Add to an ArcGIS Pro project
 
 Help
