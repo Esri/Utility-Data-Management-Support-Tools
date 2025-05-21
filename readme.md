@@ -20,8 +20,8 @@ Help
 - [Help for ArcGIS Pro 3.5](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.5/)
 - [Help for ArcGIS Pro 3.3](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.3/)
 - [Help for ArcGIS Pro 3.1](https://esri.github.io/Utility-Data-Management-Support-Tools/docs/3.1/)
-- [Import and Export Matrix Help](./help/ImportExport_matrix.md)
-- [Batch Trace Video](./help/BatchTrace.mp4)
+- [Import and Export Matrix Help](https://github.com/Esri/Utility-Data-Management-Support-Tools/blob/gh-pages/help/ImportExport_matrix.md)
+- [Batch Trace Video](https://github.com/Esri/Utility-Data-Management-Support-Tools/blob/gh-pages/help/BatchTrace.mp4)
 
 Requirements
 ------------
