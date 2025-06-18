@@ -10,9 +10,9 @@ Download
 --------
 
 ![GitHub All Releases](https://img.shields.io/github/downloads/esri/Utility-Data-Management-Support-Tools/total?style=for-the-badge)
-- **[Utility Data Management Support toolbox for ArcGIS Pro 3.5](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3_5/UtilityDataManagementSupport.atbx)**
-- **[Utility Data Management Support toolbox for ArcGIS Pro 3.3.4](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3-3-4/UtilityDataManagementSupport.atbx)**
-- **[Utility Data Management Support toolbox for ArcGIS Pro 3.1.1](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/6_1_2023_3.1.1/UtilityDataManagementSupport.atbx)**
+- **[Utility Data Management Support toolbox (3.5) for ArcGIS Pro 3.5](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3_5/UtilityDataManagementSupport.atbx)**
+- **[Utility Data Management Support toolbox (3.3.4) for ArcGIS Pro 3.3](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/5_8_2025_3-3-4/UtilityDataManagementSupport.atbx)**
+- **[Utility Data Management Support toolbox (3.1.1) for ArcGIS Pro 3.1](https://github.com/Esri/Utility-Data-Management-Support-Tools/releases/download/6_1_2023_3.1.1/UtilityDataManagementSupport.atbx)**
 
 Help
 ----
