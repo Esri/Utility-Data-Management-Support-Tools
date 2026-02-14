@@ -1,6 +1,6 @@
 # Utility Data Management Support (UDMS) toolbox for ArcGIS Pro
 
-The Utility Data Management Support (UDMS) toolbox is a comprehensive suite of tools designed to enhance the management and configuration of utility networks within ArcGIS Pro. This toolbox is used in the the Utility Network Foundation solutions provided by Esri, aimed at streamlining various data management tasks essential for utility network operations.
+The Utility Data Management Support (UDMS) toolbox is a comprehensive suite of tools designed to enhance the management and configuration of utility networks within ArcGIS Pro. This toolbox is used in the Utility Network Foundation solutions provided by Esri, aimed at streamlining various data management tasks essential for utility network operations.
 The UDMS toolbox includes a variety of tools that assist in tasks such as adding system tables, performing batch traces, building starting points, calculating tolerances and resolutions, configuring utility network layers, creating association lines, enabling linear referencing systems (LRS), and updating data sources. These tools are designed to work with ArcGIS Pro and are continuously updated to incorporate new functionalities and improvements.
  
 By leveraging the UDMS toolbox, utility organizations can efficiently manage their network data, ensure accurate configurations, and optimize their workflows, ultimately leading to more reliable and effective utility services
@@ -33,7 +33,7 @@ Install Instructions
 
 - Download the version of the Utility Data Management Support toolbox that corresponds with your version of ArcGIS Pro.
 - In ArcGIS Pro, open an existing project, or create a new one.
-  - In the catalong pane, right click on Toolboxes and select Add Toolbox.
+  - In the catalog pane, right click on Toolboxes and select Add Toolbox.
   - Navigate to the downloaded toolbox and select OK.
 
 > [!TIP]
