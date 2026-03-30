@@ -223,13 +223,13 @@
   </style>
   </head>
   <body oncontextmenu="return true">
-    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">ConfigureUtilityNetworkLayers</h1>
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">LifecycleToAssetStateRule</h1>
     <p xmlns=""><span class="ContentHeader">Title</span> 
-				Configure UN Layers</p>
+				Add Lifecycle to Asset State Attribute Rule</p>
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">Configures utility network layers by modifying popups and display filters.</pre>
+        <pre class="wrap">Generated an Attribute Rule and calculate the Asset State from the Asset Lifecycle Values in the asset package.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -237,15 +237,17 @@
       <p>
         <pre class="wrap">
           <span>
-This tool can be run multiple times and existing properties will be updated.
+The Utility Network controlled classes must have two integer fields named assetstate and assetlifecyclestatus.
+assetlifecyclestatus must have a domain assigned at the field named Asset_Lifecycle_Status.
+assetstate must have a domain assigned to the field named Asset_State.
 
-<h3>License</h3>Basic<h3>Toolset</h3>Map</span>
+<h3>License</h3>Basic<h3>Toolset</h3>Asset Package</span>
         </pre>
       </p>
     </div>
     <div xmlns="">
       <h3>Syntax</h3>
-      <p>ConfigureUtilityNetworkLayers (map_name, options, {input_project}, {category_filters}, {remove_settings}, {remove_display_filters}, {hierarchical_tiers}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <p>LifecycleToAssetStateRule (asset_package, default_value, value_mapping) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
       <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
         <tr>
           <th width="30%">Parameter</th>
@@ -253,84 +255,37 @@ This tool can be run multiple times and existing properties will be updated.
           <th width="20%">Data Type</th>
         </tr>
         <tr>
-          <td class="gp">map_name</td>
+          <td class="gp">asset_package</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The map name to process.</p>
+              <p>The asset package to update.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEWorkspace</td>
+        </tr>
+        <tr>
+          <td class="gp">default_value</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The default value to calculate the Asset State too when a value is not mapped from the Asset Lifecycle Status.</p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>
         </tr>
         <tr>
-          <td class="gp">options</td>
+          <td class="gp">value_mapping</td>
           <td class="gp" align="left">
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>
-The options to add to the layers.
-<ul><li>Rule Popup - Adds an entry to the popup listing the valid rules the record can connect to.</li><li>Category Popup - Adds an entry to the popup listing the record's assigned network categories.</li><li>Subnetwork Popup- Adds an entry to the popup listing the record's assigned subnetworks and parent subnetworks. Only valid for partitioned networks.</li><li>Category Display Filter - Adds display filters to show/hide features with the assigned network categories.</li><li>Category Definition Expression - Adds definition expressions to show/hide features with the assigned network categories.</li><li>Terminal Popup - Adds an entry to the popup listing the record's terminal configuration and paths.</li><li>Terminal Labels - Adds a from and to terminal label to domain line classes.</li><li>Terminal Use - Adds a popup to devices which displays the items connected via each terminal.</li></ul>
-			</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPString</td>
-        </tr>
-        <tr>
-          <td class="gp">input_project (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The Pro project to read maps from. Leave blank to use the active project.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">DEFile</td>
-        </tr>
-        <tr>
-          <td class="gp">category_filters (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The display filters/definition expressions to add to the map. To specify multiple categories in the same filter, reuse the Filter Name.</p>
+              <p>The mapping of Asset Lifecycle Status to Asset State.</p>
             </span>
           </td>
           <td class="gp" align="left">GPValueTable</td>
-        </tr>
-        <tr>
-          <td class="gp">remove_settings (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>When checked, this will remove these options from the layers.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPBoolean</td>
-        </tr>
-        <tr>
-          <td class="gp">remove_display_filters (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>The display filters and/or definition expressions to remove.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPString</td>
-        </tr>
-        <tr>
-          <td class="gp">hierarchical_tiers (Optional) </td>
-          <td class="gp" align="left">
-            <span class="SubContentHeader">Dialog Reference</span>
-            <br />
-            <span>
-              <p>For a Hierarchical domain network, select the tier(s) to show in the subnetwork pop up.</p>
-            </span>
-          </td>
-          <td class="gp" align="left">GPString</td>
         </tr>
       </table>
     </div>
