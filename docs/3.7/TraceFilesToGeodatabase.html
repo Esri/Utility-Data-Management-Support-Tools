@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:res="http://www.esri.com/metadata/res/">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <style xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" type="text/css" id="internalStyle">
+    body {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #4C4C4C;
+      background-color: #FFFFFF;
+      margin: 6px, 6px, 6px, 6px;
+    }
+    h1 {
+      font-family: "Segoe UI Light", "Segoe UI", Arial, Sans-serif;
+      font-size: 14pt;
+      color: #0079C1;
+      margin: 0px 0px 8px 0px;
+    }
+    h3 {
+      font-family: "Segoe UI semibold", "Segoe UI", Arial, Sans-serif;
+      font-size: 12pt;
+      margin: 10px 0px 4px 0px;
+    }
+    span.ContentHeader {
+      font-family: "Segoe UI semibold", "Segoe UI", Arial, Sans-serif;
+      font-size: 12pt;
+    }
+    span.SubContentHeader {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #6D6C70;
+    }
+    span.ElementLabel {
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      color: #929497;
+    }
+    div {
+      margin: 0px 0px 0px 0px;
+    }
+    p {
+      margin: 0px 0px 6px 0px;
+    }
+    .center {
+      text-align: center;
+    }
+    img {
+      margin: 8px 0px 8px 0px;
+    }
+    img.summary {
+      width: 210px;
+      height: 133px;
+      margin: 8px 0px 8px 0px;
+    }
+    img.center {
+      text-align: center;
+      display: block;
+    }
+    img.gp {
+      width: auto;
+    }
+    .noThumbnail {
+      #color: rgb(70%, 70%, 70%);
+      color: #A6A8AB;
+      border-width: 1px;
+      border-style: solid;
+      #color: rgb(70%, 70%, 70%);
+      border-color: #A6A8AB;
+      padding: 3em 3em;
+      position: relative;
+      text-align: center;
+      width: 210px;
+      height: 140px;
+      margin: 8px 0px 8px 0px;
+    }
+    .noContent {
+      #color: rgb(70%, 70%, 70%);
+      color: #A6A8AB;
+    }
+    h3 a.expander:link {
+      color: #4C4C4C;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    h3 a.expander:visited {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    h3 a.expander:link:hover, h3 a.expander:visited:hover {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a.expander:link {
+      color: #323232;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a.expander:visited {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a.expander:link:hover, a.expander:visited:hover {
+      color: #0079C1;
+      text-decoration: none;
+    }
+    a:link {
+      color: #5A9359;
+      font-weight: normal;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #5A9359;
+      text-decoration: none;
+    }
+    a:link:hover, a:visited:hover {
+      color: #257824;
+      text-decoration: underline;
+    }
+    div.hide {
+      display: none;
+      margin: 0px 0px 20px 0px;
+      color: #6D6C70;
+    }
+    div.show {
+      display: block;
+      margin: 0px 0px 20px 0px;
+    }
+    span.hide {
+      display: none;
+      font-family: Times;
+    }
+    span.show {
+      display: inline-block;
+      font-style: normal;
+      font-family: Times;
+    }
+    table {
+      margin: 0px 0px 0px 0px;
+      padding: 0px 0px 8px 0px;
+      border-collapse:collapse;
+      font-size: 10pt;
+    }
+    th {
+      font-family: "Segoe UI Semibold", Arial, Sans-serif;
+      color: #4C4C4C;
+      /* color: #6C6D70 for dialog/python reference heading; */
+      text-align: left;
+      vertical-align: bottom;
+      border-bottom: 1px solid #4C4C4C;
+    }
+    td {
+      text-align: left;
+      vertical-align: top;
+    }
+    td.description {
+      vertical-align: center;
+    }
+    td.gp {
+      padding: 8px 8px 8px 8px;
+      border-bottom: 1px solid #4C4C4C;
+    }
+    ul {
+      margin: 0px 0px 0px 10px;
+      padding: 0px 0px 0px 10px;
+    }
+    li {
+      margin: 0px 0px 0px 0px;
+      padding: 0px 0px 0px 10px;
+    }
+    ul ul {
+      list-style-type: square;
+    }
+    pre.wrap {
+      width: 99%;
+      font-family: "Segoe UI", Arial, Sans-serif;
+      font-size: 10pt;
+      margin: 0px 0px 0px 0px;
+      white-space: pre-wrap;       /* css-3 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+    pre.wrap p {
+      padding-bottom: 1em;
+    }
+    pre.wrap li {
+      padding-bottom: 1em;
+    }
+    pre.wrap br {
+      display: block;
+    }
+    pre.gp {
+      font-family: Courier New, Courier, monospace;
+    }
+    .gpcode {
+      border: 1px dashed #ACC6D8;
+      padding: 10px;
+      background-color:#EEEEEE;
+      height: auto;
+      overflow: scroll; 
+      width: 98%;
+    }
+    .code {
+      font-family: monospace;
+    }
+
+    p.gp {
+      margin: 7px 0px 7px 0px;
+    }
+    dl {
+      margin: 0px 0px 0px 0px;
+    }
+    dt {
+      margin: 0px 0px 0px 15px;
+      clear: left;
+    }
+    dd {
+      margin: 0px 0px 0px 15px;
+      clear: left;
+    }
+  </style>
+    <style>.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  </head>
+  <body oncontextmenu="return true">
+    <h1 xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">TraceFilesToGeodatabase</h1>
+    <p xmlns=""><span class="ContentHeader">Title</span> 
+				Trace Results To Geodatabase</p>
+    <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
+      <h3>Description</h3>
+      <p>
+        <pre class="wrap">Converts the JSON files from a Utility Network trace to a geodatabase.</pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Usage</h3>
+      <p>
+        <pre class="wrap">
+          <span>
+Only specify <b>Utility Network</b> if the output schema needs to be changed. The tool is additive, so new tables and fields can be added to an existing geodatabase.
+The output geodatabase will always have the following tables prefixed with <b>I_</b>. Additional tables will be created based on <b>Schema Options</b>:
+<ul><li>I_File - Stores the name of the JSON file and an incrementing ID</li><li>I_NetworkAttributes - Stores metadata about Utility Network network attributes</li><li>I_Pairs - Stores left/right <b>fileKey</b> values used in the difference views</li><li>I_Sources - Stores metadata about Utility Network source tables</li><li>I_SourceFilter - Stores the names of the sources, fields, and network attributes used when defining the output schema</li></ul>
+The difference views can manually be configured by populating the <b>I_Pairs</b> table after loading at least 2 JSON files. For automatic loading, the following JSON can be added to each file which will be used to populate this table. The <b>Batch Trace</b> tool adds the JSON payload for you.
+<code>
+{
+    "traceInfo": {
+        "name": "My Subnetwork",     // This will be written to I_File. If not specified, the base name of the file will be used.
+        "moment": 1693260302.855814, // This will be written to I_File. If not specified, the current time will be used.
+        "key": "a",                  // Two files with the same value populates I_Pairs.
+        "side": "left"               // "left" represents current/original and "right" represents newer/modified.
+    }
+}
+</code>
+
+<h3>License</h3>Basic<h3>Toolset</h3>Utility Network</span>
+        </pre>
+      </p>
+    </div>
+    <div xmlns="">
+      <h3>Syntax</h3>
+      <p>TraceFilesToGeodatabase (output_gdb, {truncate_tables}, {trace_files}, {controller_dataset}, {schema_options}, {output_options}, {source_filter_csv}, {source_filter_json}) <br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /><br xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common" /></p>
+      <table xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
+        <tr>
+          <th width="30%">Parameter</th>
+          <th width="50%">Explanation</th>
+          <th width="20%">Data Type</th>
+        </tr>
+        <tr>
+          <td class="gp">output_gdb</td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The target geodatabase to convert the trace results files into.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEWorkspace</td>
+        </tr>
+        <tr>
+          <td class="gp">truncate_tables (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Truncates the tables listed in the <b>I_Sources</b> table.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPBoolean</td>
+        </tr>
+        <tr>
+          <td class="gp">trace_files (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>JSON files from <b>Trace</b> or <b>Export Subnetwork</b>. If a folder is specified, it will be recursively traversed for JSON files.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPComposite</td>
+        </tr>
+        <tr>
+          <td class="gp">controller_dataset (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The Utility Network used to define the output schema. Leave blank if the output schema already exists.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPUtilityNetworkLayer</td>
+        </tr>
+        <tr>
+          <td class="gp">schema_options (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>The tables to create in the <b>Output Geodatabase</b><ul><li>Associations: A table to store association records.</li><li>Attachment/Containment: A table to store structural attachment and containment associations.</li><li>Connectivity: A table to store from/to/via connectivity information. If <b>Include Geometry</b> is enabled, this table will be a polyline feature class.</li><li>Elements: A series of tables prefixed with <b>E_</b> representing Utility Network elements. If <b>Include Geometry</b> is enabled, these tables will be feature classes.</li><li>Features: A series of tables prefixed with <b>F_</b> representing Utility Network features. If <b>Include Geometry</b> is enabled, these tables will be feature classes.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">output_options (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Options enabled when a controller is provided.<ul><li>Include Geometry: The outputs will include the geometry of the original elements and features.</li><li>Create Database Views: Creates a series of difference views. This requires <b>Features</b> to be selected.</li></ul>
+			</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPString</td>
+        </tr>
+        <tr>
+          <td class="gp">source_filter_csv (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>A table with the sources to include and their fields and network attributes. Use the recordset to define the schema. This parameter cannot be used at the same time as <b>Source Filter JSON</b>.</p>
+            </span>
+          </td>
+          <td class="gp" align="left">GPRecordSet</td>
+        </tr>
+        <tr>
+          <td class="gp">source_filter_json (Optional) </td>
+          <td class="gp" align="left">
+            <span class="SubContentHeader">Dialog Reference</span>
+            <br />
+            <span>
+              <p>Specify one of the output trace results files to restrict the sources and fields in the results. This parameter cannot be used at the same time as <b>Source Filter Table.</b></p>
+            </span>
+          </td>
+          <td class="gp" align="left">DEFile</td>
+        </tr>
+      </table>
+    </div>
+    <div xmlns="">
+      <h3>Code Samples</h3>
+      <p>
+        <span class="span.SubContentHeader">TraceFilesToGeodatabase example 1 (Python window)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">convert the trace results from trace_results1 and trace_results2 into features and elements in the report database</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results1.json"</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results2.json"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">report_database</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\trace_report.geodatabase"</span>
+<span class="n">un</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\sample_un.geodatabase\network\utility_network"</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">TraceFilesToGeodatabase</span><span class="p">(</span><span class="n">report_database</span><span class="p">,</span> <span class="n">un</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
+</pre>
+      </div>
+      <br />
+      <p>
+        <span class="span.SubContentHeader">TraceFilesToGeodatabase example 2 (stand-alone script)</span>
+        <br />
+      </p>
+      <p>
+        <pre class="wrap">convert the trace results from trace_results1 and trace_results2 into features and elements in the report database</pre>
+      </p>
+      <div class="highlight">
+        <pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
+
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results1.json"</span><span class="p">,</span>
+    <span class="sa">r</span><span class="s2">"c:\temp\trace_results2.json"</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">report_database</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\trace_report.geodatabase"</span>
+<span class="n">un</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"c:\temp\sample_un.geodatabase\network\utility_network"</span>
+
+<span class="n">arcpy</span><span class="o">.</span><span class="n">udms</span><span class="o">.</span><span class="n">TraceFilesToGeodatabase</span><span class="p">(</span>
+    <span class="n">output_gdb</span><span class="o">=</span><span class="n">report_database</span><span class="p">,</span>
+    <span class="n">controller_dataset</span><span class="o">=</span><span class="n">un</span><span class="p">,</span>
+    <span class="n">trace_files</span><span class="o">=</span><span class="n">files</span><span class="p">,</span>
+<span class="p">)</span>
+</pre>
+      </div>
+    </div>
+  </body>
+</html>
