@@ -299,7 +299,7 @@
     <div xmlns="" xmlns:esri="http://www.esri.com/metadata/" xmlns:msxsl="http://exslt.org/common">
       <h3>Description</h3>
       <p>
-        <pre class="wrap">This tools generates aggregated geometry and asset summaries for the subnetworks in an utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present.</pre>
+        <pre class="wrap">This tools generates aggregated geometry and asset summaries for the subnetworks in a utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present.</pre>
       </p>
     </div>
     <div xmlns="">
@@ -307,9 +307,9 @@
       <p>
         <pre class="wrap">
           <span>
-Generate output geometry and summary information for the subnetworks in an utility network.  This can be used to generate partial geometry on subnetworks with error features.
+Generate output geometry and summary information for the subnetworks in a utility network.  This can be used to generate partial geometry on subnetworks with error features.
 
-The output geodatabase has a series of tables for the aggregated features.  Each table will be stored in a feature dataset and prefixed with the Domain of the Utility Network.  The tables will include fields to store the summary information and details about the number of vertices and parts in the aggreagate.  If there is no geometry to aggregate, a row is still added with an empty geometry:
+The output geodatabase has a series of tables for the aggregated features.  Each table will be stored in a feature dataset and prefixed with the Domain of the Utility Network.  The tables will include fields to store the summary information and details about the number of vertices and parts in the aggregate.  If there is no geometry to aggregate, a row is still added with an empty geometry:
 
 <ul><li>DOMAIN_Aggregated_Points - The aggregated points.</li><li>DOMAIN_Aggregated_Polygons - The aggregated Polygons.</li><li>DOMAIN_Aggregated_Polylines - The aggregated Polylines.</li><li>DOMAIN_Areas - A generated convex hull geometry for each subnetwork.</li></ul>
 
@@ -369,13 +369,13 @@ The output geodatabase will include the follow table if Calculate Asset Summary 
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The subnetwork table or table view.  The list of subnetworks to trace is determined by the unique set of values in the subnetworkname field.  A subnetwork is traced with all controllers even if a subset of controllers is filtered via the expresssion.
+              <p>The subnetwork table or table view.  The list of subnetworks to trace is determined by the unique set of values in the subnetworkname field.  A subnetwork is traced with all controllers even if a subset of controllers is filtered via the expression.
 
 If omitted, all the subnetworks from the utility network are used.
 
 Use the Create Utility Network System Tables Views tool to create a view to the subnetwork table.
 
-The this parameter requires a table requires the following fields:<ul><li>DOMAINNETWORKNAME: Text</li><li>TIERNAME: Text</li><li>SUBNETWORKNAME: Text</li></ul>
+The parameter requires a table requires the following fields:<ul><li>DOMAINNETWORKNAME: Text</li><li>TIERNAME: Text</li><li>SUBNETWORKNAME: Text</li></ul>
 			</p>
             </span>
           </td>
@@ -387,7 +387,7 @@ The this parameter requires a table requires the following fields:<ul><li>DOMAIN
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The sql expression used to limit the subnetworks queried from the table specified in the Subnetwork Table parameter.  The Subnetwork Table parameter needs to be populated to use this parameter.</p>
+              <p>The SQL expression used to limit the subnetworks queried from the table specified in the Subnetwork Table parameter.  The Subnetwork Table parameter needs to be populated to use this parameter.</p>
             </span>
           </td>
           <td class="gp" align="left">GPSQLExpression</td>
@@ -398,7 +398,7 @@ The this parameter requires a table requires the following fields:<ul><li>DOMAIN
             <span class="SubContentHeader">Dialog Reference</span>
             <br />
             <span>
-              <p>The name of a tag used in trace configurations to override the subnetwork trace parameters.  This tag is used to find a trace config that matches the tier of the subnetwork. To limit the trace configuration shown, the trace configuration must of a tag of SubnetworkOverride.  All tags from these configurations are shown.  To load different trace configuration per tier, create a trace configuration for each tier and use the same tag to group them together.  </p>
+              <p>The name of a tag used in trace configurations to override the subnetwork trace parameters.  This tag is used to find a trace config that matches the tier of the subnetwork. To limit the trace configuration shown, the trace configuration must have a tag of SubnetworkOverride.  All tags from these configurations are shown.  To load different trace configuration per tier, create a trace configuration for each tier and use the same tag to group them together.  </p>
             </span>
           </td>
           <td class="gp" align="left">GPString</td>
@@ -412,7 +412,7 @@ The this parameter requires a table requires the following fields:<ul><li>DOMAIN
               <p>Option to calculate and store asset counts per subnetwork. If checked, an AssetSummary table is created in the output geodatabase.
 
 The table has the following schema.<ul><li>SubnetworkName - The name of the subnetwork</li><li>SourceName - The Source Name in the Utility Network</li><li>AssetGroup - The Asset Group Description</li><li>AssetType - The Asset Type Description</li><li>ParticipationType - How the Asset Group/Type participates in the subnetwork
-						<ul><li>Attached - is attached to the structure newtork</li><li>Connected - part of the subnetwork</li><li>Container - is a container</li><li>Content - is contained by a container</li><li>Structure - is a structure that has attachments</li></ul>
+						<ul><li>Attached - is attached to the structure network</li><li>Connected - part of the subnetwork</li><li>Container - is a container</li><li>Content - is contained by a container</li><li>Structure - is a structure that has attachments</li></ul>
 					</li><li>RecordCount - The number of times the Asset Group/Type appears</li></ul>
 			</p>
             </span>

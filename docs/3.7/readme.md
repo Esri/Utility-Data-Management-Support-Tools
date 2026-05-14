@@ -37,7 +37,7 @@
 | Asset Package | [LifecycleToAssetStateRule](./LifecycleToAssetStateRule.html) | Add Lifecycle to Asset State Attribute Rule | Generated an Attribute Rule and calculate the Asset State from the Asset Lifecycle Values in the asset package. |
 | Map | [MapLayersToCSV](./MapLayersToCSV.html) | Map Layers to CSV | Use this tool to create a csv report with field information from your tables and layers. |
 | Map | [SetFieldPropsFromCSV](./SetFieldPropsFromCSV.html) | Set Field Properties from CSV | Set a field's alias and other field properties for layers and tables. |
-| Utility Network | [SubnetworkAggregator](./SubnetworkAggregator.html) | Subnetwork Aggregator | This tools generates aggregated geometry and asset summaries for the subnetworks in an utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present. |
+| Utility Network | [SubnetworkAggregator](./SubnetworkAggregator.html) | Subnetwork Aggregator | This tools generates aggregated geometry and asset summaries for the subnetworks in a utility network.  This can be used to generated subnetwork geometry for subnetworks who currently have error rows. The results will include the currently connected features up to the location where errors are present. |
 | Schema | [SubtypesToClasses](./SubtypesToClasses.html) | Convert Subtypes to Classes | Convert each subtype of a class to a class. |
 |  | [SummarizeAttributeRules](./SummarizeAttributeRules.html) | Report and Summarize Attribute Rules | Generates a Mobile GDB that has a report of all the attribute rules in the workspace. |
 | Utility Network | [SummarizeUNErrors](./SummarizeUNErrors.html) | Summarize Utility Network Errors | Generates a Mobile GDB summarizing utility network errors and data inconsistencies |
@@ -49,4 +49,4 @@
 | Asset Package | [TransferUtilityNetworkData](./TransferUtilityNetworkData.html) | Transfer Utility Network Data | Merge the data from one or more asset packages to an asset package or utility network. |
 | Subset | [ValidateByPolygon](./ValidateByPolygon.html) | Validate by Polygon | Runs the Validate Network Topology Geoprocessing tool for every input polygon. |
 
-`Last built 2026-04-21`
+`Last built 2026-05-14`
