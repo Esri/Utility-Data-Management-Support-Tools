@@ -25,6 +25,13 @@ Help
 - [Import and Export Matrix Help](https://github.com/Esri/Utility-Data-Management-Support-Tools/blob/gh-pages/help/ImportExport_matrix.md)
 - [Batch Trace Video](https://github.com/Esri/Utility-Data-Management-Support-Tools/blob/gh-pages/help/BatchTrace.mp4)
 
+
+Change log
+----
+- [3.7](/change_log_37)
+- [3.5](/change_log_35)
+
+
 Requirements
 ------------
 
