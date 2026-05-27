@@ -28,8 +28,8 @@ Help
 
 Change log
 ----
-- [3.7](/change_log_37)
-- [3.5](/change_log_35)
+- [3.7](/change_log_37.md)
+- [3.5](/change_log_35.md)
 
 
 Requirements
