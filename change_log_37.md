@@ -1,5 +1,11 @@
 # Utility Data Management Support (UDMS) toolbox for ArcGIS Pro Change Log
 
+## 3.7.1
+* Adjust Configure UN Layer to use Arcade Text when presenting HTML
+* Resolve issue with Batch Trace #68
+* Additional support for UNs with Telecom Domain Networks
+
+  
 ## 3.7.0
 
 * New Common Ancestor Trace tool to find the common feature/features from 2 or more starting points
